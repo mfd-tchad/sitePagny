@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    {# .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; } #}
+    .example-wrapper { margin: 1em auto; font: 18px/1.5 sans-serif; align: justify}
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="row container">
+    <h1> {{ titre }}</h1>
+    <main class="example-wrapper col-md-8">
+      <p>Le village a appartenu au <a href="https://fr.wikipedia.org/wiki/Dioc%C3%A8se_de_Toul" title="Diocèse de Toul">diocèse de Toul</a>.</p>
+      <p>En 1630, durant la guerre de Trente Ans, il est en grande partie incendié par les <a href="https://fr.wikipedia.org/wiki/Su%C3%A8de" title="Suède">Suédois</a>.</p>
+      <p>Pagny est desservi par le chemin de fer en 1870. La France est alors en guerre contre l'Allemagne et la Prusse. Le premier train à emprunter la ligne est d'ailleurs un convoi de 
+fantassins prussiens. Elle est petit à petit délaissée puis entièrement désaffectée en 1970, laissant pour seul vestige la maison du garde-barrière, qui finit par être démolie en 2005.
+      </p>
+      <p>Le 31 décembre 1916, le <abbr class="abbr" title="Deuxième">2<sup>e</sup></abbr> Groupe du <abbr class="abbr" title="Vingt-neuvième">29<sup>e</sup></abbr>&nbsp;
+      régiment d'artillerie arrive dans le village. Le journal de marche et des opérations du régiment stipule pour la journée du <abbr class="abbr" title="Premier">1<sup>er</sup></abbr> janvier 1917&nbsp;: «&nbsp;installation facilitée par l’amabilité des habitants.&nbsp;»
+      </p>
+      <p>L'électricité arrive en 1912, et la TSF à partir de 1925 dans une poignée de maisons. Cette dernière, moyen le plus rapide de suivre l'actualité à l'époque, 
+n'est adoptée plus largement qu'à partir des années 1940, lors de la Seconde Guerre mondiale.
+    </p>
+      <p>Dans les années 1930, un habitant du village crée une petite laiterie. Celle-ci change de propriétaire en 1941 puis connaît une grande expansion dans les années 1950, qui se traduit par une augmentation significative de la population du village. Forte de son succès, elle déménage vers 1980 à Sorcy-Saint-Martin (près de Commercy). Actuellement, un projet d'aménagement de cette friche industrielle est acté et les autorités compétentes y travaillent.
+      </p>
+      <p>La fête patronale de Saint Grégoire le Grand était autrefois fêtée le 12 mars. Puis elle a été déplacée le premier dimanche de mai avec une animation sur la place de la fête.
+      </p>
+      <h2> Lieux et Monuments </h2>
+          <ul><li>Un moulin à eau est construit en 1550, mais est détruit vers 1960. Le lieu-dit <i>le Moulin</i> a depuis beaucoup participé à la vie de la commune.</li></ul>
+          <ul><li>Le <a href="https://fr.wikipedia.org/wiki/Fort_de_Pagny-la-Blanche-C%C3%B4te" title="Fort de Pagny-la-Blanche-Côte">fort de Pagny</a> est construit vers 1880 et fait partie du 
+          système de fortification</a> mis en place par l'architecte <a href="https://fr.wikipedia.org/wiki/S%C3%A9r%C3%A9_de_Rivi%C3%A8res" class="mw-redirect" title="Séré de Rivières">Séré de Rivières</a>. 
+          Malgré son nom, il est situé sur le territoire de la commune limitrophe d'Uruffe. En 1920, il est acheté par un particulier, mais réquisitionné par les Allemands</a> 
+          pendant quatre ans lors de la Seconde Guerre mondiale. Ils le transforment en ferme et font venir des ouvriers polonais afin d'y cultiver notamment la pomme de terre</a>. 
+          Le fort n'est aujourd'hui plus accessible, car acheté par un particulier dans les années 1995-2000. Sur le territoire du village se trouve une seconde fortification&nbsp;: 
+          la batterie de Pagny, qui n'est plus accessible non plus, car également rachetée par un particulier en 2008.</li></ul>
+          <ul><li>Un beau lavoir d'hiver en forme de demi-cercle, connu comme étant le plus beau des environs, fait la fierté des habitants de la commune jusque vers 1960. 
+          Il est alors détruit dans le but de créer une nouvelle route, et ce malgré un désaccord total de la population. Le lavoir d'été, sur le bord du canal, est toujours intact mais noyé une grande partie de l'année.</li></ul>
+          <ul><li>Au cœur du village qu'elle surplombe, l'église <a href="https://fr.wikipedia.org/wiki/Gr%C3%A9goire_Ier" title="Grégoire Ier">Saint-Grégoire-le-Grand</a> a été bâtie au XV<sup style="font-size:72%">e</sup></abbr>&nbsp;siècle dans un style gothique encore très perceptible. L'église possède trois nefs. Remaniée partiellement à diverses périodes, on distingue ainsi le chœur (restauré en 1897), une travée datée de 1535 et une reprise des voûtes en 1644. En 2010, l'Association Saint Grégoire le Grand a été créée pour œuvrer à sa restauration. Le projet est déjà bien avancé grâce au travail hebdomadaire d'une équipe de bénévoles. Ce travail important a été possible avec les aides financières des adhérents, des généreux donateurs et des différents partenaires dont la municipalité.</li></ul>
+          <ul><li>La chapelle Sainte-Anne est ajoutée en 1886.</li></ul>
+          <ul><li>Le Monument aux morts est le dernier monument construit.</li></ul>
+
+      </main>
+      <aside class="col-md-4">
+        <p> <img src = "/images/ancienneEntreeVillage.jpg"> Ancienne entrée du village </img></p>
+        <p> <img src = "/images/ancienneMairieEtEcole.jpg"> Ancienne Mairie et Ecole </img> </p>
+        <p> <img src = "/images/ancienneRueDeLaHalle.jpg" Alt="Rue de la Halle"> Ancienne rue de la Halle </img> </p>
+        <p> <img src = "/images/ancienneRueDeLaChapelle.jpg" Alt="Rue de la chapelle"> Ancienne rue de la Chapelle </img> </p>
+        <p> <img src = "/images/lavoir.jpg" Alt="Le lavoir"> Le lavoir </img> </p>
+        <p> <img src="/images/Fort_Pagny.jpg" Alt="Le Fort de Pagny"> Le Fort de Pagny </img> </p>
+      </aside>
+</div>
+{% endblock %}

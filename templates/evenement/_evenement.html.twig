@@ -1,0 +1,26 @@
+
+<div class="card mb-4 
+        {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
+             border-secondary
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}
+            border-success
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Fête') %}
+            border-warning
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Mariage') %}
+            border-info
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
+            border-lignt
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
+            border-primary
+        {% endif %}">
+    <div class="card-body">
+        <h5 class="card-title"> 
+            <a href="{{ path('evenement.show', {slug: evenement.slug, id: evenement.id}) }}">
+                {{ evenement.typeEvenement(evenement.type) }} 
+            </a>
+        </h5>
+        <p class="card-text" style="font-size: 1.2rem; font-weight: bold;"> {{ evenement.titre }} </p>
+                    
+        <p class="card-text"> Le {{ evenement.date | date ("d/m/Y") }} </p>            
+    </div>
+</div>

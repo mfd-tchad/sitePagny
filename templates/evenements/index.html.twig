@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; min-height: 20em; font: 18px/1.5 sans-serif; }
+</style>
+
+<div class="example-wrapper">
+    <h1> {{ titre }} </h1>
+
+   <div class="container mt-4">
+        <div class="row">
+            {% for evenement in evenements %}
+            <div class="col-4">
+                {% include 'evenement/_evenement.html.twig' %}
+            </div>
+            {% else %}
+                <li> Pas (encore !) d'évènements enregistrés</li>
+            {% endfor %}
+        </div>
+   </div>
+</div>
+{% endblock %}

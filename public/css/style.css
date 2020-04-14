@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+footer p {
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.card-header {
+    background-color: aqua;
+    /* display: flex; */
+}
+
+.card-header element {
+    /* align-content: stretch; */
+}
+
+.card-body element {
+    text-align: right;
+}

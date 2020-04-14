@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; min-height: 20em; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    span  {font-style: italic; text-align: right; font-size:small; color:blue}
+</style>
+
+<div class="example-wrapper">
+    <h1> {{ titre }} </h1>
+
+   <div class="container">
+        <div class="row">
+            {% for evenement in evenements %}
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header"> 
+                        <h4> {{ evenement.typeEvenement(evenement.type) }} </h4> 
+                    </div>
+                    <div class="card-body">
+                        <div class="element"> Le {{ evenement.date | date ("d/m/Y") }} </div>
+                        {{ evenement.description }} <br>
+                        <span > créé le {{ evenement.createdAt | date ("d/m/Y h:m:s") }} </span>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                <li> Pas (encore !) d'évènements enregistrés</li>
+            {% endfor %}
+        </div>
+   </div>
+</div>
+{% endblock %}

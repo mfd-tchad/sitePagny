@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; min-height: 20em; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1> {{ titre }} </h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    
+   <div class="container mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Type </th>
+                    <th> Titre </th>
+                    <th> Date </th>
+                    <th> Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evenement in evenements %}
+                <tr>
+                    <td> {{ evenement.typeEvenement(evenement.type) }} </td>
+                     <td> {{ evenement.titre }} </td>
+                    <td> {{ evenement.date|date("d/m/Y") }} </td>
+                    <td> 
+                        <a href="{{ path('admin.evenement.edit' , {id: evenement.id}) }}" class="btn btn-secondary"> Editer </a>
+                        <form  action="{{ path('admin.evenement.delete' , {id: evenement.id}) }}" style="display:inline-block" method="POST" onsubmit="return confirm('Etes vous vraiment sûr ?')"> 
+                            <input type="hidden" name="_method" value="DELETE">
+                            {# pour la sécurité, on ajoute un tocken #}
+                            <input type="hidden" name="_tocken" value="{{ csrf_token('delete' ~ evenement.id) }}"> 
+                            <button class="btn btn-danger"> Supprimer </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-right">
+        <a href="{{ path('admin.evenement.new') }}" class="btn btn-primary">Créer un nouvel Evenement</a>
+        </div>
+   </div>
+</div>
+{% endblock %}

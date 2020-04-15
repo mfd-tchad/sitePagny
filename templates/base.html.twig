@@ -10,7 +10,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">sitePagny</a>
+            <a class="navbar-brand" href="/">Pagny la Blanche Côte</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,10 +27,13 @@
                         <a class="nav-link" href="{{ path('evenements') }}">EVENEMENTS</a>
                     </li>
                     <li class="nav-item {% if current_menu is defined and current_menu == 'mairie'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('mairie') }}">MAIRIE & ASSOCIATIONS</a>
+                        <a class="nav-link" href="{{ path('mairie') }}">MAIRIE</a>
                     </li>
-                    <li class="nav-item {% if current_menu is defined and current_menu == 'horaires'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('horaires') }}">HORAIRES</a>
+                    <li class="nav-item {% if current_menu is defined and current_menu == 'viepratique'%} active {% endif %}">
+                        <a class="nav-link" href="{{ path('viepratique') }}">VIE PRATIQUE</a>
+                    </li>
+                    <li class="nav-item {% if current_menu is defined and current_menu == 'reserve'%} active {% endif %}">
+                        <a class="nav-link" href="{{ path('reserve') }}">RESERVE NATURELLE</a>
                     </li>
                     <li class="nav-item {% if current_menu is defined and current_menu == 'contact'%} active {% endif %}">
                         <a class="nav-link" href="{{ path('contact') }}">CONTACT</a>

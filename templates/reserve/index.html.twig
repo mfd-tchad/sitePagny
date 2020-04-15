@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 1100px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1> {{ titre }} </h1>
+<img src="/images/site-pagny-3bis.jpg"/>
+
+{# <img src="/images/site-pagny.jpg" width="98%"/> #}
+
+    <h3> Un site naturel classé en Europe </h3>
+    
+    <p>  La côte de Pagny en forme d'arc-en-ciel se répartit sur deux sites, de part et d'autre du village, qui abritent une faune et une flore exceptionnelles en Europe, de quoi attirer les botanistes.
+        
+    </p>
+   <p> Les éboulis de couleur blanche présents sur la côte sont très probablement à l'origine du nom du village. 
+        Ils sont dûs au sol calcaire de la région et les moutons qui s'y promenaient autrefois empêchaient la végétation de se fixer sur la pente.
+        Depuis quelques décennies, la pente est progressivement colonisée par des végétaux. 
+    </p>
+    <p> Liens : </p>
+  
+    <p> <a href="https://fr.wikipedia.org/wiki/Pagny-la-Blanche-C%C3%B4te"> Wikipedia </a> </p>
+
+</div>
+<aside>
+    <img src="/images/explorationcotepagny.jpg"/>
+</aside>
+{% endblock %}

@@ -11,39 +11,22 @@
 <div class="row container">
     <main class="example-wrapper col-md-8">
         <h1>{{ titre }} </h1>
-
-        <p> <img src="/images/iconeadresse.jpg" height="80">7, rue des Halles <span margin="20">     55140 Pagny la Blanche Côte </img> </p>
-        <p> <img src="/images/iconetel.jpg" height="60" > 03 29 90 86 30 </img> 
-        <img  src="/images/iconefax.jpg" height="70"> Fax: 03 29 90 86 30 </img> </p>
-        <p> La marie est ouverte :
-            <ul>
-                <li> Le lundi de 10h30 à 12h30</li>
-                <li> Le jeudi de 10h30 à 12h30 </li>
-            </ul>
-        </p>
-
-        <p>    <b>Maire :</b> M. Daniel Rouvenach  <img src="/images/photoDRouvenach.jpg" ></p>
-
-        <b>Conseil Municipal élu en 2014:</b>
-        <ul>
-            <li>M. Daniel Rouvenach</li>
-            <li>M. Laurent Vichard</li>
-            <li>M. François Nuffer</li>
-            <li>Mme Michèle Bocciarelli</li>
-            <li>M. Gaël Rouvenach</li>
-            <li>M. Sylvain Zimmermann</li>
-            <li>M. Michaël Thiry</li>
-            <li>Mme Marie-José Prud'homme</li>
-            <li>M. Fabien Chrétien</li>
-            <li>Mme Vanessa Martin</li>
-        </ul>
-        <br>
+        <section class="mt-4">
+        {% include '/mairie/bureaux.html.twig' %}
+        </section>
+        
+        <section class="mt-4 pt-4">
+        {% include '/mairie/conseilmunicipal.html.twig' %}
+        </section>
+        
+        <section class="mt-4 pt-4">
         La commune a deux associations déclarées en activité : 
         <ul>
         <li> L'<b>association Saint Grégoire Le Grand</b> qui s'occupe de la <a href="https://www.fondation-patrimoine.org/les-projets/eglise-saint-gregoire-le-grand-a-pagny-la-blanche-cote">restauration du bâtiment de l'Eglise </a></li>
         <li> L'<b>île aux enfants</b> qui organise des animations pour les enfants </li>
-        <br>
         </ul>
+        </section>
+        
         <section>
         Liens :
         <ul>
@@ -51,6 +34,7 @@
         <li> <a href="http://www.meuse.gouv.fr/Services-de-l-Etat/Prefecture-et-sous-prefectures/La-Sous-Prefecture-de-Commercy"> Sous-Préfecture de Commercy </a> </li>
         <li> <a href="http://www.meuse.gouv.fr/Services-de-l-Etat/Prefecture-et-sous-prefectures/La-Prefecture-de-la-Meuse"> Préfecture de la Meuse </a> </li>
         </ul>
+        </section>
         </main>
     <aside class="col-md-4">
         <p> <img src = "/images/photomairie.jpg" height="300"> Mairie </img> </p>

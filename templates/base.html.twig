@@ -23,7 +23,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ path('mairie') }}">Bureaux</a>
-                            <a class="dropdown-item" href="{{ path('mairie') }}">Conseil municipal</a>
+                            <a class="dropdown-item" href="{{ path('conseilmunicipal') }}">Conseil municipal</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Réalisations</a>
                             <a class="dropdown-item" href="#">Projets</a>
@@ -47,8 +47,12 @@
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Ramassage des ordures</a>
                         </div>
                     </li>
-                    <li class="nav-item {% if current_menu is defined and current_menu == 'reserve'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('reserve') }}">RESERVE NATURELLE</a>
+                    <li class="nav-item dropdown-toggle {% if current_menu is defined and current_menu == 'patrimoine'%} active {% endif %}">
+                        <a class="nav-link dropdown-toggle" href="{{ path('patrimoine') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PATRIMOINE</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('patrimoine') }}">Eglise St Grégoire</a>
+                            <a class="dropdown-item" href="{{ path('reserve') }}">Réserve naturelle</a>
+                        </div>
                     </li>
                     <li class="nav-item {% if current_menu is defined and current_menu == 'historique' %} active {% endif %}">
                         <a class="nav-link" href="{{ path('historique') }}">HISTORIQUE</a>

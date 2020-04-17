@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 1100px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="row container">
+<main class="example-wrapper col-md-8">
+    <h1> {{ titre }} </h1>
+    
+    <p> L'Eglise St-Grégoire fait la fierté de la population depuis sa restauration dans les années 2010.
+        ...
+        A REDIGER
+    </p>
+   
+    <p> Liens : </p>
+  
+    <p> <a href="#"> Les plus belles églises du département </a> </p>
+
+</main>
+<aside class="col-md-4">
+    <img src="/images/portes-ouvertes-a-saint-gregoire.jpg"/>
+</aside>
+</div>
+{% endblock %}

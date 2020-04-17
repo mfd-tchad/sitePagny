@@ -43,7 +43,17 @@ class HomeController extends AbstractController
     public function reserve()
     {
         return $this->render('reserve/index.html.twig', [
-            'title' => 'Reserve', 'titre' => 'Reserve naturelle régionale', 'current_menu' => 'reserve'
+            'title' => 'Reserve', 'titre' => 'Reserve naturelle régionale', 'current_menu' => 'patrimoine'
+        ]);
+    }
+
+    /**
+     * @Route("/patrimoine", name="patrimoine")
+     */
+    public function patrimoine()
+    {
+        return $this->render('patrimoine/index.html.twig', [
+            'title' => 'Patrimoine', 'titre' => 'Patrimoine', 'current_menu' => 'patrimoine'
         ]);
     }
 }

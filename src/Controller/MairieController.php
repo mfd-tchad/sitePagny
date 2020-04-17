@@ -16,4 +16,14 @@ class MairieController extends AbstractController
             'title' => 'Mairie', 'titre' => 'Mairie de Pagny',  'current_menu' => 'mairie'
         ]);
     }
+
+    /**
+     * @Route("/conseilmunicipal", name="conseilmunicipal")
+     */
+    public function conseilmunicipal()
+    {
+        return $this->render('mairie/indexconseil.html.twig', [
+            'title' => 'ConseilMunicipal', 'titre' => 'Mairie de Pagny',  'current_menu' => 'mairie'
+        ]);
+    }
 }

@@ -38,6 +38,15 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/cadredevie", name="cadredevie")
+     */
+    public function cadredevie()
+    {
+        return $this->render('cadredevie/index.html.twig', [
+            'title' => 'CadreDeVie', 'titre' => 'Cadre de vie', 'current_menu' => 'cadredevie'
+        ]);
+    }
+    /**
      * @Route("/reserve", name="reserve")
      */
     public function reserve()

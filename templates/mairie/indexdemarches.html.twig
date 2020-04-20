@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<main>
+    <h1>{{ titre }} </h1>
+    <section class="mt-4 pt-4">
+        <h2> Démarches en ligne </h2>
+        <div class="row container">
+            <div class="example-wrapper col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="https://mdel.mon.service-public.fr/mademarchev5/sfjsp?interviewID=etatCivil" target="_blank"><img src="http://commercy.fr/wp-content/uploads/2015/07/e-mairie-demarches-en-ligne.png" alt="E-mairie, vos démarches" width="130" height="130"/></a>
+                    </div>
+                </div>
+                <h4 class="text-center">Demande d&#8217;acte d&#8217;état civil</h4>
+                <p>Ce service vous permet d&#8217;obtenir gratuitement une copie ou un extrait d&#8217;acte d&#8217;état civil.</p>
+            </div>
+            <div class="example-wrapper col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="https://mdel.mon.service-public.fr/inscription-listes-electorales.html" target="_blank"><img src="http://commercy.fr/wp-content/uploads/2015/07/carte-d-identite.png" alt="Carte d'identité" width="130" height="130" /></a>
+                        
+                    </div>
+                </div>
+                <h4>Inscription sur les listes éléctorales</h4>
+                <p>Ce service vous permet de demander votre inscription sur les listes électorales de votre commune.</p>
+            </div>
+            <div class="example-wrapper col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="https://mdel.mon.service-public.fr/recensement-citoyen.html" target="_blank"><img src="http://commercy.fr/wp-content/uploads/2015/07/passeport.png" alt="Faites faire votre passeport en ligne" width="130" height="130" /></a>
+                    <h4 style="text-align: center;">Recensement citoyen obligatoire</h4>
+                    </div>
+                </div>
+                <p>Ce service permet de vous faire recenser, dans le cadre des obligations de service national.</p>
+            </div>
+        </div>
+    </section>
+    
+    {% include '/mairie/bureaux.html.twig' %}
+        
+    {% include '/mairie/lienscomcom.html.twig' %}
+</main>
+{% endblock %}

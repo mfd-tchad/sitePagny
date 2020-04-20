@@ -18,6 +18,16 @@ class MairieController extends AbstractController
     }
 
     /**
+     * @Route("/demarches", name="demarches")
+     */
+    public function demarches()
+    {
+        return $this->render('mairie/indexdemarches.html.twig', [
+            'title' => 'Demarches', 'titre' => 'Démarches administratives',  'current_menu' => 'demarches'
+        ]);
+    }
+
+    /**
      * @Route("/conseilmunicipal", name="conseilmunicipal")
      */
     public function conseilmunicipal()

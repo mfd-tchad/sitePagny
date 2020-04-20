@@ -20,13 +20,15 @@
                     
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'mairie'%} active {% endif %}">
                         <a class="nav-link dropdown-toggle" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MAIRIE</a>
-                        </a>
+                        
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('mairie') }}">Bureaux</a>
+                            <a class="dropdown-item" href="{{ path('demarches') }}">Démarches administratives</a>
                             <a class="dropdown-item" href="{{ path('conseilmunicipal') }}">Conseil municipal</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Réalisations</a>
                             <a class="dropdown-item" href="#">Projets</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Finances</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
@@ -44,19 +46,39 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Bus scolaires</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ path('viepratique') }}">Ramassage des ordures</a>
+                            <a class="dropdown-item" href="{{ path('viepratique') }}">Collecte des ordures</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown-toggle {% if current_menu is defined and current_menu == 'patrimoine'%} active {% endif %}">
+                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'cadredevie' %} active {% endif %}">
+                        <a class="nav-link dropdown-toggle" href="{{ path('cadredevie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CADRE DE VIE</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('cadredevie') }}">Urbanisme</a>
+                            <a class="dropdown-item" href="#">Infos travaux</a> 
+                            <a class="dropdown-item" href="#">Cadastre</a> 
+                            <div class="dropdown-divider"></div>
+                            
+                            <a class="dropdown-item" href="#">Sentiers banalisés</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'patrimoine'%} active {% endif %}">
                         <a class="nav-link dropdown-toggle" href="{{ path('patrimoine') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PATRIMOINE</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('patrimoine') }}">Eglise St Grégoire</a>
+                            <a class="dropdown-item" href="{{ path('historique') }}">Historique</a>
+                            <a class="dropdown-item" href="{{ path('patrimoine') }}">Eglise St Grégoire</a>  
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ path('reserve') }}">Réserve naturelle</a>
+                            <a class="dropdown-item" href="#">Sentiers banalisés</a>
                         </div>
                     </li>
-                    <li class="nav-item {% if current_menu is defined and current_menu == 'historique' %} active {% endif %}">
-                        <a class="nav-link" href="{{ path('historique') }}">HISTORIQUE</a>
+                    {#
+                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'environnement' %} active {% endif %}">
+                        <a class="nav-link dropdown-toggle" href="{{ path('reserve') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENVIRONNEMENT</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('reserve') }}">Réserve naturelle</a>
+                            <a class="dropdown-item" href="#">Sentiers banalisés</a>
+                        </div>
                     </li>
+                    #}
                     <li class="nav-item {% if current_menu is defined and current_menu == 'contact'%} active {% endif %}">
                         <a class="nav-link" href="{{ path('contact') }}">CONTACT</a>
                     </li>
@@ -74,7 +96,7 @@
             {% block body %}{% endblock %}
         </div>
         <footer class="container">
-            {# <p>Responsable du site: {{ webmaster }} </p> #}
+            <p><italic>Le site officiel de la mairie de Pagny la Blanche Côte </italic></p>
         </footer>
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; font: 16px/1.5 sans-serif; align: justify}
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="row container">
+    <main class="example-wrapper col-md-8">
+        <h1>{{ titre }} </h1>
+        {% include '/jeunesse/ileauxenfants.html.twig' %}
+        
+
+    </main>
+    <aside class="col-md-4">
+        <div class="container-fluid"> <img class="center-block" src ="/images/ileauxenfants.jpg" Alt="Photo Ile aux enfants" height="300"> Ile aux enfants </img> </div>
+    </aside>
+</div>
+{% endblock %}

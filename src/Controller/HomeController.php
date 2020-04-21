@@ -23,7 +23,7 @@ class HomeController extends AbstractController
     public function historique()
     {
         return $this->render('historique/index.html.twig', [
-            'title' => 'Historique', 'titre' => 'Historique du village', 'current_menu' => 'historique'
+            'title' => 'Historique', 'titre' => 'Historique du village', 'current_menu' => 'patrimoins'
         ]);
     }
     
@@ -38,14 +38,35 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/cadredevie", name="cadredevie")
+     * @Route("/jeunesse", name="jeunesse")
      */
-    public function cadredevie()
+    public function jeunesse()
     {
-        return $this->render('cadredevie/index.html.twig', [
-            'title' => 'CadreDeVie', 'titre' => 'Cadre de vie', 'current_menu' => 'cadredevie'
+        return $this->render('jeunesse/index.html.twig', [
+            'title' => 'Jeunesse', 'titre' => 'Jeunesse', 'current_menu' => 'jeunesse'
         ]);
     }
+
+    /**
+     * @Route("/ileauxenfants", name="ileauxenfants")
+     */
+    public function ileauxenfants()
+    {
+        return $this->render('jeunesse/indexileauxenfants.html.twig', [
+            'title' => 'IleAuxEnfants', 'titre' => 'île aux Enfants', 'current_menu' => 'jeunesse'
+        ]);
+    }
+
+    /**
+     * @Route("/sportsetloisirs", name="sportsetloisirs")
+     */
+    public function sportsetloisirs()
+    {
+        return $this->render('jeunesse/indexsportsetloisirs.html.twig', [
+            'title' => 'SportEtLoisirs', 'titre' => 'Sports et Loisirs', 'current_menu' => 'jeunesse'
+        ]);
+    }
+
     /**
      * @Route("/reserve", name="reserve")
      */

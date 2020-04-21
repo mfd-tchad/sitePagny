@@ -9,6 +9,9 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <div>
+            <img src="/images/bandeau-2.jpg" width="100%"/>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="/">Pagny la Blanche Côte</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,8 +25,10 @@
                         <a class="nav-link dropdown-toggle" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MAIRIE</a>
                         
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('demarches') }}">Démarches administratives</a>
+                            <a class="dropdown-item" href="{{ path('demarches') }}">Démarches citoyenneté</a>
+                            <a class="dropdown-item" href="{{ path('urbanisme') }}">Urbanisme</a>
                             <a class="dropdown-item" href="{{ path('conseilmunicipal') }}">Conseil municipal</a>
+                            <a class="dropdown-item" href="{{ path('associations') }}">Associations</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Réalisations</a>
                             <a class="dropdown-item" href="#">Projets</a>
@@ -49,15 +54,13 @@
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Collecte des ordures</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'cadredevie' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('cadredevie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CADRE DE VIE</a>
+                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'jeunesse' %} active {% endif %}">
+                        <a class="nav-link dropdown-toggle" href="{{ path('jeunesse') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">JEUNESSE</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('cadredevie') }}">Urbanisme</a>
-                            <a class="dropdown-item" href="#">Infos travaux</a> 
-                            <a class="dropdown-item" href="#">Cadastre</a> 
-                            <div class="dropdown-divider"></div>
                             
-                            <a class="dropdown-item" href="#">Sentiers banalisés</a>
+                            <a class="dropdown-item" href="{{ path('ileauxenfants') }}">Ile aux enfants</a> 
+                            <a class="dropdown-item" href="{{ path('sportsetloisirs') }}">Sports et Loisirs</a> 
+                            
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'patrimoine'%} active {% endif %}">

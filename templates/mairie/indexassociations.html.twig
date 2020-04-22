@@ -9,24 +9,9 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="row container">
-    <main class="example-wrapper col-md-8">
-        <h1>{{ titre }} </h1>
+<main>
+        <h1 class="mt-4">{{ titre }} </h1>
         {% include '/mairie/associations.html.twig' %}
         
-    </main>
-    <aside class="col-md-4">
-        <section class="ml-4 mt-4">
-        <h4> Plus d'informations </h4>
-        <strong> contacts: </strong>
-        <p> </p>
-        <h4> Sur le même thème </h4>
-        <ul>
-            <li> Activités de L'île aux enfants </li>
-            <li> Restauration de l'Eglise Saint Grégoire </li>
-        
-        </ul>
-        </section>
-    </aside>
-</div>
+</main>
 {% endblock %}

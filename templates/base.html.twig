@@ -99,7 +99,27 @@
             {% block body %}{% endblock %}
         </div>
         <footer class="container">
-            <p><italic>Le site officiel de la mairie de Pagny la Blanche Côte </italic></p>
+        <p> <i>Le site officiel de la mairie de Pagny la Blanche Côte </i></p>
+        <div class= "row container">
+            <section class="col-md-4">
+                <h5> Mairie </h5>
+                <div> 7 rue des Halles <br> 55140 PAGNY LA BLANCHE CÔTE <br>
+                Tel : 03 29 90 86 30 <br>
+                Les lundi et jeudi de 10h30 à 12h30
+                </div>
+            </section>
+
+            <section class="col-md-4">
+                <h5> Nos rubriques </h5>
+                <div><a href="{{ path('mairie') }}">Mairie</a></div>
+                <div><a href="{{ path('evenements') }}">Evenements</a></div>
+                <div><a href="{{ path('viepratique') }}">Vie Pratique</a></div>
+                <div><a href="{{ path('sportsetloisirs') }}">Animations et Loisirs</a></div>
+                <div><a href="{{ path('patrimoine') }}">Patrimoine </a></div>
+                <div><a href="{{ path('contact') }}">Contact </a></div>
+            </section>
+        </div>
+            
         </footer>
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -58,6 +58,15 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/saintgregoire", name="saintgregoire")
+     */
+    public function saintgregoire()
+    {
+        return $this->render('patrimoine/index.html.twig', [
+            'title' => 'SaintGregoire', 'titre' => 'Association Saint Grégoire', 'current_menu' => 'patrimoine'
+        ]);
+    }
+    /**
      * @Route("/sportsetloisirs", name="sportsetloisirs")
      */
     public function sportsetloisirs()

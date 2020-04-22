@@ -53,7 +53,7 @@ class MairieController extends AbstractController
     public function associations()
     {
         return $this->render('mairie/indexassociations.html.twig', [
-            'title' => 'Associations', 'titre' => 'Associations', 'current_menu' => 'mairie'
+            'title' => 'Associations', 'titre' => 'Associations de la commune', 'current_menu' => 'mairie'
         ]);
     }
 }

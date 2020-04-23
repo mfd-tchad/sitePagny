@@ -5,11 +5,11 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 16px/1.5 Comic Verdana sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<h1> {{ titre }} </h1>
+<h2> {{ titre }} </h2>
 <div class="example-wrapper">
 
     {% for message in app.flashes('success') %}
@@ -17,7 +17,7 @@
             {{ message }}
         </div>
     {% endfor %}
-    <h2>Laissez nous un message</h2>
+    <h3>Laissez nous un message</h3>
     
     <div id="contactForm" class="mt-4">
 

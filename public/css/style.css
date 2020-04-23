@@ -1,7 +1,14 @@
 h1 {
     text-align: center;
+    font-size: 48px;
+    padding-top: 100px;
+    padding-bottom: 110px;
+    /* text-transform: uppercase; */
 }
 
+h2 {
+    text-align: center;
+}
 p {
     text-align: justify;
 }
@@ -10,8 +17,12 @@ footer p {
     margin: 1em;
     padding: 1em;
     text-align: center;
-    border-top: 1px solid black;
+    border-top: 1px solid navy;
 }
+ aside {
+    /* border-left: 2px solid black; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
 
 .card-header {
     background-color: aqua;

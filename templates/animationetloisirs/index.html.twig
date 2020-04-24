@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; font: 16px/1.5 sans-serif; text-align: center}
+</style>
+<main>
+    <h2>{{ titre }} </h2>
+    <hr>
+    <div class="row container">
+        <section class="example-wrapper col-md-4">
+        
+            <div> 
+                <a href="{{ path('jeunesse') }}"><img class="center-block" src ="/images/animations/ileauxenfants.jpg" Alt="Photo Ile aux enfants" width="200" height="150"/> 
+                <h5> Jeunesse </h5>
+                </a>
+            </div>
+        </section>
+        <section class="example-wrapper col-md-4">
+            <div class="container-fluid"> 
+                <a href="{{ path('aines') }}"><img class="center-block" src ="/images/animations/repas-anciens2.jpg" Alt="Photo Repas des anciens" width="200" height="150"/>  
+                <h5> Aines </h5>
+                </a> 
+            </div>
+        </section>
+        <section class="example-wrapper col-md-4">
+            <div class="container-fluid"> 
+                <a href="#"><img class="center-block" src ="/images/animations/brocante.jpg" Alt="Photo Vide-Greniers" width="200" height="150"/>  
+                <h5> Vide-Greniers </h5>
+                </a> 
+            </div>
+        </section>
+        <section class="example-wrapper col-md-4">
+            <div class="container-fluid"> 
+                <a href="#"><img class="center-block" src ="/images/animations/concert-ecole-musique.jpg" Alt="Photo Concert à l'eglise" width="200" height="150"/>  
+                <h5> Concerts </h5>
+                </a> 
+            </div>
+        </section>
+        <section class="example-wrapper col-md-4">
+            <div class="container-fluid"> 
+                <a href="#"><img class="center-block" src ="/images/animations/13Juillet.jpg" Alt="Photo Fête du 14 Juillet" width="200" height="150"/>  
+                <h5> Fête Nationale </h5>
+                </a> 
+            </div>
+        </section>
+        <section class="example-wrapper col-md-4">
+            <div class="container-fluid"> 
+                <a href="{{ path('sportsetloisirs') }}"><img class="center-block" src ="/images/site-pagny-3.jpg" Alt="Photo Sports et Loisirs" width="200" height="150"/>  
+                <h5> Sports et Loisirs </h5>
+                </a>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

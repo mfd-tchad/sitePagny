@@ -7,8 +7,24 @@ h1 {
 }
 
 h2 {
+    margin-top : 1em;
     text-align: center;
 }
+
+hr{ 
+    height: 3px;
+    color: yellow;
+    background-color: yellow;
+    width: 10%;
+    border: none;
+    margin-top: 0;
+    padding-top:0;
+  }
+
+h4 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 p {
     text-align: justify;
 }

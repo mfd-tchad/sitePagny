@@ -38,6 +38,16 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/animationetloisirs", name="animationetloisirs")
+     */
+    public function animationetloisirs()
+    {
+        return $this->render('animationetloisirs/index.html.twig', [
+            'title' => 'AnimationetLoisirs', 'titre' => 'Animation et Loisirs', 'current_menu' => 'animationetloisirs'
+        ]);
+    }
+
+    /**
      * @Route("/jeunesse", name="jeunesse")
      */
     public function jeunesse()
@@ -48,12 +58,22 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/aines", name="aines")
+     */
+    public function aines()
+    {
+        return $this->render('animationetloisirs/index.html.twig', [
+            'title' => 'Aines', 'titre' => 'Aines', 'current_menu' => 'animationetloisirs'
+        ]);
+    }
+
+    /**
      * @Route("/ileauxenfants", name="ileauxenfants")
      */
     public function ileauxenfants()
     {
         return $this->render('jeunesse/indexileauxenfants.html.twig', [
-            'title' => 'IleAuxEnfants', 'titre' => 'île aux Enfants', 'current_menu' => 'jeunesse'
+            'title' => 'IleAuxEnfants', 'titre' => 'île aux Enfants', 'current_menu' => 'animationetloisirs'
         ]);
     }
 

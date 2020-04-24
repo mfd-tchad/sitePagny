@@ -13,14 +13,16 @@
             <img src="/images/bandeau-3.jpg" width="100%"/>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Pagny la Blanche Côte</a>
+            <a class="navbar-brand" href="/"> <img style="margin:-12px" src="/images/logoPagny.jpg" height="80" width="80"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    
+                    <li class="nav-item {% if current_menu is defined and current_menu == 'accueil'%} active {% endif %}">
+                        <a class="nav-link" href="/">ACCUEIL</a>
+                    </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'mairie'%} active {% endif %}">
                         <a class="nav-link dropdown-toggle" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MAIRIE</a>
                         
@@ -54,11 +56,12 @@
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Collecte des ordures</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'jeunesse' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('jeunesse') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">JEUNESSE</a>
+                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'animationetloisirs' %} active {% endif %}">
+                        <a class="nav-link dropdown-toggle" href="{{ path('animationetloisirs') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ANIMATION ET LOISIRS</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
-                            <a class="dropdown-item" href="{{ path('ileauxenfants') }}">Ile aux enfants</a> 
+                            <a class="dropdown-item" href="{{ path('jeunesse') }}">Jeunesse</a> 
+                            <a class="dropdown-item" href="{{ path('aines') }}">Ainés</a> 
                             <a class="dropdown-item" href="{{ path('sportsetloisirs') }}">Sports et Loisirs</a> 
                             
                         </div>
@@ -114,7 +117,7 @@
                 <div><a href="{{ path('mairie') }}">Mairie</a></div>
                 <div><a href="{{ path('evenements') }}">Evenements</a></div>
                 <div><a href="{{ path('viepratique') }}">Vie Pratique</a></div>
-                <div><a href="{{ path('sportsetloisirs') }}">Animations et Loisirs</a></div>
+                <div><a href="{{ path('animationetloisirs') }}">Animations et Loisirs</a></div>
                 <div><a href="{{ path('patrimoine') }}">Patrimoine </a></div>
                 <div><a href="{{ path('contact') }}">Contact </a></div>
             </section>

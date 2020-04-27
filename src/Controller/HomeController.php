@@ -36,7 +36,35 @@ class HomeController extends AbstractController
             'title' => 'ViePratique', 'titre' => 'Vie pratique', 'current_menu' => 'viepratique'
         ]);
     }
+/**
+     * @Route("/scolaire", name="scolaire")
+     */
+    public function scolaire()
+    {
+        return $this->render('viepratique/indexscolaire.html.twig', [
+            'title' => 'Scolaire', 'titre' => 'Bus scolaires et Ecoles', 'current_menu' => 'viepratique'
+        ]);
+    }
 
+    /**
+     * @Route("/serviceaines", name="serviceaines")
+     */
+    public function serviceaines()
+    {
+        return $this->render('viepratique/indexserviceaines.html.twig', [
+            'title' => 'ServiceAines', 'titre' => 'Services aux Ainés', 'current_menu' => 'viepratique'
+        ]);
+    }
+
+    /**
+     * @Route("/ordures", name="ordures")
+     */
+    public function ordures()
+    {
+        return $this->render('viepratique/indexordures.html.twig', [
+            'title' => 'GestionDechets', 'titre' => 'Gestion des déchets', 'current_menu' => 'viepratique'
+        ]);
+    }
     /**
      * @Route("/animationetloisirs", name="animationetloisirs")
      */
@@ -63,7 +91,7 @@ class HomeController extends AbstractController
     public function aines()
     {
         return $this->render('animationetloisirs/index.html.twig', [
-            'title' => 'Aines', 'titre' => 'Aines', 'current_menu' => 'animationetloisirs'
+            'title' => 'Aines', 'titre' => 'Ainés', 'current_menu' => 'animationetloisirs'
         ]);
     }
 

@@ -51,9 +51,12 @@
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Boulangerie</a>
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Relais Poste</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ path('viepratique') }}">Bus scolaires</a>
+                            <a class="dropdown-item" href="{{ path('scolaire') }}">Bus scolaires et écoles</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ path('viepratique') }}">Collecte des ordures</a>
+                            <a class="dropdown-item" href="{{ path('serviceaines') }}">Minibus</a>
+                            <a class="dropdown-item" href="{{ path('serviceaines') }}">Portage de repas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('ordures') }}">Collecte des ordures</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'animationetloisirs' %} active {% endif %}">
@@ -113,7 +116,7 @@
             </section>
 
             <section class="col-md-4">
-                <h5> Nos rubriques </h5>
+                <h5> Menu Général : </h5>
                 <div><a href="{{ path('mairie') }}">Mairie</a></div>
                 <div><a href="{{ path('evenements') }}">Evenements</a></div>
                 <div><a href="{{ path('viepratique') }}">Vie Pratique</a></div>

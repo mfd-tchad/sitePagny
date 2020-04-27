@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; font: 16px/1.5 sans-serif; }
+    h3 { margin-bottom: 1em;}
+</style>
+<div class="row container">
+    <main class="example-wrapper col-md-10">   
+    <h2> {{ titre }} </h2>
+    <hr>
+    
+    {% include '/viepratique/collecteordures.html.twig' %}
+    </main>
+     <aside class="col-md-2">
+        {% include '/viepratique/menurubrique.html.twig' %}
+    </aside>
+</div>
+{% endblock %}

@@ -64,7 +64,10 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
                             <a class="dropdown-item" href="{{ path('jeunesse') }}">Jeunesse</a> 
-                            <a class="dropdown-item" href="{{ path('aines') }}">Ainés</a> 
+                            <a class="dropdown-item" href="{{ path('aines') }}">Ainés</a>
+                            <a class="dropdown-item" href="{{ path('videgreniers') }}">Vide-Greniers</a>
+                            <a class="dropdown-item" href="{{ path('concerts') }}">Concerts</a>
+                            <a class="dropdown-item" href="{{ path('fetes') }}">Fetes</a> 
                             <a class="dropdown-item" href="{{ path('sportsetloisirs') }}">Sports et Loisirs</a> 
                             
                         </div>
@@ -79,15 +82,7 @@
                             <a class="dropdown-item" href="#">Sentiers banalisés</a>
                         </div>
                     </li>
-                    {#
-                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'environnement' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('reserve') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENVIRONNEMENT</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('reserve') }}">Réserve naturelle</a>
-                            <a class="dropdown-item" href="#">Sentiers banalisés</a>
-                        </div>
-                    </li>
-                    #}
+                    
                     <li class="nav-item {% if current_menu is defined and current_menu == 'contact'%} active {% endif %}">
                         <a class="nav-link" href="{{ path('contact') }}">CONTACT</a>
                     </li>

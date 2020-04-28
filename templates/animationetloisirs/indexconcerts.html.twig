@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; font: 16px/1.5 sans-serif; align: justify}
+</style>
+
+<div class="row container">
+    <main class="example-wrapper col-md-8">
+        <h2>{{ titre }} </h2>
+        <hr>
+        {% include '/animationetloisirs/concerts.html.twig' %}
+        
+
+    </main>
+    <aside class="col-md-4">
+        <div class="container-fluid"> 
+            <img class="center-block" src ="/images/animations/concert-eglise.jpg" Alt="Photo Concert Eglise" height="300" />
+            <img class="center-block mt-4" src ="/images/animations/concert-ecole-musique1.jpg" Alt="Photo concert école musique" height="300" />
+            {% include '/animationetloisirs/menurubrique.html.twig' %}
+        </div>
+
+    </aside>
+</div>
+{% endblock %}

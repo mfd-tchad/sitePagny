@@ -90,15 +90,55 @@ class HomeController extends AbstractController
      */
     public function aines()
     {
-        return $this->render('animationetloisirs/index.html.twig', [
-            'title' => 'Aines', 'titre' => 'Ainés', 'current_menu' => 'animationetloisirs'
+        return $this->render('animationetloisirs/indexaines.html.twig', [
+            'title' => 'Aines', 'titre' => 'Animations pour les Ainés', 'current_menu' => 'animationetloisirs'
+        ]);
+    }
+
+    /**
+     * @Route("/videgreniers", name="videgreniers")
+     */
+    public function videgreniers()
+    {
+        return $this->render('animationetloisirs/indexvidegreniers.html.twig', [
+            'title' => 'Vide-Greniers', 'titre' => 'Vide-Greniers', 'current_menu' => 'animationetloisirs'
+        ]);
+    }
+
+    /**
+     * @Route("/concerts", name="concerts")
+     */
+    public function concerts()
+    {
+        return $this->render('animationetloisirs/indexconcerts.html.twig', [
+            'title' => 'Concerts', 'titre' => 'Concerts', 'current_menu' => 'animationetloisirs'
+        ]);
+    }
+
+    /**
+     * @Route("/fetes", name="fetes")
+     */
+    public function fetes()
+    {
+        return $this->render('animationetloisirs/indexfetes.html.twig', [
+            'title' => 'Fetes', 'titre' => 'Fêtes', 'current_menu' => 'animationetloisirs'
+        ]);
+    }
+    
+     /**
+     * @Route("/sportsetloisirs", name="sportsetloisirs")
+     */
+    public function sportsetloisirs()
+    {
+        return $this->render('animationetloisirs/indexsportsetloisirs.html.twig', [
+            'title' => 'SportEtLoisirs', 'titre' => 'Sports et Loisirs', 'current_menu' => 'jeunesse'
         ]);
     }
 
     /**
      * @Route("/ileauxenfants", name="ileauxenfants")
      */
-    public function ileauxenfants()
+     public function ileauxenfants()
     {
         return $this->render('jeunesse/indexileauxenfants.html.twig', [
             'title' => 'IleAuxEnfants', 'titre' => 'île aux Enfants', 'current_menu' => 'animationetloisirs'
@@ -114,15 +154,7 @@ class HomeController extends AbstractController
             'title' => 'SaintGregoire', 'titre' => 'Association Saint Grégoire', 'current_menu' => 'patrimoine'
         ]);
     }
-    /**
-     * @Route("/sportsetloisirs", name="sportsetloisirs")
-     */
-    public function sportsetloisirs()
-    {
-        return $this->render('jeunesse/indexsportsetloisirs.html.twig', [
-            'title' => 'SportEtLoisirs', 'titre' => 'Sports et Loisirs', 'current_menu' => 'jeunesse'
-        ]);
-    }
+    
 
     /**
      * @Route("/reserve", name="reserve")

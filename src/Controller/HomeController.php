@@ -141,7 +141,7 @@ class HomeController extends AbstractController
      public function ileauxenfants()
     {
         return $this->render('jeunesse/indexileauxenfants.html.twig', [
-            'title' => 'IleAuxEnfants', 'titre' => 'île aux Enfants', 'current_menu' => 'animationetloisirs'
+            'title' => 'IleAuxEnfants', 'titre' => 'Association L\'île aux Enfants', 'current_menu' => 'animationetloisirs'
         ]);
     }
 
@@ -150,7 +150,7 @@ class HomeController extends AbstractController
      */
     public function saintgregoire()
     {
-        return $this->render('patrimoine/index.html.twig', [
+        return $this->render('patrimoine/indexassocstgregoire.html.twig', [
             'title' => 'SaintGregoire', 'titre' => 'Association Saint Grégoire', 'current_menu' => 'patrimoine'
         ]);
     }

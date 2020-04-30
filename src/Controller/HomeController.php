@@ -151,11 +151,19 @@ class HomeController extends AbstractController
     public function saintgregoire()
     {
         return $this->render('patrimoine/indexassocstgregoire.html.twig', [
-            'title' => 'SaintGregoire', 'titre' => 'Association Saint Grégoire', 'current_menu' => 'patrimoine'
+            'title' => 'SaintGregoire', 'titre' => 'Association Saint Grégoire le Grand', 'current_menu' => 'patrimoine'
         ]);
     }
     
-
+    /**
+     * @Route("/eglise", name="eglise")
+     */
+    public function eglise()
+    {
+        return $this->render('patrimoine/indexeglise.html.twig', [
+            'title' => 'Eglise', 'titre' => 'Eglise Saint Grégoire le Grand', 'current_menu' => 'patrimoine'
+        ]);
+    }
     /**
      * @Route("/reserve", name="reserve")
      */

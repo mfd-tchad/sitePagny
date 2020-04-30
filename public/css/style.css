@@ -25,6 +25,7 @@ h4 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
 p {
     text-align: justify;
 }
@@ -37,7 +38,7 @@ footer p {
 }
  aside {
     /* border-left: 2px solid black; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size : 14px;
  }
 
 .card-header {

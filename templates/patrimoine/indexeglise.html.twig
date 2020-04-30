@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; font: 14px/1.5; }
+</style>
+
+<div class="row container">
+<main class="col-md-8">
+    <h2> {{ titre }} </h2>
+    <hr>
+    <section class="example-wrapper">
+        <p> L'Eglise St-Grégoire fait la fierté de la population depuis sa restauration dans les années 2010.
+        </p>
+        <p>Au cœur du village qu'elle surplombe, l'église <a href="https://fr.wikipedia.org/wiki/Gr%C3%A9goire_Ier" title="Grégoire Ier">Saint-Grégoire-le-Grand</a> a été bâtie au XV<sup style="font-size:72%">e</sup></abbr>&nbsp;siècle dans un style gothique encore très perceptible. 
+        L'église possède trois nefs. 
+        </p>
+        <p> Toutefois l’édifice, de  type  halle,  a  conservé  sa  tour  donjon  romane  XIII<sup style="font-size:72%">e</sup></abbr>&nbsp;  avec  fortifications.  
+        </p>
+        <p> Remarquez  avant  d’entrer  le  portail  gothique  surmonté  d’une  frise  feuillagée et d’un tympan de forme originale en ac-colade.  Le  mobilier  comprend  une  Vierge  de  pitié  en calcaire polychrome XV<sup style="font-size:72%">e</sup></abbr>&nbsp;-XVI<sup style="font-size:72%">e</sup></abbr>&nbsp; et un gisant XVI<sup style="font-size:72%">e</sup></abbr>&nbsp;.  
+        Les vitraux sont signés Benoît frères (1936-1969 atelier installé à Nancy).
+        <div class="mb-4"> <img src="/images/eglise/eglise2.jpg" width="100%"/></div>
+
+        <p>Remaniée partiellement à diverses périodes, on distingue ainsi le chœur (restauré en 1897), une travée datée de 1535 et une reprise des voûtes en 1644. 
+        </p>
+        
+        <p> En 2010, l'<a href= "{{ path('saintgregoire') }}">Association Saint Grégoire le Grand</a> a été créée pour œuvrer à sa restauration. 
+          Les travaux de rénovation se sont achevés en 2019 grâce au travail hebdomadaire d'une équipe de bénévoles. Ce travail important a été possible avec les aides financières des adhérents, des généreux donateurs et des différents partenaires dont la municipalité.
+        
+        </p>
+        <div class="mb-4"> <img src="/images/eglise/eglise1.jpg" width="100%"/></div>
+
+        <p>Suite à la restauration, l'église a été retenue pour faire partie d'un circuit des
+            <a href="https://musees-meuse.fr/wp-content/uploads/2018/07/Eglises-remarquables-de-Meuse.pdf"> églises remarquables de la Meuse</a>.
+        </p> 
+        
+    </section>
+</main>
+<aside class="col-md-4">
+    <div class="container-fluid"><img src="/images/eglise/ExterieurEglise.jpg" height="300"/>Vue de derrière</div>
+    <div class="container-fluid mt-3"><img src="/images/eglise/OrguesEglise.JPG" height="300"/>Fond de l'église</div>
+    <div class="container-fluid mt-3"><img src="/images/eglise/Chaire.JPG" height="300"/>Chaire et allée gauche</div> 
+    
+    <div class="container-fluid">{% include '/patrimoine/menupatrimoine.html.twig' %}</div> 
+    <div class="container-fluid mt-4"> Liens complémentaires:<br>
+        <a href="https://www.fondation-patrimoine.org/les-projets/eglise-saint-gregoire-le-grand-a-pagny-la-blanche-cote">Fondation du Patrimoine </a></p>
+    </div>  
+</aside>
+</div>
+{% endblock %}

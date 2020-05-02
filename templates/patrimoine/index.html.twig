@@ -4,31 +4,40 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; font: 14px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; font: 14px/1.5; }
 </style>
 
-<div class="row container">
-<main class="col-md-8">
-    <h2> {{ titre }} </h2>
-    <hr>
-    <section class="example-wrapper">
-        <p> L'Eglise St-Grégoire fait la fierté de la population depuis sa restauration dans les années 2010.
-        ...
-        A REDIGER
-        </p>
-   
-        <p> <strong> Liens : </strong></p>
-  
-        <p> <a href="#"> Le circuit des églises remarquables du département </a> </p>
-        <p> <a href="https://www.fondation-patrimoine.org/les-projets/eglise-saint-gregoire-le-grand-a-pagny-la-blanche-cote">Fondation du Patrimoine </a></p>
-    </section>
+<h2> {{ titre }} </h2>
+<hr>
+<main class="row container">
+    
+    <section class="example-wrapper col-md-4"> 
+            <div class="container-fluid"> 
+                <div class="text-center">
+                    <a href="{{ path('historique') }}"><img src ="/images/historique/ancienneEntreeVillage.jpg" Alt="Carte postale village" width="200" height="150"/> 
+                    <h5 class="mt-2"> Historique du village</h5>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="example-wrapper col-md-4">
+            <div class="container-fluid"> 
+                <div class="text-center">
+                    <a href="{{ path('eglise') }}"><img src ="/images/eglise/AlleePrincipaleEglise.JPG" Alt="Photo Eglise" width="200" height="150"/>  
+                    <h5 class="mt-2"> Eglise St Grégoire</h5>
+                    </a> 
+                </div>
+            </div>
+        </section>
+        <section class="example-wrapper col-md-4">
+            <div class="container-fluid"> 
+                <div class="text-center">
+                    <a href="{{ path('reserve') }}"><img src ="/images/cote/CoteArcDeCercleEtVillage.jpg" Alt="Photo cote" width="200" height="150"/>  
+                    <h5 class="mt-2"> Réserve naturelle</h5>
+                    </a> 
+                </div>
+            </div>
+        </section>
 </main>
-<aside class="col-md-4">
-    <img src="/images/eglise/InaugurationEglise.JPG" Alt="Ineuguration Eglise" height="300"/>
-    <img src="/images/eglise/AlleePrincipaleEglise.JPG" height="300"/>
-    <img src="/images/eglise/OrguesEglise.JPG" height="300"/>
-    <img src="/images/eglise/NaissanceJesusEglise.JPG" height="300"/>
-    <img src="/images/eglise/AlleeDroiteEglise.JPG" height="300"/>
-</aside>
-</div>
+
 {% endblock %}

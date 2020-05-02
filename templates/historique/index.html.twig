@@ -5,7 +5,7 @@
 {% block body %}
 <style>
     {# .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; } #}
-    .example-wrapper { margin: 1em auto; font: 16px/1.5 sans-serif; align: justify}
+    .example-wrapper { margin: 1em auto; font: 16px/1.5 ; align: justify}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
@@ -54,6 +54,7 @@ n'est adoptée plus largement qu'à partir des années 1940, lors de la Seconde 
         <p> <img src="/images/historique/Fort_Pagny.jpg" Alt="Le Fort de Pagny"> Le Fort de Pagny </img> </p>
         <p>  </p>
         <p> <strong>Plus d'infos :</strong> <a href="https://fr.wikipedia.org/wiki/Pagny-la-Blanche-C%C3%B4te"> Wikipedia </a> </p>      
+        {% include '/patrimoine/menupatrimoine.html.twig' %}
       </aside>
 </div>
 {% endblock %}

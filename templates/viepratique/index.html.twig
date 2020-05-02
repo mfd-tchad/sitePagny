@@ -4,7 +4,7 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; font: 16px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; font: 16px/1.5; }
     h3 { margin-bottom: 1em;}
 </style>
 <div class="row container">
@@ -19,10 +19,12 @@
     {% include '/viepratique/minibus.html.twig' %}
     <hr>
     {% include '/viepratique/portagerepas.html.twig' %}
+    <hr>
+    {% include '/viepratique/aidemenage.html.twig' %}
     </main>
      <aside class="col-md-4">
-        <p> <img src = "/images/viepratique/photoboulangerie1.jpg" height="300"> Boulangerie </img> </p>
-        <p> <img src = "/images/viepratique/abribus.jpg" height="300"> Abri-bus </img> </p>
+        <p><img src ="/images/viepratique/boulangerie.jpg" height="300"/> Boulangerie  </p>
+        <p><img src = "/images/viepratique/abribus.jpg" height="300"/> Abri-bus </p>
         {% include '/viepratique/liensecoles.html.twig' %}
         <h5>Plus d'infos</h5><p> <a href="https://www.eterritoire.fr/territoires/grand-est/meuse/pagny-la-blanche-cote/55397/21582">eTerritoire : Vivre et s'installer à Pagny</a></p>
         {% include '/viepratique/menurubrique.html.twig' %}

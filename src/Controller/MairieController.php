@@ -38,6 +38,15 @@ class MairieController extends AbstractController
     }
 
     /**
+     * @Route("/cadastre", name="cadastre")
+     */
+    public function cadastre()
+    {
+        return $this->render('mairie/indexcadastre.html.twig', [
+            'title' => 'Cadastre', 'titre' => 'Plan cadastral interactif', 'current_menu' => 'mairie'
+        ]);
+    }
+    /**
      * @Route("/conseilmunicipal", name="conseilmunicipal")
      */
     public function conseilmunicipal()

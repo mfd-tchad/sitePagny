@@ -102,7 +102,7 @@
         <p> <i>Le site officiel de la mairie de Pagny la Blanche Côte </i></p>
         <div class= "row container">
             <section class="col-md-4">
-                <h5> Mairie </h5>
+                <div><strong> Mairie de Pagny la Blanche Côte</strong></div>
                 <div> 7 rue des Halles <br> 55140 PAGNY LA BLANCHE CÔTE <br>
                 Tel : 03 29 90 86 30 <br>
                 Les lundi et jeudi de 10h30 à 12h30
@@ -110,13 +110,18 @@
             </section>
 
             <section class="col-md-4">
-                <h5> Menu Général : </h5>
-                <div><a href="{{ path('mairie') }}">Mairie</a></div>
-                <div><a href="{{ path('evenements') }}">Evenements</a></div>
-                <div><a href="{{ path('viepratique') }}">Vie Pratique</a></div>
-                <div><a href="{{ path('animationetloisirs') }}">Animations et Loisirs</a></div>
-                <div><a href="{{ path('patrimoine') }}">Patrimoine </a></div>
-                <div><a href="{{ path('contact') }}">Contact </a></div>
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <div><strong> Menu Général </div></strong>
+                    
+                        <div><a href="{{ path('mairie') }}">Mairie</a></div>
+                        <div><a href="{{ path('evenements') }}">Evenements</a></div>
+                        <div><a href="{{ path('viepratique') }}">Vie Pratique</a></div>
+                        <div><a href="{{ path('animationetloisirs') }}">Animations et Loisirs</a></div>
+                        <div><a href="{{ path('patrimoine') }}">Patrimoine </a></div>
+                        <div><a href="{{ path('contact') }}">Contact </a></div>
+                    </div>
+                </div>
             </section>
         </div>
             

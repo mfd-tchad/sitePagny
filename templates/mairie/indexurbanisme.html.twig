@@ -5,7 +5,7 @@
 {% block body %}
 <style>
     {# .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; } #}
-    .example-wrapper { margin: 1em auto; font: 16px/1.5 ; align: justify}
+    .example-wrapper { margin: 1em auto; font: 14px/1.5 ; align: justify}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
@@ -14,8 +14,6 @@
         <h2>{{ titre }} </h2>
         <hr>
         {% include '/mairie/urbanisme.html.twig' %}
-        
-        {% include '/mairie/infostravaux.html.twig' %}
 
     </main>
     <aside class="col-md-4">
@@ -24,6 +22,8 @@
         <strong> contact: </strong>
         <p> </p>
         {% include '/mairie/infostravaux.html.twig' %}
+        <hr>
+        {% include '/mairie/menumairie.html.twig' %}
         </section>
     </aside>
 </div>

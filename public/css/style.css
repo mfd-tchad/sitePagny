@@ -53,3 +53,12 @@ footer p {
 .card-body element {
     text-align: right;
 }
+
+
+.example-wrapper { 
+    margin: 1em auto; font: 14px/1.5 ; 
+}
+
+.example-wrapper code { 
+    background: #F5F5F5; padding: 2px 6px; 
+}

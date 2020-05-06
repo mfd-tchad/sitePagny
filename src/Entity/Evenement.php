@@ -18,17 +18,15 @@ class Evenement
         3 => 'Fête',
         4 => 'Vide-Greniers',
         5 => 'Ile aux Enfants',
-        6 => 'Commémoration'
+        6 => 'Commémoration',
+        7 => 'Concert',
+        8 => 'Animation',
+        9 => 'Repas',
+        10 => 'Sport',
+        11 => 'Flash-Info'
     ];
 
-    // const TYPE_EVENEMENT = [
-    //     'Naissance',
-    //     'Hommage',
-    //     'Mariage',
-    //     'Fête',
-    //     'Vide-Greniers',
-    //     'Ile aux Enfants'
-    // ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

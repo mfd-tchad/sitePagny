@@ -4,12 +4,13 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 500px; width: 95%; min-height: 20em; font: 18px/1.5 sans-serif; }
-    p  {font-style: italic; font-size:small; color:blue}
-    h1 {text-align: center}
+    {# .example-wrapper { max-width: 500px; width: 95%; min-height: 20em; } #}
+    .card-body p  {font-style: italic; font-size:small; color:blue}
+    h2 {text-align: center}
 </style>
 
-<div class="example-wrapper">
+<div class="row container">
+<main class="example-wrapper col-md-8">
     <h2> {{ titre }} </h2>
     <hr>
    <div class="container mt-4">
@@ -24,9 +25,21 @@
             {% elseif (evenement.typeEvenement(evenement.type) == 'Mariage') %}
                 bg-info
             {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
-                bg-lignt
+                bg-light
             {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
+                bg-warning
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Concert') %}
+                bg-warning
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Animation') %}
                 bg-primary
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Repas') %}
+                bg-primary
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Ile aux Enfants') %}
+                bg-success
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Sport') %}
+                bg-success
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Flash-Info') %}
+                bg-danger
             {% endif %}"> 
                 <h4> {{ evenement.typeEvenement(evenement.type) }} </h4> 
             </div>
@@ -37,5 +50,9 @@
             </div>
         </div>
    </div>
+</main>
+<aside class="col-md-4">
+    {% include '/evenements/menuevenements.html.twig' %}  
+</aside>
 </div>
 {% endblock %}

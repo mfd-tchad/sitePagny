@@ -61,6 +61,17 @@ class EvenementRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
+    public function findHasHappenedAndToCome()
+    {
+        $date = new DateTime();
+        return $this->createQueryBuilder('e')
+            ->orderBy('e.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
+
     /*
     public function findOneBySomeField($value): ?Evenement
     {

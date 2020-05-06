@@ -11,7 +11,19 @@
         {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
             border-lignt
         {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
+            border-warning
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Concert') %}
+            border-warning
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Animation') %}
             border-primary
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Repas') %}
+            border-primary
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Ile aux Enfants') %}
+            border-success
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Sport') %}
+            border-success
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Flash-Info') %}
+            border-danger
         {% endif %}">
     <div class="card-body">
         <h5 class="card-title"> 
@@ -19,7 +31,7 @@
                 {{ evenement.typeEvenement(evenement.type) }} 
             </a>
         </h5>
-        <p class="card-text" style="font-size: 1.2rem; font-weight: bold;"> {{ evenement.titre }} </p>
+        <p class="card-text" style="font-weight: bold;"> {{ evenement.titre }} </p>
                     
         <p class="card-text"> Le {{ evenement.date | date ("d/m/Y") }} </p>            
     </div>

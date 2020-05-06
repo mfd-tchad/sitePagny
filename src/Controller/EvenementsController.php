@@ -37,10 +37,74 @@ class EvenementsController extends AbstractController
     {
         $events = $this->repository->findHasHappened();
         return $this->render('evenements/index.html.twig', [
-            'title' => 'Actualite', 'titre' => 'Actualité du village',  'current_menu' => 'actualite', 'evenements' => $events
+            'title' => 'Actualite', 'titre' => 'Actualité du village',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
 
+    /**
+     * @Route("/naissances", name="naissances")
+     */
+    public function naissances() : Response
+    {
+        $events = $this->repository->findByType('0');
+        return $this->render('evenements/index.html.twig', [
+            'title' => 'Naissances', 'titre' => 'Naissances',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
+
+    /**
+     * @Route("/mariages", name="mariages")
+     */
+    public function mariages() : Response
+    {
+        $events = $this->repository->findByType('2');
+        return $this->render('evenements/index.html.twig', [
+            'title' => 'Mariages', 'titre' => 'mariages',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
+
+    /**
+     * @Route("/deces", name="deces")
+     */
+    public function deces() : Response
+    {
+        $events = $this->repository->findByType('1');
+        return $this->render('evenements/index.html.twig', [
+            'title' => 'Deces', 'titre' => 'Décés',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
+
+    /**
+     * @Route("/fetesactu", name="fetesactu")
+     */
+    public function fetesactu() : Response
+    {
+        $events = $this->repository->findByType('3');
+        return $this->render('evenements/index.html.twig', [
+            'title' => 'FetesActu', 'titre' => 'Fêtes Actu',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
+
+    /**
+     * @Route("/flashinfos", name="flashinfos")
+     */
+    public function flashinfos() : Response
+    {
+        $events = $this->repository->findByType('11');
+        return $this->render('evenements/index.html.twig', [
+            'title' => 'FlashInfos', 'titre' => 'Flash Infos',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
+    /**
+     * @Route("/actualiteetevenements", name="actualiteetevenements")
+     */
+    public function bothEvents() : Response
+    {
+        $events = $this->repository->findHasHappenedAndToCome();
+        return $this->render('evenements/index.html.twig', [
+            'title' => 'EvenementsPassesEtAVenir', 'titre' => 'Actualité et Evénements',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
     /**
      * @Route("evenements/{slug}-{id}", name="evenement.show", requirements={"slug": "[a-z0-9\-]*"})
      * @param Evenement $evenement

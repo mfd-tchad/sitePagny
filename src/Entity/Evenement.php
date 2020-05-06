@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EvenementRepository")
+ * @Vich\Uploadable()
  */
 class Evenement
 {
@@ -60,6 +62,13 @@ class Evenement
     private $titre;
 
     /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="evenement_image",fileNameProperty="image")
+     */
+    private $imageFile;
+
+    /**
+     * @var String|null
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
@@ -150,9 +159,29 @@ class Evenement
 
         return $this;
     }
+    /**
+     * @return null|File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param null|File
+     * @return Evenement
+     */
+    public function setImageFile(?File $imageFile): self
+    {
+        $this->imageFile = $imageFile;
+
+        return $this;
+    }
 
     public function getSlug() {
         $slugify = new Slugify();
         return $slugify->slugify($this->getTypeEvenement($this->getType()) . $this->getTitre());
     }
+
+
 }

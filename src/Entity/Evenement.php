@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
+use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -73,9 +74,16 @@ class Evenement
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updated_at;
+
     public function __construct()
     {
         $this->created_at = new \DateTime();
+        $this->updated_at = new \DateTime();
     }
     
     public function getId(): ?int
@@ -148,12 +156,12 @@ class Evenement
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(?string $image): self
+    public function setImage($image): self
     {
         $this->image = $image;
 
@@ -171,10 +179,16 @@ class Evenement
      * @param null|File
      * @return Evenement
      */
-    public function setImageFile(?File $imageFile): self
+    public function setImageFile(File $imageFile = null): self
     {
         $this->imageFile = $imageFile;
-
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($imageFile) {
+            // if 'updated_at' is not defined in your entity, use another property
+            $this->updated_at = new \DateTime('now');
+        }
         return $this;
     }
 

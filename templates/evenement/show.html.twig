@@ -43,6 +43,11 @@
             {% endif %}"> 
                 <h4> {{ evenement.typeEvenement(evenement.type) }} </h4> 
             </div>
+            {% if evenement.image %}
+                <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('medium')}}" Alt="card-img-top" width="100%" height="auto"/>
+            {% else %}
+                <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('medium')}}" width="100%" height="auto"/>
+            {% endif %}
             <div class="card-body">
                 <div class="element text-right"> Le {{ evenement.date | date ("d/m/Y") }} </div>
                 <div class="mt-2 text-justify" > {{ evenement.description }} </div>

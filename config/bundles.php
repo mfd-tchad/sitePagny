@@ -17,4 +17,5 @@ return [
     Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
     EasyCorp\Bundle\EasyDeployBundle\EasyDeployBundle::class => ['dev' => true, 'test' => true],
+    Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true],
 ];

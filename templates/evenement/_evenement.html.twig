@@ -25,6 +25,11 @@
         {% elseif (evenement.typeEvenement(evenement.type) == 'Flash-Info') %}
             border-danger
         {% endif %}">
+    {% if evenement.image %}
+        <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="card-img-top" width="100%" height="auto"/>
+    {% else %}
+        <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100%" height="auto"/>
+    {% endif %}
     <div class="card-body">
         <h5 class="card-title"> 
             <a href="{{ path('evenement.show', {slug: evenement.slug, id: evenement.id}) }}">

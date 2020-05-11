@@ -3,16 +3,26 @@
             <div class="col-md-3"> 
                 {{ form_row(form.type) }} 
             </div>
-            <div class="col-md-6"> {{ form_row(form.titre) }} </div>
-            <div class="col-md-3"> 
-                {{ form_label(form.imageFile,'Image') }} 
-                {{ form_help(form.imageFile) }}
-                {{ form_widget(form.imageFile) }}
-            </div>
-            <div class="col-md-8"> {{ form_row(form.date) }} </div>
+            <div class="col-md-5"> {{ form_row(form.titre) }} </div>
             
+            <div class="col-md-4"> {{ form_row(form.date) }} </div>
+            <div class="col-md-3"> 
+                {% if evenement.image %}
+                    <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="" width="100%" height="auto"/>
+                {% endif %}
+            </div>
+            <div class="col-md-5"> 
+                {{ form_label(form.imageFile,'Image') }} 
+                {{ form_errors(form.imageFile) }}
+                {{ form_help(form.imageFile) }}
+                <div class="vich-image">
+                    {{ form_widget(form.imageFile) }}
+                </div>
+            </div>
         </section>
-        {{ form_label(form.description) }}
+        <div class="mt-4">
+            {{ form_label(form.description) }}
+        </div>
         <div class="champ_description mb-4">
             {{ form_widget(form.description, {'attr_row' : {'font-size' : '12px'},
             'attr_row' : {'min-height' : '15rem'}}) }}

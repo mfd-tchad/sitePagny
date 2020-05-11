@@ -5,6 +5,8 @@ namespace App\Form;
 use App\Entity\Evenement;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,8 +19,8 @@ class EvenementType extends AbstractType
             ->add('type', ChoiceType::class, ['choices' => $this->getChoices()])
             // ->add('type', ChoiceType::class, ['choices' => Evenement::TYPE_EVENEMENT ])
             ->add('titre')
-            ->add('date')
-            ->add('description')
+            ->add('date',DateType::class)
+            ->add('description', TextareaType::class)
             ->add('imageFile', FileType::class, ['required' => false])
         ;
     }

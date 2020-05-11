@@ -1,12 +1,23 @@
         {{ form_start(form) }}
-        <div class="row"> 
-            <div class="col-md-3"> {{ form_row(form.type) }} </div>
+        <section class="row mt-4"> 
+            <div class="col-md-3"> 
+                {{ form_row(form.type) }} 
+            </div>
             <div class="col-md-6"> {{ form_row(form.titre) }} </div>
-            <div class="col-md-3"> {{ form_row(form.imageFile) }} </div>
+            <div class="col-md-3"> 
+                {{ form_label(form.imageFile,'Image') }} 
+                {{ form_help(form.imageFile) }}
+                {{ form_widget(form.imageFile) }}
+            </div>
             <div class="col-md-8"> {{ form_row(form.date) }} </div>
             
+        </section>
+        {{ form_label(form.description) }}
+        <div class="champ_description mb-4">
+            {{ form_widget(form.description, {'attr_row' : {'font-size' : '12px'},
+            'attr_row' : {'min-height' : '15rem'}}) }}
         </div>
-        {{ form_widget(form) }}
-            <button class="btn btn-primary">{{ button|default('Enregistrer')}} </button>
+        <button class="btn btn-primary">{{ button|default('Enregistrer')}} </button>
+            
         {{ form_end(form) }}
         </div>

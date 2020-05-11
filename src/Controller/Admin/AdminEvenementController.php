@@ -34,7 +34,7 @@ class AdminEvenementController extends AbstractController {
     public function index () : Response {
         $evenements = $this->repository->findAll();
         return $this->render('admin/evenement/index.html.twig', [
-            'title' => 'Evenements', 'titre' => 'Evénements',  'current_menu' => 'admin', 'evenements' => $evenements]);
+            'title' => 'Admin', 'titre' => 'Administration des événements',  'current_menu' => 'admin', 'evenements' => $evenements]);
     }
 
     /**
@@ -53,7 +53,7 @@ class AdminEvenementController extends AbstractController {
             return $this->redirectToRoute('admin.evenement.index');  // On redirige l'utilisateur vers la liste des événements
         }
         return $this->render('admin/evenement/new.html.twig', [
-            'title' => 'Edition', 'titre' => 'Evénements',  'current_menu' => 'admin', 'evenement' => $evenement, 'form' => $form->createView()  ]);
+            'title' => 'Creation', 'titre' => 'Création d\'un événement',  'current_menu' => 'admin', 'evenement' => $evenement, 'form' => $form->createView()  ]);
     }
     /**
      * @Route("/admin/evenement/{id}", name="admin.evenement.edit", methods="GET|POST")
@@ -70,7 +70,7 @@ class AdminEvenementController extends AbstractController {
             return $this->redirectToRoute('admin.evenement.index');  // On redirige l'utilisateur vers la liste des événements
         }
         return $this->render('admin/evenement/edit.html.twig', [
-        'title' => 'Edition', 'titre' => 'Evénements',  'current_menu' => 'admin', 'evenement' => $evenement, 'form' => $form->createView()  ]);
+        'title' => 'Edition', 'titre' => 'Edition d\'un événement',  'current_menu' => 'admin', 'evenement' => $evenement, 'form' => $form->createView()  ]);
 
     }
 

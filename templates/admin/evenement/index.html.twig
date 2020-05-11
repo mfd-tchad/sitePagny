@@ -4,12 +4,13 @@
 
 {% block body %}
 <style>
-    .example-wrapper { max-width: 800px; width: 95%; min-height: 20em; font: 18px/1.5 }
+    .example-wrapper { max-width: 800px; width: 95%; min-height: 20em; font: 16px/1.5 }
 
 </style>
 
 <div class="example-wrapper">
-    <h1> {{ titre }} </h1>
+    <h2> {{ titre }} </h2>
+    <hr>
 
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
@@ -33,7 +34,7 @@
                 {% for evenement in evenements %}
                 <tr>
                     <td> {{ evenement.typeEvenement(evenement.type) }} </td>
-                     <td> {{ evenement.titre }} </td>
+                    <td> {{ evenement.titre }} </td>
                     <td> {{ evenement.date|date("d/m/Y") }} </td>
                     <td> 
                         <a href="{{ path('admin.evenement.edit' , {id: evenement.id}) }}" class="btn btn-secondary"> Editer </a>

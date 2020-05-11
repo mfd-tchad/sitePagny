@@ -6,6 +6,7 @@
 /.env.*.local
 /config/prod/
 /public/bundles/
+/public/images/evenements/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###

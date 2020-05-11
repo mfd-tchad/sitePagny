@@ -39,9 +39,9 @@
     </section>
 </main>
 <aside class="col-md-4">
-    <div class="container-fluid"><img src="/images/eglise/ExterieurEglise.jpg" height="300"/>Vue de derrière</div>
-    <div class="container-fluid mt-3"><img src="/images/eglise/OrguesEglise.JPG" height="300"/>Fond de l'église</div>
-    <div class="container-fluid mt-3"><img src="/images/eglise/Chaire.JPG" height="300"/>Chaire et allée gauche</div> 
+    <div class="container-fluid"><img src="{{'/images/eglise/ExterieurEglise.jpg'| imagine_filter('medium')}}" height="300"/>Vue de derrière</div>
+    <div class="container-fluid mt-3"><img src="{{'/images/eglise/OrguesEglise.JPG'| imagine_filter('medium')}}" height="300"/>Fond de l'église</div>
+    <div class="container-fluid mt-3"><img src="{{'/images/eglise/Chaire.JPG'| imagine_filter('medium')}}" height="300"/>Chaire et allée gauche</div> 
     
     <div class="container-fluid">{% include '/patrimoine/menupatrimoine.html.twig' %}</div> 
     <div class="container-fluid mt-4"> Liens complémentaires:<br>

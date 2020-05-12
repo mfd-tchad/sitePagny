@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,11 +18,19 @@ class EvenementType extends AbstractType
     {
         $builder
             ->add('type', ChoiceType::class, ['choices' => $this->getChoices()])
-            // ->add('type', ChoiceType::class, ['choices' => Evenement::TYPE_EVENEMENT ])
             ->add('titre')
             ->add('date',DateType::class)
             ->add('description', TextareaType::class)
-            ->add('imageFile', FileType::class, ['required' => false])
+            ->add('imageFile', VichImageType::class, [
+                'required' => false,
+                'asset_helper' => true,
+                'allow_delete' => true,
+                'label' => 'Parcourir',
+                'download_uri' => true,
+                'image_uri' => static function (Evenement $evenement) {
+                    return $evenement->getImage();}
+              //  'upload_max_size_message' => 'Le fichier image est trop volumineux. Taille max autorisée : 2 MB'
+                ])
         ;
     }
 

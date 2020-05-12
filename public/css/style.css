@@ -30,6 +30,13 @@ p {
     text-align: justify;
 }
 
+textarea
+{
+ resize : height;
+ min-height : 150px;
+ max-height : 100%;
+}
+
 footer p {
     margin: 1em;
     padding: 1em;
@@ -62,3 +69,11 @@ footer p {
 .example-wrapper code { 
     background: #F5F5F5; padding: 2px 6px; 
 }
+
+.vich-image {
+    width:70%;
+}
+.custom_file_label {
+    width:1%;
+}
+

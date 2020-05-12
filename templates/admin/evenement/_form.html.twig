@@ -6,7 +6,7 @@
             <div class="col-md-5"> {{ form_row(form.titre) }} </div>
             
             <div class="col-md-4"> {{ form_row(form.date) }} </div>
-            <div class="col-md-3"> 
+            <div class="col-md-3" id="image_evenement"> 
                 {% if evenement.image %}
                     <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="" width="100%" height="auto"/>
                 {% endif %}
@@ -16,7 +16,10 @@
                 {{ form_errors(form.imageFile) }}
                 {{ form_help(form.imageFile) }}
                 <div class="vich-image">
-                    {{ form_widget(form.imageFile) }}
+                    {{ form_widget(form.imageFile, {
+                        'attr': {'placeholder': 'fichier-image' }
+                        }
+                        ) }}
                 </div>
             </div>
         </section>
@@ -28,6 +31,23 @@
             'attr_row' : {'min-height' : '15rem'}}) }}
         </div>
         <button class="btn btn-primary">{{ button|default('Enregistrer')}} </button>
+        <a href="/admin" id="cancel" name="cancel" class="btn btn-secondary">Annuler </a>
             
         {{ form_end(form) }}
         </div>
+
+<script>
+    $(document).ready(function() {
+        {% if evenement.image %}
+            $("#evenement_imageFile_file").hover(funtion () {
+                $(this).html(evenement.image)});
+        {% endif %}
+    })
+// Add the following code if you want the name of the file appear on select
+
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+})
+        $(#image_evenement).html(<img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="" width="100%" height="auto"/>)
+</script>

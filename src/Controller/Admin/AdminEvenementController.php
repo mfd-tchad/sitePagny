@@ -63,7 +63,7 @@ class AdminEvenementController extends AbstractController {
     {
         $form = $this->createForm(EvenementType::class, $evenement);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->flush(); // mise à jour de la base
             $this->addFlash('success', "Evenement modifié avec succés");

@@ -7,8 +7,10 @@ use Cocur\Slugify\Slugify;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
+ * @UniqueEntity("titre")
  * @ORM\Entity(repositoryClass="App\Repository\EvenementRepository")
  * @Vich\Uploadable()
  */
@@ -59,6 +61,8 @@ class Evenement
     private $created_at;
 
     /**
+     * @var String
+     * @Assert\Length(min=4, max=255)
      * @ORM\Column(type="string", length=255)
      */
     private $titre;
@@ -66,7 +70,6 @@ class Evenement
     /**
      * @var File|null
      * @Assert\Image(mimeTypes = {"image/*"})
-     * 
      * @Vich\UploadableField(mapping="evenement_image",fileNameProperty="image")
      */
     private $imageFile;

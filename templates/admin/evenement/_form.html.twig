@@ -48,6 +48,8 @@
     $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-})
-        $(#image_evenement).html(<img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="" width="100%" height="auto"/>)
+        var fullPath = $(this).val();
+        var htmlCode = "<img src = $(this).val() Alt='' width='100%' height='auto'/>"
+        $(#image_evenement).html("<img src = $(this).val() Alt='' width='100%' height='auto'/>");
+    })
 </script>

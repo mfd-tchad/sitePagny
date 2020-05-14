@@ -38,6 +38,8 @@
 
 <script>
     $(document).ready(function() {
+        // On voudrait que le nom de l'image affichée apparaisse 
+        // quand on passe sur le bouton "Browse". Malheureusement,ça ne marche pas
         {% if evenement.image %}
             $("#evenement_imageFile_file").hover(funtion () {
                 $(this).html(evenement.image)});
@@ -48,8 +50,10 @@
     $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        // On voudrait que l'image affichée soir mise à jour. Hélas ça ne marche pas non plus
+        // tant que le formulaire n'est n'est pas enregistré et validé en totalité
         var fullPath = $(this).val();
-        var htmlCode = "<img src = $(this).val() Alt='' width='100%' height='auto'/>"
+        var htmlCode = "<img src = fullPath Alt='' width='100%' height='auto'/>"
         $(#image_evenement).html("<img src = $(this).val() Alt='' width='100%' height='auto'/>");
     })
 </script>

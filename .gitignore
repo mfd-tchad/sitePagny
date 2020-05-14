@@ -9,6 +9,7 @@
 /public/images/evenements/
 /var/
 /vendor/
+/translations/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

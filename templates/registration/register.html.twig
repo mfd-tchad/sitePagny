@@ -1,21 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Enregistrer un administrateur{% endblock %}
+{% block title %}Enregistrer un utilisateur{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; min-height: 300px; font: 18px/1.5 sans-serif; }
-    .container {margin: 100px;}
+    .example-wrapper { min-height: 300px; max-width: 400px; font: 14px/1.5 sans-serif; }
 </style>
-<div class="container mt-4">
-    <h1 class="h3 mb-4 font-weight-normal">Enregistrer un administrateur</h1>
-     <div class="offset-md-4 col-md-4">
-        {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.username) }}
-            {{ form_row(registrationForm.plainPassword) }}
-
-            <button class="btn btn-primary">Enregistrer</button>
-        {{ form_end(registrationForm) }}
+<h3 class="text-center">Enregistrer un utilisateur</h3>
+<hr>
+<main class="example-wrapper mt-4">
+    
+     <div class="row container">
+        {{ include ('/registration/_form.html.twig', {form: registrationForm, button: 'Créer'}) }}
     </div>
-</div>
+</main>
 {% endblock %}

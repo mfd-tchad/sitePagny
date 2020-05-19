@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface
 {
@@ -20,12 +22,27 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $Lastname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Firstname;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
     public function getId(): ?int
     {
@@ -57,11 +74,22 @@ class User implements UserInterface
     }
 
     // les fonctions suivantes doivent être ajoutées, soit par l'éditeur, soit manuellement
-    public function getRoles()
+    /**
+     * @see UserInterface
+     */
+    public function getRoles() : array
     {
-        return ['ROLE_ADMIN'];
+        $roles = $this->roles;
+        $roles[] = 'ROLE_USER';
+        //return ['ROLE_ADMIN'];
+        return array_unique($roles);
     }
     
+    public function setRoles(array $roles) : self
+    {
+        $this->roles = $roles;
+        return $this;
+    }
     public function getSalt()
     {
         return null;
@@ -88,5 +116,29 @@ class User implements UserInterface
             $this->username,
             $this->password
         ) = unserialize($serialized, ['allowed_classes' => false]);
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->Lastname;
+    }
+
+    public function setLastname(string $Lastname): self
+    {
+        $this->Lastname = $Lastname;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->Firstname;
+    }
+
+    public function setFirstname(string $Firstname): self
+    {
+        $this->Firstname = $Firstname;
+
+        return $this;
     }
 }

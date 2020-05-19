@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Security\AuthenticationUtilsAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +16,30 @@ use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
 class RegistrationController extends AbstractController
 {
+    /**
+     * @var UserRepository
+     */
+    private $repository;
+
+    /**
+     * @var ObjectManager
+     */
+    private $em;
+
+    public function __construct(UserRepository $repository, EntityManagerInterface $em) {
+        $this->repository = $repository;
+        $this->em = $em;
+    }
+    /**
+     * @Route("/supadmin", name="admin.utilisateur.index")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function index () : Response {
+        $users = $this->repository->findAll();
+        return $this->render('admin/utilisateur/index.html.twig', [
+            'title' => 'Admin', 'titre' => 'Administration des utilisateurs',  'current_menu' => 'admin', 'users' => $users]);
+    }
+
     /**
      * @Route("/register", name="app_register")
      */
@@ -37,17 +63,57 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
 
             // do anything else you need here, like send an email
-
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
-            );
+            $this->addFlash('success', "Nouvel utilisateur créé avec succés");
+            return $this->redirectToRoute('admin.utilisateur.index');  // On redirige l'administrateur vers la liste des utilisateurs
         }
 
         return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
+            'title' => 'Admin', 'titre' => 'Edition d\'un utilisateur',  'current_menu' => 'admin', 'registrationForm' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/admin/utilisateur/{id}", name="admin.utilisateur.edit", methods="GET|POST")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function edit(User $user, Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($form->get('plainPassword')->getData()) {
+                // encode the plain password
+                $user->setPassword(
+                    $passwordEncoder->encodePassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                    )
+                );
+            }
+
+            $this->em->flush(); // mise à jour de la base
+            $this->addFlash('success', "Utilisateur modifié avec succés");
+            return $this->redirectToRoute('admin.utilisateur.index');  // On redirige l'utilisateur vers la liste des événements
+        }
+        return $this->render('admin/utilisateur/edit.html.twig', [
+        'title' => 'Admin', 'titre' => 'Edition d\'un utilisateur',  'current_menu' => 'admin', 'user' => $user, 'registrationForm' => $form->createView()  ]);
+
+    }
+
+    /**
+     * @Route("/admin/utilisateur/{id}", name="admin.utilisateur.delete", methods="DELETE")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function delete(User $user, Request $request)
+    {
+        // ajout d'un conrôle de tocken pour la sécurité. On le récupère dans la request
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->get('_tocken'))) {
+        $this->em->remove($user);
+        $this->em->flush();
+        $this->addFlash('success', "Utilisateur supprimé avec succés");
+        }
+        return $this->redirectToRoute('admin.utilisateur.index');
+    }
+    
 }

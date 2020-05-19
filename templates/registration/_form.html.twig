@@ -1,0 +1,10 @@
+{{ form_start(registrationForm) }}
+        
+            {{ form_row(registrationForm.Lastname) }}
+            {{ form_row(registrationForm.Firstname) }}
+            {{ form_row(registrationForm.username) }}
+            {{ form_row(registrationForm.plainPassword) }}
+
+            <button class="btn btn-primary">Enregistrer</button>
+            <a href="/" type="cancel" class="btn btn-secondary">Annuler</a>
+{{ form_end(registrationForm) }}

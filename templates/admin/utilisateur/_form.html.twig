@@ -1,3 +1,10 @@
+{% if not registrationForm.vars.valid %}
+    <div class="alert alert-danger">
+        Vous avez fait une erreur dans le remplissage du formulaire. 
+        <br> Veuillez corriger s'il vous plait.
+    </div>
+{% endif %}
+
 {{ form_start(registrationForm) }}
         
     {{ form_row(registrationForm.Lastname) }}

@@ -23,6 +23,8 @@ class UserFixtures extends Fixture
     {
         $user = new User();
         $user->setUsername('mairie');
+        $user->setFirstname('Mairie');
+        $user->setLastName("Pagny La Blanche Côte");
         $user->setPassword($this->encoder->encodePassword($user, 'Pagny'));
         $manager->persist($user);
 
@@ -30,6 +32,8 @@ class UserFixtures extends Fixture
 
         $user = new User();
         $user->setUsername('mfd');
+        $user->setLastname("Dewulf");
+        $user->setFirstname("Marie-Françoise");
         $user->setPassword($this->encoder->encodePassword($user, 'mfd5345'));
         $manager->persist($user);
 

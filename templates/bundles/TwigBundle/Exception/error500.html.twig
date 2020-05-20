@@ -2,11 +2,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Accés non autorisé</h1>
+    <h1>Erreur interne</h1>
 
     <p>
-        Nous sommes désolés. Vous n'avez pas les droits requis pour accéder
-        à la page demandée. Veuillez vous connecter avec un identifiant ayant les droitsd'administration requis.
-        ou <a href="{{ path('/') }}">retournez à la page d'accueil</a>.
+        Nous sommes désolés. Une erreur interne s'est produite sur le serveur. <br>
+        Veuillez <a href="{{ path('contact') }}">informer l'administrateur du système</a> de ce que vous étiez en train de faire
+        quand l'erreur s'est produite, et nous règlerons le problème dès que possible.<br>
+        ou <a href="{{ path('home') }}">retournez à la page d'accueil</a>.
     </p>
 {% endblock %}

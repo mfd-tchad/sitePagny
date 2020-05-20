@@ -107,6 +107,8 @@ class RegistrationController extends AbstractController
         $this->em->remove($user);
         $this->em->flush();
         $this->addFlash('success', "Utilisateur supprimé avec succés");
+        } else {
+            $this->addFlash('danger', "Echec de la suppression de l'utilisateur");
         }
         return $this->redirectToRoute('admin.utilisateur.index');
     }

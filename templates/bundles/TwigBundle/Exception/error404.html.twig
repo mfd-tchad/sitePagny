@@ -2,11 +2,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Page non trouvée</h1>
+    <h2>Page non trouvée</h2>
 
-    <p>
+    <div class="container">
         Nous sommes désolés. La page demandée n'a pas pu être localisée sur ce site. 
-        Vérifiez les erreurs dans l'URL
+        Vérifiez les erreurs dans l'URL <br>
         ou <a href="{{ path('home') }}">retournez à la page d'accueil</a>.
-    </p>
+    </div>
 {% endblock %}

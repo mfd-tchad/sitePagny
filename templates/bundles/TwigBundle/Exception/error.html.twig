@@ -2,10 +2,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Oups</h1>
-
+    <h2>Oups</h2>
+    <div class="container">
     <p>
-        Nous sommes désolés. Quelque chose n'a pas marché.
+        Nous sommes désolés. Quelque chose n'a pas marché.<br>
+        Si le problème persiste, veuillez <a href="{{ path('contact') }}">contacter l'administrateur du site </a>
+        pour l'informer de ce que vous étiez en train de faire quand l'erreur s'est produite.<br>
+        Nous règlerons le problème dès que possible.<br>
+    </p>
+    <p>
          <a href="{{ path('home') }}">retournez à la page d'accueil</a>.
     </p>
+    </div>
 {% endblock %}

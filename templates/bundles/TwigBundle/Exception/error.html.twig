@@ -1,0 +1,11 @@
+{# templates/bundles/TwigBundle/Exception/error.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Oups</h1>
+
+    <p>
+        Nous sommes désolés. Quelque chose n'a pas marché.
+         <a href="{{ path('/') }}">retournez à la page d'accueil</a>.
+    </p>
+{% endblock %}

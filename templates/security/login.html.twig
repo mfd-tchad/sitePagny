@@ -16,7 +16,7 @@
             {{ error.messageKey | trans(error.messagedata, 'security')}}
         </div>
         {% else %}
-        <div class="text-info text-center"> Veuillez vous identifier pour accéder à l'administration du site </div>
+        <div class="alert alert-secondary"> Veuillez vous identifier pour accéder à l'administration du site </div>
         {% endif %}
         <div class="mt-4">
             <form action="{{ path('login')}}" method="POST">

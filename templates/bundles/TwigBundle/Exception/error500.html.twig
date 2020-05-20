@@ -1,0 +1,12 @@
+{# templates/bundles/TwigBundle/Exception/error500.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Accés non autorisé</h1>
+
+    <p>
+        Nous sommes désolés. Vous n'avez pas les droits requis pour accéder
+        à la page demandée. Veuillez vous connecter avec un identifiant ayant les droitsd'administration requis.
+        ou <a href="{{ path('/') }}">retournez à la page d'accueil</a>.
+    </p>
+{% endblock %}

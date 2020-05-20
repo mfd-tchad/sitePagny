@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\UserType;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,6 +36,7 @@ class RegistrationController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index () : Response {
+        
         $users = $this->repository->findAll();
         return $this->render('admin/utilisateur/index.html.twig', [
             'title' => 'Admin', 'titre' => 'Administration des utilisateurs',  'current_menu' => 'admin', 'users' => $users]);
@@ -68,7 +70,7 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render('registration/register.html.twig', [
-            'title' => 'Admin', 'titre' => 'Edition d\'un utilisateur',  'current_menu' => 'admin', 'registrationForm' => $form->createView(),
+            'title' => 'Admin', 'titre' => 'Enregistrement d\'un utilisateur',  'current_menu' => 'admin', 'registrationForm' => $form->createView(),
         ]);
     }
 
@@ -78,26 +80,18 @@ class RegistrationController extends AbstractController
      */
     public function edit(User $user, Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $this->denyAccessUnlessGranted('ROLE_SUPADMIN');
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($form->get('plainPassword')->getData()) {
-                // encode the plain password
-                $user->setPassword(
-                    $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                    )
-                );
-            }
 
             $this->em->flush(); // mise à jour de la base
             $this->addFlash('success', "Utilisateur modifié avec succés");
             return $this->redirectToRoute('admin.utilisateur.index');  // On redirige l'utilisateur vers la liste des événements
         }
         return $this->render('admin/utilisateur/edit.html.twig', [
-        'title' => 'Admin', 'titre' => 'Edition d\'un utilisateur',  'current_menu' => 'admin', 'user' => $user, 'registrationForm' => $form->createView()  ]);
+        'title' => 'Admin', 'titre' => 'Edition d\'un utilisateur',  'current_menu' => 'admin', 'user' => $user, 'form' => $form->createView()  ]);
 
     }
 
@@ -107,6 +101,7 @@ class RegistrationController extends AbstractController
      */
     public function delete(User $user, Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPADMIN');
         // ajout d'un conrôle de tocken pour la sécurité. On le récupère dans la request
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->get('_tocken'))) {
         $this->em->remove($user);

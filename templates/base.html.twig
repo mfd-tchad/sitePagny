@@ -87,20 +87,27 @@
                     </li>
                 
                 {% if app.user %}
-                
+                    {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'admin' %} active {% endif %}">
                         <a class="nav-link dropdown-toggle" href="{{ path('admin.evenement.index') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMINISTRATION</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
                             <a class="dropdown-item" href="{{ path('admin.evenement.index') }}">Evénements</a> 
-                            <a class="dropdown-item" href="{{ path('admin.utilisateur.index') }}">Utilisateurs</a>                           
+                            {% if is_granted('ROLE_SUPADMIN') %}
+                                <a class="dropdown-item" href="{{ path('admin.utilisateur.index') }}">Utilisateurs</a>                           
+                            {% endif %}
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ path('logout') }}" class="nav-link">Se déconnecter</a>
+                    {% endif %}
+                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
+                        <a class="nav-link dropdown-toggle" href="{{ path('logout') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{app.user.firstname}}</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('logout') }}">Se déconnecter</a> 
+                        </div>
                     </li>
+                
                 {% else %}
-                    <li class="nav-item">
+                    <li class="nav-item {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
                         <a href="{{ path('login') }}" class="nav-link">Se connecter</a>
                     </li>
                 {% endif %}
@@ -110,7 +117,7 @@
         <div class="container">
             {% block body %}{% endblock %}
         </div>
-        <footer class="container bg-primary">
+        <footer class="bg-primary">
         <p> <i>Le site officiel de la mairie de Pagny la Blanche Côte </i></p>
         <div class= "row container">
             <section class="col-md-4">

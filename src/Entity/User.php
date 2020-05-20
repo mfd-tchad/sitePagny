@@ -12,6 +12,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
+    const TYPE_ROLE = [
+        'ROLE_USER',
+        'ROLE_ADMIN',
+        'ROLE_SUPADMIN'
+    ];
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -20,17 +25,17 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=30)
      */
     private $Lastname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=25)
      */
     private $Firstname;
     
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=25)
      */
     private $username;
 
@@ -74,6 +79,10 @@ class User implements UserInterface
     }
 
     // les fonctions suivantes doivent être ajoutées, soit par l'éditeur, soit manuellement
+    public function getTypeRole(String $type): ?string
+    {
+        return $this::TYPE_ROLE[$type];
+    }
     /**
      * @see UserInterface
      */
@@ -87,7 +96,9 @@ class User implements UserInterface
     
     public function setRoles(array $roles) : self
     {
-        $this->roles = $roles;
+        foreach ($roles as $k => $v) {
+            $this->roles[$k] = $this->getTypeRole($roles[$k]);
+        }
         return $this;
     }
     public function getSalt()

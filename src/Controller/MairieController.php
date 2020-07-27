@@ -13,7 +13,7 @@ class MairieController extends AbstractController
     public function index()
     {
         return $this->render('mairie/index.html.twig', [
-            'title' => 'Mairie', 'titre' => 'Mairie de Pagny',  'current_menu' => 'mairie'
+            'title' => 'Mairie de Pagny la Blanche Côte', 'titre' => 'Mairie de Pagny',  'current_menu' => 'mairie'
         ]);
     }
 
@@ -23,7 +23,7 @@ class MairieController extends AbstractController
     public function demarches()
     {
         return $this->render('mairie/indexdemarches.html.twig', [
-            'title' => 'Demarches', 'titre' => 'Démarches administratives',  'current_menu' => 'mairie'
+            'title' => 'Démarches administratives', 'titre' => 'Démarches administratives',  'current_menu' => 'mairie'
         ]);
     }
 
@@ -33,7 +33,7 @@ class MairieController extends AbstractController
     public function urbanisme()
     {
         return $this->render('mairie/indexurbanisme.html.twig', [
-            'title' => 'Urbanisme', 'titre' => 'Urbanisme', 'current_menu' => 'mairie'
+            'title' => 'Cadastre de Pagny la Blanche Côte', 'titre' => 'Cadastre', 'current_menu' => 'mairie'
         ]);
     }
 
@@ -43,7 +43,7 @@ class MairieController extends AbstractController
     public function cadastre()
     {
         return $this->render('mairie/indexcadastre.html.twig', [
-            'title' => 'Cadastre', 'titre' => 'Plan cadastral interactif', 'current_menu' => 'mairie'
+            'title' => 'Plan cadastral Pagny la Blanche Côte', 'titre' => 'Plan cadastral interactif', 'current_menu' => 'mairie'
         ]);
     }
     /**
@@ -52,7 +52,7 @@ class MairieController extends AbstractController
     public function conseilmunicipal()
     {
         return $this->render('mairie/indexconseil.html.twig', [
-            'title' => 'ConseilMunicipal', 'titre' => 'Conseil Municipal et Commissions',  'current_menu' => 'mairie'
+            'title' => 'Conseil Municipal de Pagny la Blanche Côte', 'titre' => 'Conseil Municipal et Commissions',  'current_menu' => 'mairie'
         ]);
     }
 
@@ -62,7 +62,7 @@ class MairieController extends AbstractController
     public function associations()
     {
         return $this->render('mairie/indexassociations.html.twig', [
-            'title' => 'Associations', 'titre' => 'Associations de la commune', 'current_menu' => 'mairie'
+            'title' => 'Associations de Pagny la Blanche Côte', 'titre' => 'Associations de la commune', 'current_menu' => 'mairie'
         ]);
     }
 }

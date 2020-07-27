@@ -42,7 +42,7 @@ class HomeController extends AbstractController
     public function scolaire()
     {
         return $this->render('viepratique/indexscolaire.html.twig', [
-            'title' => 'Bus scolaires et ecoles pres de Pagny la Blanche Cote', 'titre' => 'Bus scolaires et Ecoles', 'current_menu' => 'viepratique'
+            'title' => 'Bus scolaires et ecoles près de Pagny la Blanche Cote', 'titre' => 'Bus scolaires et Ecoles', 'current_menu' => 'viepratique'
         ]);
     }
 
@@ -62,7 +62,7 @@ class HomeController extends AbstractController
     public function ordures()
     {
         return $this->render('viepratique/indexordures.html.twig', [
-            'title' => 'Gestion des dechets', 'titre' => 'Gestion des déchets', 'current_menu' => 'viepratique'
+            'title' => 'Gestion des dechets à Pagny la Blanche Côte', 'titre' => 'Gestion des déchets', 'current_menu' => 'viepratique'
         ]);
     }
     /**
@@ -71,7 +71,7 @@ class HomeController extends AbstractController
     public function animationetloisirs()
     {
         return $this->render('animationetloisirs/index.html.twig', [
-            'title' => 'Animation et Loisirs', 'titre' => 'Animation et Loisirs', 'current_menu' => 'animationetloisirs'
+            'title' => 'Animation et Loisirs à Pagny la Blanche Côte', 'titre' => 'Animation et Loisirs', 'current_menu' => 'animationetloisirs'
         ]);
     }
 
@@ -81,7 +81,7 @@ class HomeController extends AbstractController
     public function jeunesse()
     {
         return $this->render('jeunesse/index.html.twig', [
-            'title' => 'Jeunesse', 'titre' => 'Jeunesse', 'current_menu' => 'jeunesse'
+            'title' => 'Activités Jeunesse à Pagny la Blanche Côte', 'titre' => 'Jeunesse', 'current_menu' => 'jeunesse'
         ]);
     }
 
@@ -91,7 +91,7 @@ class HomeController extends AbstractController
     public function aines()
     {
         return $this->render('animationetloisirs/indexaines.html.twig', [
-            'title' => 'Aines', 'titre' => 'Animations pour les Ainés', 'current_menu' => 'animationetloisirs'
+            'title' => 'Animations pour les ainés à Pagny la Blanche Côte', 'titre' => 'Animations pour les Ainés', 'current_menu' => 'animationetloisirs'
         ]);
     }
 
@@ -101,7 +101,7 @@ class HomeController extends AbstractController
     public function videgreniers()
     {
         return $this->render('animationetloisirs/indexvidegreniers.html.twig', [
-            'title' => 'Vide-Greniers', 'titre' => 'Vide-Greniers', 'current_menu' => 'animationetloisirs'
+            'title' => 'Vide-Greniers à Pagny la Blanche Côte', 'titre' => 'Vide-Greniers', 'current_menu' => 'animationetloisirs'
         ]);
     }
 
@@ -111,7 +111,7 @@ class HomeController extends AbstractController
     public function concerts()
     {
         return $this->render('animationetloisirs/indexconcerts.html.twig', [
-            'title' => 'Concerts', 'titre' => 'Concerts', 'current_menu' => 'animationetloisirs'
+            'title' => 'Concerts à Pagny la Blanche Côte', 'titre' => 'Concerts', 'current_menu' => 'animationetloisirs'
         ]);
     }
 
@@ -121,7 +121,7 @@ class HomeController extends AbstractController
     public function fetes()
     {
         return $this->render('animationetloisirs/indexfetes.html.twig', [
-            'title' => 'Fetes', 'titre' => 'Fêtes', 'current_menu' => 'animationetloisirs'
+            'title' => 'Fetes à Pagny la Blanche Côte', 'titre' => 'Fêtes', 'current_menu' => 'animationetloisirs'
         ]);
     }
     
@@ -161,7 +161,7 @@ class HomeController extends AbstractController
     public function eglise()
     {
         return $this->render('patrimoine/indexeglise.html.twig', [
-            'title' => 'Eglise Saint Grégoire le Grand', 'titre' => 'Eglise Saint Grégoire le Grand', 'current_menu' => 'patrimoine'
+            'title' => 'Eglise Saint Grégoire le Grand de Pagny la Blanche Côte', 'titre' => 'Eglise Saint Grégoire le Grand', 'current_menu' => 'patrimoine'
         ]);
     }
     /**
@@ -170,7 +170,7 @@ class HomeController extends AbstractController
     public function reserve()
     {
         return $this->render('reserve/index.html.twig', [
-            'title' => 'Réserve Naturelle Régionale', 'titre' => 'Reserve naturelle régionale', 'current_menu' => 'patrimoine'
+            'title' => 'Réserve Naturelle Régionale de Pagny la Blanche Côte', 'titre' => 'Reserve naturelle régionale', 'current_menu' => 'patrimoine'
         ]);
     }
 

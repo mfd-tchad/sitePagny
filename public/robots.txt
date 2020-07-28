@@ -1,0 +1,2 @@
+User-Agent: *
+Sitemap: www.mfdewulf.fr/sitemap.xml

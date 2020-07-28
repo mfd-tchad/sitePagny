@@ -18,18 +18,15 @@ class Evenement
 {
    
     const TYPE_EVENEMENT = [
-        0 => 'Naissance',
-        1 => 'Hommage',
-        2 => 'Mariage',
-        3 => 'Fête',
-        4 => 'Vide-Greniers',
-        5 => 'Ile aux Enfants',
+        4 => 'Activité associative',
+        5 => 'Activité Nature',
+        2 => 'Carnet blanc',
+        0 => 'Carnet rose',
         6 => 'Commémoration',
-        7 => 'Concert',
-        8 => 'Animation',
-        9 => 'Repas',
-        10 => 'Sport',
-        11 => 'Flash-Info'
+        3 => 'Festivité',
+        7 => 'Flash-Info',
+        1 => 'Hommage',
+        8 => 'Rencontre sportive'
     ];
 
 

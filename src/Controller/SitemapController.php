@@ -22,17 +22,18 @@ class SitemapController extends AbstractController
 
         // On ajoute les URLs "statiques"
         
-        $urls[] = ['loc' => $this->generateUrl('home')];
-        $urls[] = ['loc' => $this->generateUrl('evenements')];
+        $urls[] = ['loc' => $this->generateUrl('home'), 'lastmod' => '2020-07-28', 
+            'changefreq' => 'monthly', 'priority' => 0.8 ];
+        $urls[] = ['loc' => $this->generateUrl('evenements'), 'changefreq' => 'weekly', 'priority' => 0.8 ];
         $urls[] = ['loc' => $this->generateUrl('associations')];
         $urls[] = ['loc' => $this->generateUrl('mairie')];
         $urls[] = ['loc' => $this->generateUrl('demarches')];
         $urls[] = ['loc' => $this->generateUrl('urbanisme')];
         $urls[] = ['loc' => $this->generateUrl('cadastre')];
-        $urls[] = ['loc' => $this->generateUrl('patrimoine')];
+        $urls[] = ['loc' => $this->generateUrl('patrimoine'), 'changefreq' => 'yearly'];
         $urls[] = ['loc' => $this->generateUrl('saintgregoire')];
-        $urls[] = ['loc' => $this->generateUrl('eglise')];
-        $urls[] = ['loc' => $this->generateUrl('reserve')];
+        $urls[] = ['loc' => $this->generateUrl('eglise'), 'changefreq' => 'yearly', 'priority' => 0.8];
+        $urls[] = ['loc' => $this->generateUrl('reserve'), 'changefreq' => 'monthly', 'priority' => 0.8];
         $urls[] = ['loc' => $this->generateUrl('historique')];
         $urls[] = ['loc' => $this->generateUrl('viepratique')];
         $urls[] = ['loc' => $this->generateUrl('scolaire')];
@@ -48,7 +49,7 @@ class SitemapController extends AbstractController
         $urls[] = ['loc' => $this->generateUrl('naissances')];
         $urls[] = ['loc' => $this->generateUrl('mariages')];
         $urls[] = ['loc' => $this->generateUrl('deces')];
-        $urls[] = ['loc' => $this->generateUrl('flashinfos')];
+        $urls[] = ['loc' => $this->generateUrl('flashinfos'), 'changefreq' => 'weekly', 'priority' => 0.9];
         $urls[] = ['loc' => $this->generateUrl('fetesactu')];
 
         // Fabrication de la réponse XML

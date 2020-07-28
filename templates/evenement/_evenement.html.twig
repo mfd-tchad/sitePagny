@@ -2,25 +2,19 @@
 <div class="card mb-4 
         {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
              border-secondary
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
             border-success
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Fête') %}
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Festivité') %}
             border-warning
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Mariage') %}
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}
             border-info
         {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
             border-lignt
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
-            border-warning
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Concert') %}
-            border-warning
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Animation') %}
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Activité Nature') %}
             border-primary
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Repas') %}
-            border-primary
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Ile aux Enfants') %}
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Activité associative') %}
             border-success
-        {% elseif (evenement.typeEvenement(evenement.type) == 'Sport') %}
+        {% elseif (evenement.typeEvenement(evenement.type) == 'Rencontre sportive') %}
             border-success
         {% elseif (evenement.typeEvenement(evenement.type) == 'Flash-Info') %}
             border-danger
@@ -29,9 +23,9 @@
         <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="card-img-top" width="100%" height="auto"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
         <img src="/images/fleur2.jpg" width="100%" height="auto"/>
-    {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}
+    {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
         <img src="/images/naissance.jpg" width="100%" height="auto"/>
-    {% elseif (evenement.typeEvenement(evenement.type) == 'Mariage') %}  
+    {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  
         <img src="/images/mariage.jpg" width="100%" height="auto"/>
     {% else %}
         <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100%" height="auto"/>

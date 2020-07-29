@@ -13,10 +13,8 @@
     </main>
     <aside class="col-md-4">
         <section class="ml-4 mt-4">
-        <h4> Plus d'informations </h4>
-        <strong> contact: </strong>
-        <p> </p>
-        {% include '/mairie/infostravaux.html.twig' %}
+        <h5> Infos travaux en cours :</h5>
+        <p><a href="{{ path('flashinfos') }}">Flash-Infos travaux</a></p>
         <hr>
         {% include '/mairie/menumairie.html.twig' %}
         </section>

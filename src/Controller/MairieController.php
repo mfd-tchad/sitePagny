@@ -33,7 +33,7 @@ class MairieController extends AbstractController
     public function urbanisme()
     {
         return $this->render('mairie/indexurbanisme.html.twig', [
-            'title' => 'Cadastre de Pagny la Blanche Côte', 'titre' => 'Cadastre', 'current_menu' => 'mairie'
+            'title' => 'Plans et Cadastre de Pagny la Blanche Côte', 'titre' => 'Plans et Cadastre', 'current_menu' => 'mairie'
         ]);
     }
 

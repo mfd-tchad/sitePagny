@@ -42,7 +42,7 @@ class HomeController extends AbstractController
     public function scolaire()
     {
         return $this->render('viepratique/indexscolaire.html.twig', [
-            'title' => 'Bus scolaires et ecoles près de Pagny la Blanche Cote', 'titre' => 'Bus scolaires et Ecoles', 'current_menu' => 'viepratique'
+            'title' => 'Bus scolaires et écoles près de Pagny la Blanche Cote', 'titre' => 'Bus scolaires et Ecoles', 'current_menu' => 'viepratique'
         ]);
     }
 
@@ -52,7 +52,7 @@ class HomeController extends AbstractController
     public function serviceaines()
     {
         return $this->render('viepratique/indexserviceaines.html.twig', [
-            'title' => 'Services aux aines à Pagny la Blanche Cote', 'titre' => 'Services aux Ainés', 'current_menu' => 'viepratique'
+            'title' => 'Services aux ainés à Pagny la Blanche Cote', 'titre' => 'Services aux Ainés', 'current_menu' => 'viepratique'
         ]);
     }
 
@@ -62,7 +62,7 @@ class HomeController extends AbstractController
     public function ordures()
     {
         return $this->render('viepratique/indexordures.html.twig', [
-            'title' => 'Gestion des dechets à Pagny la Blanche Côte', 'titre' => 'Gestion des déchets', 'current_menu' => 'viepratique'
+            'title' => 'Gestion des déchets à Pagny la Blanche Côte', 'titre' => 'Gestion des déchets', 'current_menu' => 'viepratique'
         ]);
     }
     /**
@@ -121,7 +121,7 @@ class HomeController extends AbstractController
     public function fetes()
     {
         return $this->render('animationetloisirs/indexfetes.html.twig', [
-            'title' => 'Fetes à Pagny la Blanche Côte', 'titre' => 'Fêtes', 'current_menu' => 'animationetloisirs'
+            'title' => 'Fêtes à Pagny la Blanche Côte', 'titre' => 'Fêtes', 'current_menu' => 'animationetloisirs'
         ]);
     }
     
@@ -131,7 +131,7 @@ class HomeController extends AbstractController
     public function sportsetloisirs()
     {
         return $this->render('animationetloisirs/indexsportsetloisirs.html.twig', [
-            'title' => 'Sport et Loisirs', 'titre' => 'Sports et Loisirs', 'current_menu' => 'jeunesse'
+            'title' => 'Sport et Loisirs à Pagny la Blanche Côte', 'titre' => 'Sports et Loisirs', 'current_menu' => 'jeunesse'
         ]);
     }
 

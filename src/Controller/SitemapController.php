@@ -30,6 +30,7 @@ class SitemapController extends AbstractController
         $urls[] = ['loc' => $this->generateUrl('demarches')];
         $urls[] = ['loc' => $this->generateUrl('urbanisme')];
         $urls[] = ['loc' => $this->generateUrl('cadastre')];
+        $urls[] = ['loc' => $this->generateUrl('conseilmunicipal')];
         $urls[] = ['loc' => $this->generateUrl('patrimoine'), 'changefreq' => 'yearly'];
         $urls[] = ['loc' => $this->generateUrl('saintgregoire')];
         $urls[] = ['loc' => $this->generateUrl('eglise'), 'changefreq' => 'yearly', 'priority' => 0.8];
@@ -39,7 +40,9 @@ class SitemapController extends AbstractController
         $urls[] = ['loc' => $this->generateUrl('scolaire')];
         $urls[] = ['loc' => $this->generateUrl('jeunesse')];
         $urls[] = ['loc' => $this->generateUrl('aines')];
-        $urls[] = ['loc' => $this->generateUrl('ordures')];
+        $urls[] = ['loc' => $this->generateUrl('fetes')];
+        $urls[] = ['loc' => $this->generateUrl('videgreniers')];
+        $urls[] = ['loc' => $this->generateUrl('concerts')];
         $urls[] = ['loc' => $this->generateUrl('sportsetloisirs')];
         $urls[] = ['loc' => $this->generateUrl('ileauxenfants')];
         $urls[] = ['loc' => $this->generateUrl('fetes')];
@@ -51,6 +54,10 @@ class SitemapController extends AbstractController
         $urls[] = ['loc' => $this->generateUrl('deces')];
         $urls[] = ['loc' => $this->generateUrl('flashinfos'), 'changefreq' => 'weekly', 'priority' => 0.9];
         $urls[] = ['loc' => $this->generateUrl('fetesactu')];
+        $urls[] = ['loc' => $this->generateUrl('viepratique')];
+        $urls[] = ['loc' => $this->generateUrl('scolaire')];
+        $urls[] = ['loc' => $this->generateUrl('serviceaines')];
+        $urls[] = ['loc' => $this->generateUrl('ordures')];
 
         // Fabrication de la réponse XML
         $response = new Response(

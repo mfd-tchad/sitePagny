@@ -63,11 +63,38 @@ footer p {
 
 
 .example-wrapper { 
-    margin: 1em auto; font: 14px/1.5 ; 
+    margin: 1em auto; font: 14px/1.5 ; width: 95%;
 }
 
 .example-wrapper code { 
     background: #F5F5F5; padding: 2px 6px; 
+}
+
+.page-normale { 
+    max-width:800px; width: 95%;
+}
+
+.page-evenement { 
+    min-height: 20em; 
+}
+
+.page-registration {
+    min-height: 300px; max-width: 400px;
+}
+
+.page-login {
+    min-height: 300px; max-width: 300px; font: 16px/1.5 sans-serif;
+}
+.element-grille-normale {
+    font: 14px/1.5 ; 
+}
+
+.element-grille-aggrandi {
+    font: 16px/1.5 ;
+}
+
+.element-grille-evenement {
+    font: 18px/1.5 ;
 }
 
 .vich-image {

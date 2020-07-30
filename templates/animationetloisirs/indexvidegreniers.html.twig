@@ -4,7 +4,7 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; font: 14px/1.5 sans-serif; align: justify}
+    .example-wrapper { align: justify}
 </style>
 
 <div class="row container">
@@ -17,9 +17,11 @@
     </main>
     <aside class="col-md-4">
         <div class="container-fluid"> 
-            <img class="center-block" src ="/images/animations/vide-greniers.jpg" Alt="Photo Vide-Greniers" height="300" width="350"/>
-            <hr>
-            {% include '/animationetloisirs/menurubrique.html.twig' %}
+            <div class="text-center">
+                <img class="center-block" src ="/images/animations/vide-greniers.jpg" Alt="Photo Vide-Greniers" height="300" width="350"/>
+                <hr>
+                {% include '/animationetloisirs/menurubrique.html.twig' %}
+            </div>
         </div>
 
     </aside>

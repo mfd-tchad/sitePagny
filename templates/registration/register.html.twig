@@ -4,11 +4,11 @@
 
 {% block body %}
 <style>
-    .example-wrapper { min-height: 300px; max-width: 400px; font: 14px/1.5 sans-serif; }
+    .example-wrapper {  font: 14px/1.5 sans-serif; }
 </style>
 <h3 class="text-center">Enregistrer un utilisateur</h3>
 <hr>
-<main class="example-wrapper mt-4">
+<main class="example-wrapper page-registration mt-4">
     
      <div class="row container">
         {{ include ('/registration/_form.html.twig', {form: registrationForm, button: 'Créer'}) }}

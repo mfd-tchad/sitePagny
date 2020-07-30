@@ -34,6 +34,8 @@ footer p {
 
 .example-wrapper { 
     font: 18px/3 ; 
+    margin:0;
+    width: 100%;
 }
 
 

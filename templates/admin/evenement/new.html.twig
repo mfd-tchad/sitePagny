@@ -4,7 +4,7 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; min-height: 200em; }
+    .example-wrapper { max-width: 800px; min-height: 200em; }
 </style>
 
 <div class="example-wrapper">
@@ -14,5 +14,5 @@
         
         {{ include ('admin/evenement/_form.html.twig', {form: form, button: 'Créer'}) }}
    </div>
-
-   {% endblock %}
+</div>
+{% endblock %}

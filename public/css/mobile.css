@@ -1,0 +1,39 @@
+h2 {
+    font-size : 2.5em;
+}
+
+hr{ 
+    height: 10px;
+    width: 30%;
+  }
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+
+p {
+    font-size: 2em;
+}
+
+footer p {
+    font-size: 2.5em;
+}
+ aside {
+    font-size : 2em;
+ }
+
+.card-body element {
+    font-size : 2em;
+}
+
+
+.example-wrapper { 
+    font: 18px/3 ; 
+}
+
+

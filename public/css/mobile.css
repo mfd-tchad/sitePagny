@@ -15,6 +15,21 @@ h4 {
     font-size: 2em;
 }
 
+.card-body element {
+    font-size : 2em;
+}
+
+.container {
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+.example-wrapper { 
+    font-size: 18px/3 ; 
+    margin:0;
+    width: 100%;
+}
 
 p {
     font-size: 2em;
@@ -26,16 +41,4 @@ footer p {
  aside {
     font-size : 2em;
  }
-
-.card-body element {
-    font-size : 2em;
-}
-
-
-.example-wrapper { 
-    font: 18px/3 ; 
-    margin:0;
-    width: 100%;
-}
-
 

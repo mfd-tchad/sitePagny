@@ -1,12 +1,39 @@
 .container {
-    max-width: 900px;
-    margin-right: 0;
+    width: 960px;
+    /* margin-right: 0;
     margin-left: 0;
+    */
     padding-left: 10px;
     padding-right: 10px;;
-    width:100%;
+}
+@media screen and (max-width: 880px) {
+    .container {
+        width: 860px;
+    }
 }
 
+@media screen and (max-width: 846px) {
+    .container {
+        width: 830px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .container {
+        width: 770px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 740px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .container {
+        width: 640px;
+    }
+}
 .example-wrapper {
     width:100%;
 }

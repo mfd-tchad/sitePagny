@@ -1,3 +1,8 @@
+.gros-titre { 
+    margin: 1em auto; 
+    font: 18px/1.5 Cursive Comic Verdana sans-serif; 
+}
+
 h1 {
     text-align: center;
     font-size: 48px;
@@ -29,6 +34,7 @@ h4 {
 p {
     text-align: justify;
 }
+
 
 textarea
 {

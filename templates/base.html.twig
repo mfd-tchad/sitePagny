@@ -4,17 +4,17 @@
         <meta charset="UTF-8">
         <meta name="description" content="Le site officiel de la Commune de Pagny la Blanche Côte" >
         <meta name="author" content="Mairie de Pagny la Blanche Côte">
-        
+        <meta name="viewport" content="width=device-width">
         <title>{% block title %}Pagny la Blanche Cote{% endblock %}</title>
         {# <link rel='stylesheet' href="https://bootswatch.com/4/lumen/bootstrap.min.css" > #}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" media="screen and (min-width: 620px) and (max-width: 1024px)" href="/css/petit-ecran.css">
-        <link rel="stylesheet" media="all and (max-width: 600px)" href="/css/mobile.css">
+        <link rel="stylesheet" media="screen and (max-width: 1024px)" href="/css/petit-ecran.css">
+        {# <link rel="stylesheet" media="all and (max-device-width: 480px)" href="/css/mobile.css"> #}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <div>
+        <div class="banner">
             <img src="/images/bandeau-3.jpg" width="100%"/>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">

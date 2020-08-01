@@ -15,6 +15,11 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
 hr{ 
     height: 3px;
     color: yellow;
@@ -27,6 +32,7 @@ hr{
 
 
 h4 {
+    margin-top: 1em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -69,7 +75,7 @@ footer p {
 
 
 .example-wrapper { 
-    margin: 1em auto; font: 14px/1.5 ; width: 95%;
+    margin: 1em auto; font: 14px/1.5 
 }
 
 .example-wrapper code { 

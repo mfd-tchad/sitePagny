@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="row">
-<main class="col-md-8">
+<main class="col-md-7">
     <h2> {{ titre }} </h2>
     <hr>
     <section class="example-wrapper">
@@ -35,10 +35,10 @@
         
     </section>
 </main>
-<aside class="col-md-4">
-    <div class="container-fluid"><img src="{{'/images/eglise/ExterieurEglise.jpg'| imagine_filter('medium')}}" height="300"/>Vue de derrière</div>
-    <div class="container-fluid mt-3"><img src="{{'/images/eglise/OrguesEglise.JPG'| imagine_filter('medium')}}" height="300"/>Fond de l'église</div>
-    <div class="container-fluid mt-3"><img src="{{'/images/eglise/Chaire.JPG'| imagine_filter('medium')}}" height="300"/>Chaire et allée gauche</div> 
+<aside class="col-md-5">
+    <div class="container-fluid"><img src="{{'/images/eglise/ExterieurEglise.jpg'| imagine_filter('medium')}}" width="100%"/>Vue de derrière</div>
+    <div class="container-fluid mt-3"><img src="{{'/images/eglise/OrguesEglise.JPG'| imagine_filter('medium')}}" width="100%"/>Fond de l'église</div>
+    <div class="container-fluid mt-3"><img src="{{'/images/eglise/Chaire.JPG'| imagine_filter('medium')}}" width="100%"/>Chaire et allée gauche</div> 
     
     <div class="container-fluid">{% include '/patrimoine/menupatrimoine.html.twig' %}</div> 
     <div class="container-fluid mt-4"> Liens complémentaires:<br>

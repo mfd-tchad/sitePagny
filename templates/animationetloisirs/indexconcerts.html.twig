@@ -8,18 +8,16 @@
 </style>
 
 <div class="row">
-    <main class="example-wrapper col-md-8">
+    <main class="example-wrapper col-md-7">
         <h2>{{ titre }} </h2>
         <hr>
         {% include '/animationetloisirs/concerts.html.twig' %}
-        
-
     </main>
-    <aside class="col-md-4">
+    <aside class="col-md-5">
         <div class="container-fluid"> 
             <div class="text-center">
-                <img src ="{{'/images/animations/concert-eglise-pagny1.jpg'| imagine_filter('medium')}}" Alt="Photo Concert Eglise" height="300" />
-                <img class= "mt-4" src ="{{'/images/animations/concert-ecole-musique1.jpg'| imagine_filter('medium')}}" Alt="Photo concert école musique" height="300" />
+                <img src ="{{'/images/animations/concert-eglise-pagny1.jpg'| imagine_filter('medium')}}" Alt="Photo Concert Eglise" width="100%" />
+                <img class= "mt-4" src ="{{'/images/animations/concert-ecole-musique1.jpg'| imagine_filter('medium')}}" Alt="Photo concert école musique" width="100%" />
                 {% include '/animationetloisirs/menurubrique.html.twig' %}
             </div>
         </div>

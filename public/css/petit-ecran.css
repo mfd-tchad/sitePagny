@@ -1,16 +1,34 @@
 .container {
     width: 960px;
-    /* margin-right: 0;
-    margin-left: 0;
-    */
     padding-left: 10px;
     padding-right: 10px;;
 }
+
+
+.example-wrapper {
+    width:100%;
+}
+
 @media screen and (max-width: 960px) {
     .container {
         width: auto;
     }
-    
+    .container-fluid {
+        margin:0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    h2 {
+        margin-top: 0.7em;
+    }
+
+    h3 {
+        margin-top: 0.7em;
+        padding-top: 0.7em;
+    }
+    h4 {
+        margin-top: 0.7em;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -36,38 +54,56 @@
         font-size: 1.2em;
     }
 
-    .banner {
+    aside p img {
+        width:100%;
+    }
+    
+}
+@media screen and (max-height : 800px) {
+    banner {
         display: none;
     }
+    h2 {
+        margin-top: 0.5em;
+    }
+
+    h3 {
+        margin-top: 0.5em;
+        padding-top: 0.5em;
+    }
 }
-/*
-@media screen and (max-width: 846px) {
-    .container {
-        width: 830px;
+
+@media screen and (max-device-width: 480px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+    
+
+    .element-grille-normale {
+        font: 11px/1.5 ; 
+    }
+    
+    .element-grille-aggrandi {
+        font: 12px/1.5 ;
+    }
+    
+    .element-grille-evenement {
+        font: 13px/1.5 ;
     }
 }
 
 
-@media screen and (max-width: 768px) {
-    .container {
-        width: 740px;
-    }
-}
-
-@media screen and (max-width: 660px) {
-    .container {
-        width: 640px;
-    }
-}
-*/
 
 
-
-.example-wrapper {
-    width:100%;
-}
-
-.container-fluid {
-    margin:0;
-    padding-right: 0;
-}

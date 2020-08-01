@@ -54,15 +54,17 @@
         font-size: 1.2em;
     }
 
+    banner {
+        display: none;
+    }
+    
     aside p img {
         width:100%;
     }
     
 }
 @media screen and (max-device-width : 768px) {
-    banner {
-        display: none;
-    }
+    
     h2 {
         margin-top: 0.5em;
     }

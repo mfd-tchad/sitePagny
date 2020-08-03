@@ -54,6 +54,10 @@
         font-size: 1.2em;
     }
 
+    h5 {
+        font-size: 1.1em;
+    }
+
     .banner {
         display: none;
     }
@@ -100,7 +104,11 @@
         font-size: 1.2em;
     }
     
-
+    h6 {
+        font-size: 1em;
+        font-weight: bold ;
+    }
+    
     .element-grille-normale {
         font: 11px/1.5 ; 
     }

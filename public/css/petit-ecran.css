@@ -13,7 +13,7 @@
     .container {
         width: auto;
     }
-    .container-fluid {
+    body.container-fluid {
         margin:0;
         padding-left: 0;
         padding-right: 0;
@@ -54,12 +54,20 @@
         font-size: 1.2em;
     }
 
-    banner {
+    .banner {
         display: none;
     }
     
     aside p img {
         width:100%;
+    }
+
+    footer.container {
+        margin: auto;
+    }
+
+    .optionnel {
+        display: none;
     }
     
 }

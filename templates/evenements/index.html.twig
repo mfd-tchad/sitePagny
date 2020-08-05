@@ -5,13 +5,13 @@
 {% block body %}
 
 <div class="row">
-    <main class="page-evenement">
+    <main class="example-wrapper page-evenement col-md-10">
         <h2> {{ titre }} </h2>
         <hr>
         <div class="container mt-4">
             <div class="row">
                 {% for evenement in evenements %}
-                <div class="col-xs-6 col-sm-4 col-md-2">
+                <div class="col-4">
                     {% include 'evenement/_evenement.html.twig' %}
                 </div>
                 {% else %}
@@ -19,7 +19,9 @@
                 {% endfor %}
             </div>
         </div>
-        {% include '/evenements/menuevenements.html.twig' %}
     </main>
+    <aside class="col-md-2 p-0 m-0">
+        {% include '/evenements/menuevenements.html.twig' %}  
+    </aside>
 </div>
 {% endblock %}

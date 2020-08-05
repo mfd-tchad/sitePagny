@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { max-width: 500px; width: 95%; }
+    p  {font-style: italic; font-size:small; color:blue}
+</style>
+
+<div class="row mt-4">
+    <main class="page-evenement col-md-9">
+        <h2> {{ titre }} </h2>
+        <hr>
+        <div class="card mt-4 example-wrapper element-evenement">
+            
+            <div class="card-header text-center 
+            {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
+                bg-secondary
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}
+                bg-success
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Fête') %}
+                bg-warning
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Mariage') %}
+                bg-info
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
+                bg-lignt
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
+                bg-primary
+            {% endif %}"> 
+                <h4> {{ evenement.typeEvenement(evenement.type) }} </h4> 
+            </div>
+            <div class="card-body">
+                <div class="element text-right"> Le {{ evenement.date | date ("d/m/Y") }} </div>
+                <div class="mt-2 text-justify" > {{ evenement.description }} </div>
+                <p class="mt-4 mb-0"> Créé le {{ evenement.createdAt | date ("d/m/Y h:m:s") }} </p>
+            </div>
+        </div>
+    </main>
+    <aside class="col-md-3">
+        {% include '/evenements/menuevenements.html.twig' %}  
+    </aside>
+</div>
+
+{% endblock %}

@@ -134,6 +134,10 @@ footer p {
     font: 16px/1.5 ;
 }
 
+.element-evenement {
+    font: 18px/1.5 ;
+}
+
 .vich-image {
     width:70%;
 }

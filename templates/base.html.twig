@@ -46,8 +46,14 @@
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
                         <a class="nav-link dropdown-toggle" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EVENEMENTS</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('actualiteetevenements') }}">A la une</a>
                             <a class="dropdown-item" href="{{ path('actualite') }}">Actualité</a>
-                            <a class="dropdown-item" href="{{ path('evenements') }}">Evènements à venir</a>
+                            <a class="dropdown-item" href="{{ path('evenements') }}">A venir</a>
+                            <a class="dropdown-item" href="{{ path('naissances') }}">Carnet rose</a>
+                            <a class="dropdown-item" href="{{ path('mariages') }}">Carnet blanc </a>
+                            <a class="dropdown-item" href="{{ path('deces') }}">Hommage </a>
+                            <a class="dropdown-item" href="{{ path('fetesactu') }}">Festivités </a>
+                            <a class="dropdown-item" href="{{ path('flashinfos') }}">Flash Infos </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'viepratique'%} active {% endif %}">
@@ -153,7 +159,7 @@
 
             <section class="col-sm-8 col-md-4 align-self-center">
                 <div class="container-fluid">
-                    <div> Ici viendra la carte </div>
+                    <div> Carte de Pagny </div>
                 </div>
             </section>   
             </div>

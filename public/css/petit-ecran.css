@@ -12,8 +12,11 @@
 @media screen and (max-width: 960px) {
     .container {
         width: auto;
+        padding-left: 5px;
+        padding-right: 5px;
     }
-    body.container-fluid {
+
+    .container-fluid {
         margin:0;
         padding-left: 0;
         padding-right: 0;
@@ -33,13 +36,15 @@
     h4 {
         margin-top: 0.7em;
     }
-
-    .carte-img {
-        width: 85%
-    }
 }
 
 @media screen and (max-width: 800px) {
+    .container {
+        margin: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .gros-titre {
         margin: 0.7em auto; 
     }
@@ -66,16 +71,16 @@
         font-size: 1.1em;
     }
 
+    .adresse {
+        font-size: 1em;
+    }
+
     .banner {
         display: none;
     }
     
     aside p img {
         width:100%;
-    }
-
-    footer.container {
-        margin: 0;
     }
 
     .optionnel {

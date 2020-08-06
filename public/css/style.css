@@ -79,10 +79,8 @@ footer p {
     margin-bottom: 0;
     padding: 0.5em;
     text-align: center;
-    /* border-top: 1px solid navy; */
 }
  aside {
-    /* border-left: 2px solid black; */
     font-size : 14px;
  }
 
@@ -155,5 +153,5 @@ footer p {
     padding-top:0;
     padding-bottom:0;
     margin:0;
-    width: 90%;
+    width: 95%;
 }

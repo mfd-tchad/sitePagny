@@ -86,6 +86,10 @@
     .optionnel {
         display: none;
     }
+
+    .carte-img {
+        width: 100%;
+    }
     
 }
 @media screen and (max-device-width : 768px) {

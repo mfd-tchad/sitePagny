@@ -1,5 +1,5 @@
 .container {
-    width: 960px;
+    width: 980px;
     padding-left: 10px;
     padding-right: 10px;;
 }
@@ -32,6 +32,10 @@
     }
     h4 {
         margin-top: 0.7em;
+    }
+
+    .carte-img {
+        width: 85%
     }
 }
 
@@ -77,6 +81,10 @@
     .optionnel {
         display: none;
     }
+
+    .carte-img {
+        width: 80%
+    }
     
 }
 @media screen and (max-device-width : 768px) {
@@ -88,6 +96,10 @@
     h3 {
         margin-top: 0.5em;
         padding-top: 0.5em;
+    }
+
+    .carte-img {
+        display: none;
     }
 }
 
@@ -125,9 +137,6 @@
         font: 13px/1.5 ;
     }
 
-    .carte-img {
-        display: none;
-    }
 }
 
 

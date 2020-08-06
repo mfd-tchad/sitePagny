@@ -65,4 +65,14 @@ class MairieController extends AbstractController
             'title' => 'Associations de Pagny la Blanche Côte', 'titre' => 'Associations de la commune', 'current_menu' => 'mairie'
         ]);
     }
+
+    /**
+     * @Route("/cartepagny", name="cartepagny")
+     */
+    public function cartepagny()
+    {
+        return $this->render('mairie/indexcarte.html.twig', [
+            'title' => 'Carte de Pagny la Blanche Côte dans le Grand-Est', 'titre' => 'Pagny la Blanche Côte dans le Grand-Est', 'current_menu' => 'mairie'
+        ]);
+    }
 }

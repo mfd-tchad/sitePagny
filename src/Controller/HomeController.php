@@ -183,4 +183,6 @@ class HomeController extends AbstractController
             'title' => 'Patrimoine de Pagny la Blanche Cote', 'titre' => 'Patrimoine', 'current_menu' => 'patrimoine'
         ]);
     }
+
+    
 }

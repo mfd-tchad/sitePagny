@@ -75,10 +75,11 @@ height: 24px;
 }
 
 footer p {
-    margin: 1em;
-    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 0;
+    padding: 0.5em;
     text-align: center;
-    border-top: 1px solid navy;
+    /* border-top: 1px solid navy; */
 }
  aside {
     /* border-left: 2px solid black; */
@@ -145,3 +146,14 @@ footer p {
     width:1%;
 }
 
+.bords-arrondis {
+    border-radius: 8px;
+}
+.img-carte {
+    border-radius: 8px;
+    border-radius: 8px;
+    padding-top:0;
+    padding-bottom:0;
+    margin:0;
+    height: 80%;
+}

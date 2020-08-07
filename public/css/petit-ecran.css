@@ -103,9 +103,7 @@
         padding-top: 0.5em;
     }
 
-    .img-carte {
-        display: none;
-    }
+    
 }
 
 @media screen and (max-device-width: 480px) {
@@ -142,6 +140,9 @@
         font: 13px/1.5 ;
     }
 
+    .img-carte, .carte-optionnelle {
+        display: none;
+    }
 }
 
 

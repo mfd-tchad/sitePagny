@@ -10,11 +10,21 @@
 
 <div class="row mt-4">
     <main class="page-evenement col-md-9">
-        <h2> {{ titre }} </h2>
+        <h2>{{ evenement.typeEvenement(evenement.type) }}</h2>
         <hr>
         <div class="card mt-4 example-wrapper element-evenement">
-            
-            <div class="card-header text-center 
+            {% if evenement.image %}
+                <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="card-img-top" width="100%" height="auto"/>
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
+                <img src="/images/fleur2.jpg" width="100%" height="auto"/>
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
+                <img src="/images/naissance.jpg" width="100%" height="auto"/>
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  
+                <img src="/images/mariage.jpg" width="100%" height="auto"/>
+            {% else %}
+                <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100%" height="auto"/>
+            {% endif %}
+                <div class="card-header text-center 
             {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 bg-secondary
             {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}
@@ -28,7 +38,7 @@
             {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
                 bg-primary
             {% endif %}"> 
-                <h4> {{ evenement.typeEvenement(evenement.type) }} </h4> 
+                <h4> {{ evenement.titre }} </h4> 
             </div>
             <div class="card-body">
                 <div class="element text-right"> Le {{ evenement.date | date ("d/m/Y") }} </div>

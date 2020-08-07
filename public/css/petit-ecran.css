@@ -87,7 +87,7 @@
         display: none;
     }
 
-    .carte-img {
+    .img-carte {
         width: 100%;
     }
     
@@ -103,7 +103,7 @@
         padding-top: 0.5em;
     }
 
-    .carte-img {
+    .img-carte {
         display: none;
     }
 }

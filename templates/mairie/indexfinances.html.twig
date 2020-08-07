@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+
+<main>
+    <h2>{{ titre }} </h2>
+    <hr>
+    <section>
+        <h3> Exercice 2019 </h3>
+        <div class="row">
+            <div class="example-wrapper col-sm-6 col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="/documents/Extrait_CA_Assainissement_2019.pdf" target="_blank"><img src="/images/mairie/iconemairie.png" alt="Icone mairie" width="150" height="130"/>
+                        <h5 class="text-center">Commune</h5>
+                        </a>
+                    </div>
+                </div>
+            <p>Prévisions et réalisations pour le budget de la commune.</p>    
+            </div>
+            <div class="example-wrapper col-sm-6 col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="/documents/Extrait_CA_Eaux_2019.pdf" target="_blank"><img src="/images/mairie/robinet1.jpg" alt="Image Robinet avec eau qui coule" width="130" height="130" />
+                        <h5 class="text-center">Eau</h5>
+                        </a>   
+                    </div>
+                </div>
+                <p>Prévisions et réalisations pour l&#8217;approvisionnement en eau potable.</p>
+            </div>
+            <div class="example-wrapper col-sm-6 col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="/documents/Extrait_CA_Assainissement_2019.pdf" target="_blank"><img src="/images/mairie/iconeassainissement1.jpg" alt="Icone assainissement" width="180" height="130" />
+                        <h5 class="text-center">Assainissement</h5>
+                        </a>
+                    </div>
+                </div>
+                <p>Prévisions et réalisations pour l&#8217;assainissement des eaux usées.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h3> Budget 2020 </h3>
+        <div class="row">
+            
+            <div class="example-wrapper col-sm-6 col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="/documents/Extrait_BP_2020_Commune.pdf" target="_blank"><img src="/images/mairie/iconevillage.png" alt="Icone village" width="150" height="130"/>
+                        <h5 class="text-center">Commune</h5>
+                        </a>
+                    </div>
+                </div>
+                
+                <p>Prévisions 2020 pour le budget de la commune.</p>
+            </div>
+            <div class="example-wrapper col-sm-6 col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="/documents/Extrait_BP_2020_Eaux.pdf" target="_blank"><img src="/images/mairie/robinet.jpg" alt="Image robinet avec eau qui coule" width="180" height="130" />
+                        <h5 class="text-center">Eau</h5>
+                        </a>
+                    </div>
+                </div>
+                <p>Prévisions 2020 pour l&#8217;approvisionnement en eau potable.</p>
+            </div>
+            <div class="example-wrapper col-sm-6 col-md-4">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <a href="/documents/Extrait_BP_2020_Assainissement.pdf" target="_blank"><img src="/images/mairie/iconeassainissement.png" alt="Icone assainissement" width="180" height="130" />
+                        <h5 class="text-center">Assainissement</h5>
+                        </a>
+                    </div>
+                </div>
+                <p>Prévisions 2020 pour l&#8217;assainissement des eaux usées.</p>
+            </div>
+        </div>
+
+    </section>
+
+    {% include '/mairie/menumairie.html.twig' %}
+</main>
+{% endblock %}

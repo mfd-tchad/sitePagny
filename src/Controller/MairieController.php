@@ -75,4 +75,14 @@ class MairieController extends AbstractController
             'title' => 'Carte de Pagny la Blanche Côte dans le Grand-Est', 'titre' => 'Pagny la Blanche Côte dans le Grand-Est', 'current_menu' => 'mairie'
         ]);
     }
+
+    /**
+     * @Route("/finances", name="finances")
+     */
+    public function finances()
+    {
+        return $this->render('mairie/indexfinances.html.twig', [
+            'title' => 'Finances de Pagny la Blanche Côte', 'titre' => 'Finances de Pagny la Blanche Côte', 'current_menu' => 'mairie'
+        ]);
+    }
 }

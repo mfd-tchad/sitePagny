@@ -10,28 +10,29 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" media="screen and (max-width: 1024px)" href="/css/petit-ecran.css">
-        {# <link rel="stylesheet" media="all and (max-device-width: 480px)" href="/css/mobile.css"> #}
         {% block stylesheets %}{% endblock %}
+    
+        
     </head>
     <body>
         <div class="banner">
             <img src="/images/bandeau-3.jpg" width="100%"/>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/"> <img style="margin:-12px" src="/images/logoPagny.jpg" height="80" width="80"/></a>
+        <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light sticky-top couleur-fond-menu" style="background-color: #87CEFA;">
+            <a class="navbar-brand optionnel" href="/"> <img class="optionnel" style="margin:-12px" src="/images/logoPagny.jpg" height="80" width="80"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto" >
                     <li class="nav-item {% if current_menu is defined and current_menu == 'accueil'%} active {% endif %}">
-                        <a class="nav-link" href="/">ACCUEIL</a>
+                        <a class="nav-link" href="/">Accueil</a>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'mairie'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MAIRIE</a>
+                        <a class="nav-link dropdown-toggle" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mairie</a>
                         
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
                             <a class="dropdown-item" href="{{ path('demarches') }}">Démarches administratives</a>
                             <a class="dropdown-item" href="{{ path('urbanisme') }}">Territoire communal</a>
                             <a class="dropdown-item" href="{{ path('conseilmunicipal') }}">Conseil municipal</a>
@@ -44,8 +45,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EVENEMENTS</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Evénements</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('actualiteetevenements') }}">A la une</a>
                             <a class="dropdown-item" href="{{ path('actualite') }}">Actualité</a>
                             <a class="dropdown-item" href="{{ path('evenements') }}">A venir</a>
@@ -57,8 +58,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'viepratique'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('viepratique') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VIE PRATIQUE</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ path('viepratique') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vie pratique</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Boulangerie</a>
                             <a class="dropdown-item" href="{{ path('viepratique') }}">Relais Poste</a>
                             <div class="dropdown-divider"></div>
@@ -70,8 +71,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'animationetloisirs' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('animationetloisirs') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ANIMATION ET LOISIRS</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ path('animationetloisirs') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animation et Loisirs</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             
                             <a class="dropdown-item" href="{{ path('jeunesse') }}">Jeunesse</a> 
                             <a class="dropdown-item" href="{{ path('aines') }}">Ainés</a>
@@ -83,8 +84,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'patrimoine'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('patrimoine') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PATRIMOINE</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ path('patrimoine') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patrimoine</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('historique') }}">Historique</a>
                             <a class="dropdown-item" href="{{ path('eglise') }}">Eglise St Grégoire</a>  
                             <div class="dropdown-divider"></div>
@@ -94,14 +95,14 @@
                     </li>
                     
                     <li class="nav-item {% if current_menu is defined and current_menu == 'contact'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('contact') }}">CONTACT</a>
+                        <a class="nav-link" href="{{ path('contact') }}">Contact</a>
                     </li>
                 
                 {% if app.user %}
                     {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'admin' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('admin.evenement.index') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMINISTRATION</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ path('admin.evenement.index') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             
                             <a class="dropdown-item" href="{{ path('admin.evenement.index') }}">Evénements</a> 
                             {% if is_granted('ROLE_SUPADMIN') %}
@@ -112,14 +113,14 @@
                     {% endif %}
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
                         <a class="nav-link dropdown-toggle" href="{{ path('logout') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{app.user.firstname}}</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('logout') }}">Se déconnecter</a> 
                         </div>
                     </li>
                 
                 {% else %}
                     <li class="nav-item {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
-                        <a href="{{ path('login') }}" class="nav-link">Se connecter</a>
+                        <a href="{{ path('login') }}" class="nav-link" ><img src="/images/icone-se-connecter.png" class="bords-arrondis" width="20"></a>
                     </li>
                 {% endif %}
                 </ul>
@@ -128,7 +129,7 @@
         <div class="container">
             {% block body %}{% endblock %}
         </div>
-        <footer class="bg-primary">
+        <footer style="background-color: #87CEFA;">
         <p> <i>Le site officiel de la commune de Pagny la Blanche Côte </i></p>
         <div class= "container">
             <div class= "row justify-content-around">
@@ -167,7 +168,7 @@
                         </div>
                     </div>
                     </a>
-                    <div class="text-center text-light small">Cliquer sur la carte</div>
+                    <div class="text-center text-light small">Cliquer sur la carte pour géolocaliser</div>
                 </div>
             </section>   
             </div>

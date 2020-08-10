@@ -1,3 +1,7 @@
+.couleur-fond-menu {
+    background-color: #87CEFA;
+}
+   
 .gros-titre { 
     margin: 1em auto; 
     font: 18px/1.5 Cursive Comic Verdana sans-serif; 
@@ -155,4 +159,11 @@ footer p {
     padding-bottom:0;
     margin:0;
     width: 90%;
+}
+
+.dropdown:hover .dropdown-menu {
+
+    display: block;
+    margin-top: 0;
+
 }

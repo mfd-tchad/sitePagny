@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="row">
-    <main class="col-md-7">   
+    <main class="col-md-8">   
     <h2> {{ titre }} </h2>
     <hr>
     {% include '/viepratique/boulangerie.html.twig' %}
@@ -20,11 +20,11 @@
     <hr>
     {% include '/viepratique/collecteordures.html.twig' %}
     <hr>
-    <h6>Plus d'infos</h5><p> <a href="https://www.eterritoire.fr/territoires/grand-est/meuse/pagny-la-blanche-cote/55397/21582">eTerritoire : Vivre et s'installer à Pagny</a></h6>
+    <h5>Plus d'infos</h5><p> <a href="https://www.eterritoire.fr/territoires/grand-est/meuse/pagny-la-blanche-cote/55397/21582">eTerritoire : Vivre et s'installer à Pagny</a></h6>
     </main>
-    <aside class="col-md-5">
-        <p><img src ="/images/viepratique/boulangerie.jpg" width="100%"/> Boulangerie  </p>
-        <p><img src = "/images/viepratique/abribus.jpg" width="100%"/> Abri-bus </p>
+    <aside class="col-md-4">
+        <p class="optionnel"><img src ="/images/viepratique/boulangerie.jpg" width="100%"/> Boulangerie  </p>
+        <p class="optionnel"><img src = "/images/viepratique/abribus.jpg" width="100%"/> Abri-bus </p>
         {% include '/viepratique/liensecoles.html.twig' %}
     </aside>
 </div>

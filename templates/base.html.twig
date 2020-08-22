@@ -30,7 +30,7 @@
                         <a class="nav-link" href="/">Accueil</a>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'mairie'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mairie</a>
+                        <a class="nav-link" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mairie</a>
                         
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
                             <a class="dropdown-item" href="{{ path('demarches') }}">Démarches administratives</a>
@@ -45,7 +45,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Evénements</a>
+                        <a class="nav-link" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Evénements</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('actualiteetevenements') }}">A la une</a>
                             <a class="dropdown-item" href="{{ path('actualite') }}">Actualité</a>
@@ -58,10 +58,9 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'viepratique'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('viepratique') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vie pratique</a>
+                        <a class="nav-link" href="{{ path('viepratique') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vie pratique</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
-                            <a class="dropdown-item" href="{{ path('viepratique') }}">Boulangerie</a>
-                            <a class="dropdown-item" href="{{ path('viepratique') }}">Relais Poste</a>
+                            <a class="dropdown-item" href="{{ path('viepratique') }}">Boulangerie et Relais Poste</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ path('scolaire') }}">Bus scolaires et écoles</a>
                             <div class="dropdown-divider"></div>
@@ -71,7 +70,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'animationetloisirs' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('animationetloisirs') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animation et Loisirs</a>
+                        <a class="nav-link" href="{{ path('animationetloisirs') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animation et Loisirs</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             
                             <a class="dropdown-item" href="{{ path('jeunesse') }}">Jeunesse</a> 
@@ -84,13 +83,12 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'patrimoine'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('patrimoine') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patrimoine</a>
+                        <a class="nav-link" href="{{ path('patrimoine') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patrimoine</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('historique') }}">Historique</a>
                             <a class="dropdown-item" href="{{ path('eglise') }}">Eglise St Grégoire</a>  
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ path('reserve') }}">Réserve naturelle</a>
-                            <a class="dropdown-item" href="#">Sentiers balisés</a>
                         </div>
                     </li>
                     
@@ -119,8 +117,10 @@
                     </li>
                 
                 {% else %}
+                </ul>
+                <ul class="navbar-nav ml-auto" >
                     <li class="nav-item {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
-                        <a href="{{ path('login') }}" class="nav-link" ><img src="/images/icone-se-connecter.png" class="bords-arrondis" width="20"></a>
+                        <a href="{{ path('login') }}" class="nav-link" ><img src="/images/icone-se-connecter.png" class="bords-arrondis" width="25"></a>
                     </li>
                 {% endif %}
                 </ul>
@@ -130,49 +130,53 @@
             {% block body %}{% endblock %}
         </div>
         <footer style="background-color: #87CEFA;">
-        <p> <i>Le site officiel de la commune de Pagny la Blanche Côte </i></p>
-        <div class= "container">
-            <div class= "row justify-content-around">
-            <section class="col-sm-4 align-self-center">
-                <div class="container-fluid adresse">
-                    <div><strong> Mairie de Pagny la Blanche Côte</strong></div>
-                    <div>7 rue des Halles <br>55140 Pagny la Blanche Côte<br>
-                    Tel : 03.29.90.86.30<br>
-                    Les lundi et jeudi de 10h30 à 12h30.
-                    </div>
-                </div>
-            </section>
-
-            <section class="col-sm-4 align-self-center">
-                <div class="container-fluid">
-                    <div class="text-center bg-light bords-arrondis">
-                        <div><strong> Menu Général </div></strong>
-                    
-                        <div><a href="{{ path('mairie') }}">Mairie</a></div>
-                        <div><a href="{{ path('actualiteetevenements') }}">Evenements</a></div>
-                        <div><a href="{{ path('viepratique') }}">Vie Pratique</a></div>
-                        <div><a href="{{ path('animationetloisirs') }}">Animations et Loisirs</a></div>
-                        <div><a href="{{ path('patrimoine') }}">Patrimoine </a></div>
-                        <div><a href="{{ path('contact') }}">Contact </a></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="col-sm-4 align-self-center">
-                <div class="container-fluid carte-optionnelle">
-                    <a href ="{{ path('cartepagny') }}">
-                    <img class="img-carte" src="/images/pagny-dans-grand-est.png" Alt="Pagny dans le Grand-Est" title="Pagny dans le Grand-Est" border="0"/>
-                    <div style="position:absolute;top:58.058548261902%;left:48.195362500348%;width:0px;height:0px;margin:0;padding:0;line-height:0px;background-color:transparent;">
-                    
-                        <div style="font-size:90%;position:relative;top:-2.5em;left: -5em;text-align:left;width:12em;line-height:1.2em;"><span class="toponyme">Pagny-la-Blanche-Côte</span></div>
+            <p> <i>Le site officiel de la commune de Pagny la Blanche Côte </i></p>
+            <div class= "container">
+                <div class= "row justify-content-around">
+                <section class="col-sm-6 align-self-center">
+                    <div class="row">
+                        <div class="col-2 col-sm-0 col-md-2"></div>
+                    <div class="container-fluid col-8 col-sm-12 col-md-8 adresse">
+                        <div><strong> Mairie de Pagny la Blanche Côte</strong></div>
+                        <div>7 rue des Halles <br>55140 Pagny la Blanche Côte<br>
+                        Contact : 03.29.90.86.30<br>
+                        pagnylablanchecote@wanadoo.fr<br>
+                        Les lundi et jeudi de 10h30 à 12h30.
                         </div>
                     </div>
-                    </a>
-                    <div class="text-center text-light small">Cliquer sur la carte pour géolocaliser</div>
+                        <div class="row col-2 col-sm-0 col-md-2"></div>
+                    </div>
+                </section>
+                {#
+                <section class="col-sm-4 align-self-center">
+                    <div class="container-fluid">
+                        <div class="text-center bg-light bords-arrondis">
+                            <div><strong> Menu Général </div></strong>
+                    
+                            <div><a href="{{ path('mairie') }}">Mairie</a></div>
+                            <div><a href="{{ path('actualiteetevenements') }}">Evenements</a></div>
+                            <div><a href="{{ path('viepratique') }}">Vie Pratique</a></div>
+                            <div><a href="{{ path('animationetloisirs') }}">Animations et Loisirs</a></div>
+                            <div><a href="{{ path('patrimoine') }}">Patrimoine </a></div>
+                            <div><a href="{{ path('contact') }}">Contact </a></div>
+                        </div>
+                    </div>
+                </section>
+                #}
+                <section class="col-sm-6 align-self-center">
+                    <div class="container-fluid text-center">
+                        <a href ="{{ path('cartepagny') }}">
+                            <img class="img-carte text-center" src="/images/pagny-dans-grand-est.png" Alt="Pagny dans le Grand-Est" title="Pagny dans le Grand-Est" border="0"/>
+                            <div style="position:absolute;top:58.058548261902%;left:48.195362500348%;width:0px;height:0px;margin:0;padding:0;line-height:0px;background-color:transparent;">
+                    
+                                <div style="font-size:90%;position:relative;top:-2.5em;left: -5em;text-align:left;width:12em;line-height:1.2em;"><span class="toponyme">Pagny-la-Blanche-Côte</span></div>
+                            </div>
+                        </a>
+                        <div class="text-center text-light small">Cliquer sur la carte pour géolocaliser</div>
+                    </div>
+                </section>   
                 </div>
-            </section>   
             </div>
-        </div>
             
         </footer>
         {% block javascripts %}

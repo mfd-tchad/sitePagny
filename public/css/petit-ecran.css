@@ -41,8 +41,8 @@
 @media screen and (max-width: 800px) {
     .container {
         margin: auto;
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     .gros-titre {
@@ -88,7 +88,7 @@
     }
 
     .img-carte {
-        width: 100%;
+        width: 60%;
     }
     
 }
@@ -140,8 +140,12 @@
         font: 13px/1.5 ;
     }
 
-    .img-carte, .carte-optionnelle {
+    .carte-optionnelle {
         display: none;
+    }
+
+    .img-carte {
+        width: 80%;
     }
 }
 

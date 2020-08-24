@@ -31,7 +31,7 @@
                         <a class="nav-link" href="/">Accueil</a>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'mairie'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('mairie') }}" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Mairie</a>
+                        <a class="nav-link" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mairie</a>
                         
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
                             <a class="dropdown-item" href="{{ path('demarches') }}">Démarches administratives</a>

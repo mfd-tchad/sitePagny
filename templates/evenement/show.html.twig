@@ -24,7 +24,7 @@
             {% else %}
                 <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100%" height="auto"/>
             {% endif %}
-                <div class="card-header text-center 
+            <div class="card-header text-center 
             {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 bg-secondary
             {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}

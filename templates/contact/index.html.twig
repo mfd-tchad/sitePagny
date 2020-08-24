@@ -5,46 +5,61 @@
 
 {% block body %}
 <style>
-    .example-wrapper { max-width: 500px;  font-family: Comic Verdana sans-serif; }
+    .example-wrapper { max-width: 500px; }
 </style>
 
 <h2> {{ titre }} </h2>
 <hr>
-<div class="example-wrapper">
+<div class="row justify-content-around">
 
-    {% if not form.vars.valid %}
-    <div class="alert alert-danger">
-        Vous avez fait une erreur dans le remplissage du formulaire. 
-        <br> Veuillez reprendre s'il vous plait.
-    </div>
-    {% endif %}
+    <main class="example-wrapper col-7">
 
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
+        {% if not form.vars.valid %}
+        <div class="alert alert-danger">
+            Vous avez fait une erreur dans le remplissage du formulaire. 
+            <br> Veuillez reprendre s'il vous plait.
+        </div>
+        {% endif %}
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
             {{ message }}
-        </div>
-    {% endfor %}
-    <h3>Laissez nous un message</h3>
+            </div>
+        {% endfor %}
+        <h3>Laissez nous un message</h3>
     
-    <div id="contactForm" class="mt-4">
+        <div id="contactForm" class="mt-4 bg-light">
 
-    {{ form_start(form) }}
-        <div class="row">
-            <div class="col">{{ form_row(form.prenom) }}</div>
-            <div class="col">{{ form_row(form.nom) }}</div>
-        </div>
-        <div class="row">
-            <div class="col">{{ form_row(form.tel) }}</div>
-            <div class="col">{{ form_row(form.email) }}</div>
-        </div>
-        {{ form_rest(form) }}
-        <div class="form-group">
-            <button class="btn btn-primary"> Envoyer </button>
-            <input id="reset" type="reset" value="Effacer tout" class="btn btn-dark">
-            <a href="/" id="cancel" name="cancel" class="btn btn-secondary">Annuler</a>
-        </div>
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col">{{ form_row(form.prenom) }} </div>
+                <div class="col">{{ form_row(form.nom) }}</div>
+            </div>
+            <div class="row">
+                <div class="col">{{ form_row(form.tel) }}</div>
+                <div class="col">{{ form_row(form.email) }}</div>
+            </div>
+            {{ form_rest(form) }}
+            <div class="form-group">
+                <button class="btn btn-primary"> Envoyer </button>
+                <input id="reset" type="reset" value="Effacer tout" class="btn btn-dark">
+            </div>
 
-    {{ form_end(form) }}
-    </div>
+        {{ form_end(form) }}
+    </main>
+    <section class="col-5 mt-4">
+        <h3 class="text-center"> Mairie </h3>
+            
+            <p class="mt-4"> <img src="/images/iconeadresse.jpg" height="40">7, rue des Halles <br>     55140 Pagny la Blanche Côte </img> </p>
+            <p> <a href="tel:+33329908630"><img src="/images/iconetel.png" height="35" > 03 29 90 86 30 </img> </a></p>
+            <p> <img  src="/images/iconefax.jpg" height="40"> Fax: 03 29 90 86 30 </img> </p>
+            <p> <a href="mailto:pagnylablanchecote@wanadoo.fr"><img src="/images/iconeadressemail.png" height="35"> pagnylablanchecote@wanadoo.fr </a></p>
+            <p> Permanence :
+                <ul>
+                    <li> Le lundi de 10h30 à 12h30</li>
+                    <li> Le jeudi de 10h30 à 12h30 </li>
+                </ul>
+            </p>
+    </section>
 </div>
 {% endblock %}

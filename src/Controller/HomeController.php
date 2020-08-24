@@ -131,7 +131,7 @@ class HomeController extends AbstractController
     public function sportsetloisirs()
     {
         return $this->render('animationetloisirs/indexsportsetloisirs.html.twig', [
-            'title' => 'Sport et Loisirs à Pagny la Blanche Côte', 'titre' => 'Sports et Loisirs', 'current_menu' => 'jeunesse'
+            'title' => 'Sport et Loisirs à Pagny la Blanche Côte', 'titre' => 'Sports et Loisirs', 'current_menu' => 'animationetloisirs'
         ]);
     }
 

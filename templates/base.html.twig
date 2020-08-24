@@ -6,6 +6,7 @@
         <meta name="author" content="Mairie de Pagny la Blanche Côte">
         <meta name="viewport" content="width=device-width">
         <title>{% block title %}Pagny la Blanche Cote{% endblock %}</title>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
         {# <link rel='stylesheet' href="https://bootswatch.com/4/lumen/bootstrap.min.css" > #}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/style.css">
@@ -16,7 +17,7 @@
     </head>
     <body>
         <div class="banner">
-            <img src="/images/bandeau-3.jpg" width="100%"/>
+            <img src="/images/Pagny-la-Blanche-Cote.jpg" width="100%"/>
         </div>
         <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light sticky-top couleur-fond-menu" style="background-color: #87CEFA;">
             <a class="navbar-brand optionnel" href="/"> <img class="optionnel" style="margin:-12px" src="/images/logoPagny.jpg" height="80" width="80"/></a>
@@ -30,7 +31,7 @@
                         <a class="nav-link" href="/">Accueil</a>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'mairie'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('mairie') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mairie</a>
+                        <a class="nav-link" href="{{ path('mairie') }}" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Mairie</a>
                         
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
                             <a class="dropdown-item" href="{{ path('demarches') }}">Démarches administratives</a>
@@ -46,7 +47,7 @@
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
                         <a class="nav-link" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Evénements</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
                             <a class="dropdown-item" href="{{ path('actualiteetevenements') }}">A la une</a>
                             <a class="dropdown-item" href="{{ path('actualite') }}">Actualité</a>
                             <a class="dropdown-item" href="{{ path('evenements') }}">A venir</a>
@@ -99,7 +100,7 @@
                 {% if app.user %}
                     {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'admin' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('admin.evenement.index') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</a>
+                        <a class="nav-link" href="{{ path('admin.evenement.index') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             
                             <a class="dropdown-item" href="{{ path('admin.evenement.index') }}">Evénements</a> 
@@ -110,7 +111,7 @@
                     </li>
                     {% endif %}
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('logout') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{app.user.firstname}}</a>
+                        <a class="nav-link" href="{{ path('logout') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{app.user.firstname}}</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('logout') }}">Se déconnecter</a> 
                         </div>
@@ -120,7 +121,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto" >
                     <li class="nav-item {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
-                        <a href="{{ path('login') }}" class="nav-link" ><img src="/images/icone-se-connecter.png" class="bords-arrondis" width="25"></a>
+                        <a href="{{ path('login') }}" class="nav-link" ><img src="/images/icone-se-connecter.png" class="bords-tres-arrondis" width="25"></a>
                     </li>
                 {% endif %}
                 </ul>

@@ -21,7 +21,7 @@ h2 {
 
 h3 {
     margin-top: 1em;
-    padding-top: 1em;
+    /* padding-top: 1em; */
 }
 
 hr{ 
@@ -160,6 +160,10 @@ footer p {
 .bords-arrondis {
     border-radius: 8px;
 }
+
+.bords-tres-arrondis {
+    border-radius: 11px;
+}
 .img-carte {
     border-radius: 8px;
     border-radius: 8px;
@@ -175,4 +179,11 @@ footer p {
     display: block;
     margin-top: 0;
 
+}
+
+.aggrandir:hover {
+    transform: scale(2);
+    overflow: visible;
+    position:relative;
+    z-index:10;
 }

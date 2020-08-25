@@ -102,12 +102,27 @@ footer p {
 .card-header element {
     /* align-content: stretch; */
 }
+.card-title {
+    font-size: 1.25rem;
+    margin-top: 0;
+    text-align: center;
+    font-weight: bold;
+}
 
+a .card-text {
+    color: black;
+}
 .card-body element {
     text-align: right;
 }
 
+.border-pink {
+    border-color: pink;
+}
 
+.bg-pink {
+    background-color: pink;
+}
 .example-wrapper { 
     margin: 1em auto; font: 14px/1.5 
 }

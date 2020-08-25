@@ -1,13 +1,14 @@
+<a href="{{ path('evenement.show', {slug: evenement.slug, id: evenement.id}) }}">
 
 <div class="card mb-4 
         {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
              border-secondary
         {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
-            border-success
+            border-pink
         {% elseif (evenement.typeEvenement(evenement.type) == 'Festivité') %}
             border-warning
         {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}
-            border-info
+            border-white
         {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
             border-lignt
         {% elseif (evenement.typeEvenement(evenement.type) == 'Activité Nature') %}
@@ -31,13 +32,14 @@
         <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100%" height="auto"/>
     {% endif %}
     <div class="card-body">
-        <h5 class="card-title"> 
-            <a href="{{ path('evenement.show', {slug: evenement.slug, id: evenement.id}) }}">
+        <p class="card-title"> 
+            
                 {{ evenement.typeEvenement(evenement.type) }} 
-            </a>
-        </h5>
+            
+        </p>
         <p class="card-text" style="font-weight: bold;"> {{ evenement.titre }} </p>
                     
         <p class="card-text"> Le {{ evenement.date | date ("d/m/Y") }} </p>            
     </div>
 </div>
+</a>

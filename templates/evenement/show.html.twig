@@ -9,7 +9,7 @@
 </style>
 
 <div class="row mt-4">
-    <main class="page-evenement col-md-9">
+    <main class="page-evenement col-md-9 bg-light">
         <h2>{{ evenement.typeEvenement(evenement.type) }}</h2>
         <hr>
         <div class="card mt-4 example-wrapper element-evenement">
@@ -28,13 +28,13 @@
             {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 bg-secondary
             {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}
-                bg-success
+                bg-pink
             {% elseif (evenement.typeEvenement(evenement.type) == 'Fête') %}
                 bg-warning
             {% elseif (evenement.typeEvenement(evenement.type) == 'Mariage') %}
-                bg-info
+                bg-white
             {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
-                bg-lignt
+                bg-light
             {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
                 bg-primary
             {% endif %}"> 

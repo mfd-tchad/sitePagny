@@ -9,6 +9,10 @@
     width:100%;
 }
 
+.card-title {
+    font-size: 1.1em;
+}
+
 @media screen and (max-width: 960px) {
     .container {
         width: auto;
@@ -71,6 +75,10 @@
         font-size: 1.1em;
     }
 
+    .card-title {
+        font-size: 1.1em;
+    }
+
     .adresse {
         font-size: 1em;
     }
@@ -91,6 +99,10 @@
         width: 60%;
     }
 
+    .aggrandir:hover {
+        transform: scale(1.1em);
+        overflow: scroll;
+    }
     
 }
 @media screen and (max-device-width : 768px) {
@@ -111,10 +123,8 @@
     }
      */
     .aggrandir:hover {
-        transform: scale(1.5em);
+        transform: scale(1.1em);
         overflow: scroll;
-        position:relative;
-        z-index:10;
     }
 }
 
@@ -166,6 +176,10 @@
 
     .img-carte {
         width: 80%;
+    }
+
+    .aggrandir:hover {
+        transform: scale(1em);
     }
 }
 

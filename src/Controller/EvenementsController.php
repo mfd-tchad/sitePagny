@@ -37,7 +37,7 @@ class EvenementsController extends AbstractController
     {
         $events = $this->repository->findHasHappened();
         return $this->render('evenements/index.html.twig', [
-            'title' => 'Actualité de Pagny la Blanche Côte', 'titre' => 'Actualité du village',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Evènements passés à Pagny la Blanche Côte', 'titre' => 'Evènements passés du village',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
 
@@ -59,7 +59,7 @@ class EvenementsController extends AbstractController
     {
         $events = $this->repository->findByType('2');
         return $this->render('evenements/index.html.twig', [
-            'title' => 'Mariages à Pagny la Blanche Côte', 'titre' => 'mariages',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Mariages à Pagny la Blanche Côte', 'titre' => 'Mariages',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
 
@@ -102,7 +102,7 @@ class EvenementsController extends AbstractController
     {
         $events = $this->repository->findHasHappenedAndToCome();
         return $this->render('evenements/index.html.twig', [
-            'title' => 'Evènements à la Une de Pagny la Blanche Côte', 'titre' => 'Actualité et Evénements',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Evènements à la Une de Pagny la Blanche Côte', 'titre' => 'Evènements à la Une',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
     /**
@@ -113,7 +113,7 @@ class EvenementsController extends AbstractController
     public function show(Evenement $evenement, string $slug): Response
     {
         if ($evenement->getSlug() !== $slug) {
-            return $this-redirecToRoute('evenement.show', [
+            return $this->redirecToRoute('evenement.show', [
                 'id' => $evenement->getId(),
                 'slug' => $evenement->getSlug()
             ], 301);

@@ -104,11 +104,12 @@
         padding-top: 0.5em;
     }
 
+    /*
     .row {
         margin-left: 0;
         margin-right: 0;
     }
-     
+     */
 }
 
 @media screen and (max-device-width: 480px) {

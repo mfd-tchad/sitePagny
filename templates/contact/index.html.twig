@@ -5,7 +5,8 @@
 
 {% block body %}
 <style>
-    .example-wrapper { max-width: 500px; }
+    .example-wrapper { max-width: 500px; margin-top: 0}
+    .h3 { margin-top: 0}
 </style>
 
 <h2> {{ titre }} </h2>
@@ -47,10 +48,11 @@
                 <input id="reset" type="reset" value="Effacer tout" class="btn btn-dark">
             </div>
 
-        {{ form_end(form) }}
+            {{ form_end(form) }}
+        </div>    
     </main>
-    <section class="col-12 col-sm-8 col-md-5 mt-4">
-        <h3 class="text-center"> Mairie </h3>
+    <section class="optionnel col-10 col-md-5">
+        <h3> Mairie </h3>
             
             <p class="mt-4"> <img src="/images/iconeadresse.jpg" height="40">7, rue des Halles <br>     55140 Pagny la Blanche Côte </img> </p>
             <p> <a href="tel:+33329908630"><img src="/images/iconetel.png" height="35" > 03 29 90 86 30 </img> </a></p>

@@ -110,6 +110,12 @@
         margin-right: 0;
     }
      */
+    .aggrandir:hover {
+        transform: scale(1.5em);
+        overflow: scroll;
+        position:relative;
+        z-index:10;
+    }
 }
 
 @media screen and (max-device-width: 480px) {

@@ -29,8 +29,7 @@ class EvenementRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('e')
             ->andWhere('e.type = :val')
             ->setParameter('val', $value)
-            ->orderBy('e.id', 'DESC')
-            ->setMaxResults(10)
+            ->orderBy('e.date', 'DESC')
             ->getQuery()
             ->getResult()
         ;
@@ -42,8 +41,21 @@ class EvenementRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('e')
             ->andWhere('e.date > :date')
             ->setParameter('date', $date)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('e.date', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findByTypeToCome($value)
+    {
+        $date = new DateTime();
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.type = :val')
+            ->andWhere('e.date > :date')
+            ->setParameter('val', $value)
+            ->setParameter('date', $date)
+            ->orderBy('e.date', 'ASC')
             ->getQuery()
             ->getResult()
         ;
@@ -55,8 +67,7 @@ class EvenementRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('e')
             ->andWhere('e.date <= :date')
             ->setParameter('date', $date)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('e.date', 'DESC')
             ->getQuery()
             ->getResult()
         ;
@@ -64,10 +75,10 @@ class EvenementRepository extends ServiceEntityRepository
 
     public function findHasHappenedAndToCome()
     {
-        $date = new DateTime();
+        
         return $this->createQueryBuilder('e')
             ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(12)
             ->getQuery()
             ->getResult();
     }

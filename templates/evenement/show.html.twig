@@ -9,7 +9,7 @@
 </style>
 
 <div class="row mt-4">
-    <main class="page-evenement col-md-9 bg-light">
+    <main class="page-evenement col-md-9">
         <h2>{{ evenement.typeEvenement(evenement.type) }}</h2>
         <hr>
         <div class="card mt-4 example-wrapper element-evenement">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </main>
-    <aside class="col-md-3">
+    <aside class="col-md-3 bg-light">
         {% include '/evenements/menuevenements.html.twig' %}  
     </aside>
 </div>

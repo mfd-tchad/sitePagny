@@ -99,11 +99,11 @@ footer p {
      transform: scale(1.1);
  }
 
-.row .card-body {
+.card-body {
     margin-left: 0;
     margin-right: 0;
-    padding-left: 5px;
-    padding-right: 3px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
 
 .card-img {
@@ -174,7 +174,8 @@ a .card-text {
 }
 
 .element-evenement {
-    font: 18px/1.5 ;
+    font-size: 17px ;
+    line-height: 1.5em;
 }
 
 .vich-image {

@@ -25,7 +25,7 @@ class EvenementsController extends AbstractController
     public function index() : Response
     {
         $events = $this->repository->findToCome();
-        return $this->render('evenements/index.html.twig', [
+        return $this->render('evenements/index-avenir.html.twig', [
             'title' => 'Evènements à venir à Pagny la Blanche Côte', 'titre' => 'Evénements à venir',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
@@ -36,7 +36,7 @@ class EvenementsController extends AbstractController
     public function pastEvents() : Response
     {
         $events = $this->repository->findHasHappened();
-        return $this->render('evenements/index.html.twig', [
+        return $this->render('evenements/index-passe.html.twig', [
             'title' => 'Evènements passés à Pagny la Blanche Côte', 'titre' => 'Evènements passés du village',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
@@ -47,7 +47,7 @@ class EvenementsController extends AbstractController
     public function naissances() : Response
     {
         $events = $this->repository->findByType('0');
-        return $this->render('evenements/index.html.twig', [
+        return $this->render('evenements/index-passe.html.twig', [
             'title' => 'Naissances à Pagny la Blanche Côte', 'titre' => 'Naissances',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
@@ -58,7 +58,7 @@ class EvenementsController extends AbstractController
     public function mariages() : Response
     {
         $events = $this->repository->findByType('2');
-        return $this->render('evenements/index.html.twig', [
+        return $this->render('evenements/index-passe.html.twig', [
             'title' => 'Mariages à Pagny la Blanche Côte', 'titre' => 'Mariages',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
@@ -69,8 +69,8 @@ class EvenementsController extends AbstractController
     public function deces() : Response
     {
         $events = $this->repository->findByType('1');
-        return $this->render('evenements/index.html.twig', [
-            'title' => 'Décés à Pagny la Blanche Cote', 'titre' => 'Décés',  'current_menu' => 'evenements', 'evenements' => $events
+        return $this->render('evenements/index-passe.html.twig', [
+            'title' => 'Décés à Pagny la Blanche Cote', 'titre' => 'Hommages',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
 
@@ -80,18 +80,38 @@ class EvenementsController extends AbstractController
     public function fetesactu() : Response
     {
         $events = $this->repository->findByType('3');
-        return $this->render('evenements/index.html.twig', [
-            'title' => 'Fêtes à Pagny la Blanche Côte', 'titre' => 'Fêtes Actu',  'current_menu' => 'evenements', 'evenements' => $events
+        return $this->render('evenements/index-passe.html.twig', [
+            'title' => 'Fêtes à Pagny la Blanche Côte', 'titre' => 'Festivités à Pagny',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
 
+    /**
+     * @Route("/fetesavenir", name="fetesavenir")
+     */
+    public function fetesavenir() : Response
+    {
+        $events = $this->repository->findByTypeToCome('3');
+        return $this->render('evenements/index-avenir.html.twig', [
+            'title' => 'Festivités annocées à Pagny la Blanche Côte', 'titre' => 'Festivités annoncées',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
+    /**
+     * @Route("/flashinfospasses", name="flashinfospasses")
+     */
+    public function flashinfospasses() : Response
+    {
+        $events = $this->repository->findByType('7');
+        return $this->render('evenements/index-passe.html.twig', [
+            'title' => 'FlashInfos passés de Pagny la Blanche Côte', 'titre' => 'Flash Infos passés',  'current_menu' => 'evenements', 'evenements' => $events
+        ]);
+    }
     /**
      * @Route("/flashinfos", name="flashinfos")
      */
     public function flashinfos() : Response
     {
-        $events = $this->repository->findByType('11');
-        return $this->render('evenements/index.html.twig', [
+        $events = $this->repository->findByTypeToCome('7');
+        return $this->render('evenements/index-avenir.html.twig', [
             'title' => 'FlashInfos de Pagny la Blanche Côte', 'titre' => 'Flash Infos',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
@@ -113,7 +133,7 @@ class EvenementsController extends AbstractController
     public function show(Evenement $evenement, string $slug): Response
     {
         if ($evenement->getSlug() !== $slug) {
-            return $this->redirecToRoute('evenement.show', [
+            return $this->redirectToRoute('evenement.show', [
                 'id' => $evenement->getId(),
                 'slug' => $evenement->getSlug()
             ], 301);

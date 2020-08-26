@@ -1,7 +1,7 @@
 .couleur-fond-menu {
     background-color: #87CEFA;
 }
-   
+
 .gros-titre { 
     margin: 1em auto; 
     font: 18px/1.5 Cursive Comic Verdana sans-serif; 
@@ -94,13 +94,20 @@ footer p {
     font-size : 14px;
  }
 
-.card-header {
-    
-    /* display: flex; */
+ .card:hover {
+     box-shadow: 6px 6px 0px grey;
+     transform: scale(1.1);
+ }
+
+.row .card-body {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 5px;
+    padding-right: 3px;
 }
 
-.card-header element {
-    /* align-content: stretch; */
+.card-img {
+    height: 110px;
 }
 .card-title {
     font-size: 1.25rem;
@@ -108,10 +115,15 @@ footer p {
     text-align: center;
     font-weight: bold;
 }
+.card-text {
+    font-size: 0.95rem;
+    text-align: center;
+}
 
 a .card-text {
     color: black;
 }
+
 .card-body element {
     text-align: right;
 }

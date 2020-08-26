@@ -10,13 +10,15 @@
         <hr>
         <div class="mt-4 bg-light">
             <div class="row">
-                {% for evenement in evenements %}
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    {% include 'evenement/_evenement.html.twig' %}
-                </div>
-                {% else %}
-                    <li> Pas (encore !) d'évènements enregistrés</li>
-                {% endfor %}
+               {# <div class="card-group"> #}
+                    {% for evenement in evenements %}
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                        {% include 'evenement/_evenement.html.twig' %}
+                    </div>
+                    {% else %}
+                        <li> Pas (encore !) d'évènements enregistrés</li>
+                    {% endfor %}
+               {#</div> #}
             </div>
         </div>
         

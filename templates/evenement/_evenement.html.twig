@@ -20,17 +20,19 @@
         {% elseif (evenement.typeEvenement(evenement.type) == 'Flash-Info') %}
             border-danger
         {% endif %}">
+        
     {% if evenement.image %}
-        <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="card-img-top" width="100%" height="auto"/>
+        <img class="card-img-top" src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="card-img-top" height="110px"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
-        <img src="/images/fleur2.jpg" width="100%" height="auto"/>
+        <img class="card-img-top" src="/images/fleur2.jpg" height="110px"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
-        <img src="/images/naissance.jpg" width="100%" height="auto"/>
+        <img class="card-img-top" src="/images/naissance.jpg" height="110px"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  
-        <img src="/images/mariage.jpg" width="100%" height="auto"/>
+        <img class="card-img-top" src="/images/mariage.jpg" height="110px"/>
     {% else %}
-        <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100%" height="auto"/>
+        <img class="card-img-top" src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" height="110px"/>
     {% endif %}
+        
     <div class="card-body">
         <p class="card-title"> 
             

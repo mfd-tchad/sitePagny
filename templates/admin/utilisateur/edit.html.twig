@@ -11,7 +11,12 @@
 <h2 class="mt-4"> {{ titre }} </h2>
 <hr>
 <main class="example-wrapper">
-    
+    {% if not form.vars.valid %}
+    <div class="alert alert-danger">
+        Vous avez fait une erreur dans le remplissage du formulaire. 
+        <br> Veuillez corriger s'il vous plait.
+    </div>
+    {% endif %}
 
    <div class="container mt-4 mb-4">
         

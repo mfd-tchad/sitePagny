@@ -9,10 +9,11 @@
 
 <div class="example-wrapper">
     <h2> {{ titre }} </h2>
+    <hr>
 
-   <div class="container mt-4 mb-4">
+   <main class="container mt-4 mb-4">
         
         {{ include ('/admin/utilisateur/_form.html.twig', {form: registrationForm, button: 'Créer'}) }}
-   </div>
-
-   {% endblock %}
+   </main>
+</div>
+{% endblock %}

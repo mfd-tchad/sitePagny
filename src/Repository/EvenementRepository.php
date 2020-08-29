@@ -35,6 +35,9 @@ class EvenementRepository extends ServiceEntityRepository
         ;
     }
     
+    /**
+     * @return Evenement[] Returns an array of Evenement objects
+     */
     public function findToCome()
     {
         $date = new DateTime();
@@ -47,6 +50,9 @@ class EvenementRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Evenement[] Returns an array of Evenement objects
+     */
     public function findByTypeToCome($value)
     {
         $date = new DateTime();
@@ -61,6 +67,9 @@ class EvenementRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Evenement[] Returns an array of Evenement objects
+     */
     public function findHasHappened()
     {
         $date = new DateTime();
@@ -73,16 +82,29 @@ class EvenementRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Evenement[] Returns an array of Evenement objects
+     */
     public function findHasHappenedAndToCome()
     {
         
         return $this->createQueryBuilder('e')
-            ->orderBy('e.id', 'ASC')
+            ->orderBy('e.id', 'DESC')
             ->setMaxResults(12)
             ->getQuery()
             ->getResult();
     }
 
+    /**
+     * @return Evenement[] Returns an array of Evenement objects
+     */
+    public function findAllHasHappenedAndToCome()
+    {
+        return $this->createQueryBuilder('e')
+            ->orderBy('e.id', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
     /*
     public function findOneBySomeField($value): ?Evenement
     {

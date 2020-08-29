@@ -32,7 +32,7 @@ class AdminEvenementController extends AbstractController {
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index () : Response {
-        $evenements = $this->repository->findAll();
+        $evenements = $this->repository->findAllHasHappenedAndToCome();
         return $this->render('admin/evenement/index.html.twig', [
             'title' => 'Admin', 'titre' => 'Administration des événements',  'current_menu' => 'admin', 'evenements' => $evenements]);
     }

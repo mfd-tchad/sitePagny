@@ -53,6 +53,10 @@ textarea
  max-height : 150%;
 }
 
+textarea.evenement-description {
+    min-height: 400px;
+}
+
 .table-urbanisme {
     border-collapse: collapse; 
     width: 100%; 

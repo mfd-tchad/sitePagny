@@ -49,8 +49,8 @@ p {
 textarea
 {
  resize : height;
- min-height : 150px;
- max-height : 100%;
+ min-height : 300px;
+ max-height : 150%;
 }
 
 .table-urbanisme {

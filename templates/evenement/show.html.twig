@@ -42,7 +42,7 @@
             </div>
             <div class="card-body">
                 <div class="element text-right"> Le {{ evenement.date | date ("d/m/Y") }} </div>
-                <div class="mt-2 text-justify" > {{ evenement.description }} </div>
+                <textarea class="mt-2 text-justify" > {{ evenement.description }} </textarea>
                 <p class="mt-4 mb-0"> Créé le {{ evenement.createdAt | date ("d/m/Y h:m:s") }} </p>
             </div>
         </div>

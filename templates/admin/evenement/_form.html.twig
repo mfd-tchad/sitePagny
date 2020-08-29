@@ -41,7 +41,7 @@
         // On voudrait que le nom de l'image affichée apparaisse 
         // quand on passe sur le bouton "Browse". Malheureusement,ça ne marche pas
         {% if evenement.image %}
-            $("#evenement_imageFile_file").hover(funtion () {
+            $("#evenement_imageFile_file").hover(function () {
                 $(this).html(evenement.image)});
         {% endif %}
     })

@@ -6,11 +6,30 @@
 {% endif %}
 {{ form_start(registrationForm) }}
         
-            {{ form_row(registrationForm.Lastname) }}
-            {{ form_row(registrationForm.Firstname) }}
-            {{ form_row(registrationForm.username) }}
-            {{ form_row(registrationForm.plainPassword) }}
+    <div class="mt-4"> Nom  
+        {{ form_errors(registrationForm.Lastname) }}
+        {{ form_widget(registrationForm.Lastname) }}
+        {{ form_help(registrationForm.Lastname) }}
+    </div>
+    <div class="mt-4"> Prénom
+        {{ form_errors(registrationForm.Firstname) }}
+        {{ form_widget(registrationForm.Firstname) }}
+        {{ form_help(registrationForm.Firstname) }}
+        
+    </div>
+    
+    <div class="mt-4"> Identifiant
+        {{ form_errors(registrationForm.username) }}
+        {{ form_widget(registrationForm.username) }}
+        {{ form_help(registrationForm.username) }}
+    </div>
+        
+    <div class="mt-4"> Mot de passe
+        {{ form_errors(registrationForm.plainPassword) }}
+        {{ form_widget(registrationForm.plainPassword) }}
+        {{ form_help(registrationForm.plainPassword) }}
+    </div>
 
-            <button class="btn btn-primary">Enregistrer</button>
-            <a href="/" type="cancel" class="btn btn-secondary">Annuler</a>
+    <button class="btn btn-primary">Enregistrer</button>
+    <a href="/" type="cancel" class="btn btn-secondary">Annuler</a>
 {{ form_end(registrationForm) }}

@@ -1,10 +1,27 @@
 
 {{ form_start(form) }}
+
+    <div class="mt-4"> Nom  
+        {{ form_errors(form.Lastname) }}
+        {{ form_widget(form.Lastname) }}
+        {{ form_help(form.Lastname) }}
+    </div>
+    <div class="mt-4"> Prénom
+        {{ form_errors(form.Firstname) }}
+        {{ form_widget(form.Firstname) }}
+        {{ form_help(form.Firstname) }}
         
-    {{ form_row(form.Lastname) }}
-    {{ form_row(form.Firstname) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.roles) }}
+    </div>
+    <div class="mt-4"> Identifiant
+        {{ form_errors(form.username) }}
+        {{ form_widget(form.username) }}
+        {{ form_help(form.username) }}
+    </div>
+    <div class="mt-4"> Rôle
+        {{ form_errors(form.roles) }}
+        {{ form_widget(form.roles) }}
+        {{ form_help(form.roles) }}
+    </div>
     <button class="btn btn-primary">Enregistrer</button>
     <a href="/supadmin" type="cancel" class="btn btn-secondary">Annuler</a>
 

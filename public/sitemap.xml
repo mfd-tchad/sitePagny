@@ -3,10 +3,8 @@
 
         <url>
                         <loc>
-                            http://www.mfdewulf.fr/
+                            http://www.pagnylablanchecote.net/
                     </loc>
-
-                            <lastmod>2020-07-28</lastmod>
         
                             <changefreq>monthly</changefreq>
         
@@ -15,7 +13,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/evenements
+                            http://www.pagnylablanchecote.net/evenements
                     </loc>
 
                 
@@ -26,7 +24,43 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/associations
+                            http://www.pagnylablanchecote.net/associations
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/mairie
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/demarches
+                        </loc>
+
+                
+                        <changefreq>monthly</changefreq>
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/urbanisme
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/cadastre
                     </loc>
 
                 
@@ -35,43 +69,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/mairie
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/demarches
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/urbanisme
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/cadastre
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/patrimoine
+                            http://www.pagnylablanchecote.net/patrimoine
                     </loc>
 
                 
@@ -81,16 +79,16 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/saintgregoire
-                    </loc>
+                            http://www.pagnylablanchecote.net/saintgregoire
+                        </loc>
 
-                
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/eglise
+                            http://www.pagnylablanchecote.net/eglise
                     </loc>
 
                 
@@ -101,7 +99,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/reserve
+                            http://www.pagnylablanchecote.net/reserve
                     </loc>
 
                 
@@ -112,7 +110,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/historique
+                            http://www.pagnylablanchecote.net/historique
                     </loc>
 
                 
@@ -121,7 +119,34 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/viepratique
+                            http://www.pagnylablanchecote.net/viepratique
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/scolaire
+                        </loc>
+
+                
+                        <changefreq>monthly</changefreq>
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/jeunesse
+                        </loc>
+
+                
+                        <changefreq>monthly</changefreq>
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/aines
                     </loc>
 
                 
@@ -130,124 +155,97 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/scolaire
-                    </loc>
+                            http://www.pagnylablanchecote.net/ordures
+                        </loc>
 
                 
+                        <changefreq>monthly</changefreq>
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/sportsetloisirs
+                        </loc>
+
+                
+                        <changefreq>monthly</changefreq>
+                
+                    </url>
+    <url>
+                        <loc>
+                            http://www.pagnylablanchecote.net/ileauxenfants
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/jeunesse
-                    </loc>
+                            http://www.pagnylablanchecote.net/fetes
+                        </loc>
 
-                
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/aines
-                    </loc>
+                            http://www.pagnylablanchecote.net/login
+                        </loc>
 
-                
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/ordures
-                    </loc>
+                            http://www.pagnylablanchecote.net/contact
+                        </loc>
 
-                
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/sportsetloisirs
-                    </loc>
+                            http://www.pagnylablanchecote.net/actualite
+                        </loc>
 
-                
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/ileauxenfants
-                    </loc>
+                            http://www.pagnylablanchecote.net/naissances
+                        </loc>
 
-                
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/fetes
-                    </loc>
+                            http://www.pagnylablanchecote.net/mariages
+                        </loc>
 
-                
+                        <changefreq>monthly</changefreq>
                 
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/login
-                    </loc>
+                            http://www.pagnylablanchecote.net/deces
+                        </loc>
 
                 
-                
+                        <changefreq>monthly</changefreq>
                 
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/contact
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/actualite
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/naissances
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/mariages
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/deces
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.mfdewulf.fr/flashinfos
+                            http://www.pagnylablanchecote.net/flashinfos
                     </loc>
 
                 
@@ -258,11 +256,11 @@
                     </url>
     <url>
                         <loc>
-                            http://www.mfdewulf.fr/fetesactu
+                            http://www.pagnylablanchecote.net/fetesactu
                     </loc>
 
                 
-                
+                        <changefreq>monthly</changefreq>
                 
                     </url>
 </urlset>

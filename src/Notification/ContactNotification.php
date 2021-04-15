@@ -25,7 +25,7 @@ class ContactNotification extends AbstractController {
 
     public function notify(Contact $contact) {
         $message = (new \Swift_Message($contact->getSujet()))
-                ->setFrom('mailer@mfdewulf.fr')
+                ->setFrom('mairie@pagnylablanchecote.net')
                 ->setTo('mfdewulf@gmail.com')
                 ->setReplyTo($contact->getEmail())
                 ->setBody($this->render('emails/contact.html.twig' , [

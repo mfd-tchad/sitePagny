@@ -89,7 +89,7 @@ class EvenementRepository extends ServiceEntityRepository
     {
         
         return $this->createQueryBuilder('e')
-            ->orderBy('e.id', 'DESC')
+            ->orderBy('e.date', 'DESC')
             ->setMaxResults(12)
             ->getQuery()
             ->getResult();
@@ -101,7 +101,7 @@ class EvenementRepository extends ServiceEntityRepository
     public function findAllHasHappenedAndToCome()
     {
         return $this->createQueryBuilder('e')
-            ->orderBy('e.id', 'DESC')
+            ->orderBy('e.date', 'DESC')
             ->getQuery()
             ->getResult();
     }

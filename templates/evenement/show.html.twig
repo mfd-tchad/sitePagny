@@ -5,7 +5,7 @@
 {% block body %}
 <style>
     .example-wrapper { max-width: 500px; width: 95%; }
-    p  {font-style: italic; font-size:small; color:blue}
+    .font-blue-italic  {font-style: italic; font-size:small; color:blue}
 </style>
 
 <div class="row mt-4">
@@ -42,14 +42,12 @@
             </div>
             <div class="card-body">
                 <div class="element text-right"> Le {{ evenement.date | date ("d/m/Y") }} </div>
-                <textarea class="mt-2 text-justify col-12 evenement-description" readonly > {{ evenement.description }} </textarea>
-                <p class="mt-4 mb-0"> Créé le {{ evenement.createdAt | date ("d/m/Y h:m:s") }} </p>
+                <div class="mt-2 text-justify col-12 evenement-description" > {{ evenement.description|raw}} </div>
+                <p class="mt-4 mb-0 font-blue-italic"> Créé le {{ evenement.createdAt | date ("d/m/Y h:m:s") }} </p>
             </div>
         </div>
     </main>
-    <aside class="col-md-3 bg-light">
-        {% include '/evenements/menuevenements.html.twig' %}  
-    </aside>
+    
 </div>
 
 {% endblock %}

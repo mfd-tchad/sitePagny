@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,7 +21,7 @@ class EvenementType extends AbstractType
             ->add('type', ChoiceType::class, ['choices' => $this->getChoices()])
             ->add('titre')
             ->add('date',DateType::class)
-            ->add('description', TextareaType::class)
+            ->add('description', CKEditorType::class)
             ->add('imageFile', VichImageType::class, [
                 'required' => false,
                 'asset_helper' => true,

@@ -41,7 +41,11 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/supadmin, roles: ROLE_SUPADMIN }
 
+    #password_hashers:
     encoders:
         App\Entity\User: 
             algorithm: bcrypt
             cost: 12
+
+    #enable_authenticator_manager: true
+

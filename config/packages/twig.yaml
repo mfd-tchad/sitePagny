@@ -6,4 +6,7 @@ twig:
     exception_controller: null
     globals:
         webmaster: "%env(WEBMASTER)%"
-    
+
+when@test:
+    twig:
+        strict_variables: true

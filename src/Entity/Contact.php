@@ -39,7 +39,7 @@ class Contact
      /**
      * @var string|null
      * @Assert\NotBlank()
-     * @Assert\Length(min=2, max=30)
+     * @Assert\Length(min=2, max=60)
      */
     private $sujet;
 

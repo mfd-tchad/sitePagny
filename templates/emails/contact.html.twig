@@ -1,9 +1,9 @@
-<p> Bonjour, </p>
-<p> Mme ou M. <b>{{ contact.prenom }}  {{ contact.nom }} </b> vous a contacté par le biais 
-du formulaire de contact sur le site de la commune. </p>
-<p> Sujet : {{ contact.sujet }} </p> 
 <p> {{ contact.message }} </p>
+<p>_________________________________________________</p>
 <br>
+<p> <b>{{ contact.prenom }}  {{ contact.nom }} </b> vous a contacté par le biais 
+du formulaire de contact sur le site de la commune. </p>
+
 <p> Merci de répondre à cette personne à l'adresse {{ contact.email }}</p>
 <p> ou au n° {{ contact.tel }} </p>
 <p> Cordialement, </p>

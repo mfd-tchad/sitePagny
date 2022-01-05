@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use App\Entity\Evenement;
 use App\Repository\EvenementRepository;
 use App\Form\EvenementType;
@@ -47,6 +49,24 @@ class AdminEvenementController extends AbstractController {
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // On récupère l'image transmise
+            $image = $form->get('imageFile')->getData();
+            if ($image) {
+                // On génère un nouveau nom de fichier
+                //$safeFilename = $slugger->slug($image);
+                $fichier = md5(uniqid()).'.'.$image->guessExtension();
+        
+                // Move the file to the directory where brochures are stored
+                try {
+                    // On copie le fichier dans le dossier uploads
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $fichier
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+            }
             $this->em->persist($evenement); // création d'un nouvel evenement dans le tableau de cache de Symfony
             $this->em->flush(); // mise à jour de la base
             $this->addFlash('success', "Evenement créé avec succés");
@@ -65,6 +85,29 @@ class AdminEvenementController extends AbstractController {
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
+         /*   // On récupère l'image transmise
+            $image = $form->get('imageFile')->getData();
+            if ($image) {
+                // On génère un nouveau nom de fichier
+                //$safeFilename = $slugger->slug($image);
+                $fichier = md5(uniqid()).'.'.$image->guessExtension();
+        
+                // Move the file to the directory where brochures are stored
+                try {
+                    // On copie le fichier dans le dossier uploads
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $fichier
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+            }
+        
+            // On crée l'image dans la base de données
+        
+            $evenement->setImage($fichier);
+           */ 
             $this->em->flush(); // mise à jour de la base
             $this->addFlash('success', "Evenement modifié avec succés");
             return $this->redirectToRoute('admin.evenement.index');  // On redirige l'utilisateur vers la liste des événements
@@ -82,10 +125,15 @@ class AdminEvenementController extends AbstractController {
     {
         // ajout d'un conrôle de tocken pour la sécurité. On le récupère dans la request
         if ($this->isCsrfTokenValid('delete' . $evenement->getId(), $request->get('_tocken'))) {
-        $this->em->remove($evenement);
-        $this->em->flush();
-        $this->addFlash('success', "Evenement supprimé avec succés");
-        // return new Response('suppression');
+            /* // On récupère le nom de l'image
+            $nomImage = $evenement->getImage();
+            // On supprime le fichier
+            unlink($this->getParameter('images_directory').'/'.$nomImage);
+            */
+            $this->em->remove($evenement);
+            $this->em->flush();
+            $this->addFlash('success', "Evenement supprimé avec succés");
+            // return new Response('suppression');
         }
         return $this->redirectToRoute('admin.evenement.index');
     }

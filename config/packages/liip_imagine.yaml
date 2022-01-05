@@ -30,3 +30,5 @@ liip_imagine:
                     mode:   outbound            
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
+    twig:
+        mode:             lazy

@@ -22,7 +22,7 @@
         {% endif %}">
         
     {% if evenement.image %}
-        <img class="card-img-top" src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="card-img-top" height="110px"/>
+        <img class="card-img-top" src="{{ asset('/images/evenements/'~evenement.image)  }}" Alt="card-img-top" height="110px"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
         <img class="card-img-top" src="/images/fleur2.jpg" height="110px"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
@@ -30,7 +30,7 @@
     {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  
         <img class="card-img-top" src="/images/mariage.jpg" height="110px"/>
     {% else %}
-        <img class="card-img-top" src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" height="110px"/>
+        <img class="card-img-top" src="{{'/images/evenements/iconecalendrier.png' }}" height="110px"/>
     {% endif %}
         
     <div class="card-body">

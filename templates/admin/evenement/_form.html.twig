@@ -15,12 +15,8 @@
                 {{ form_label(form.imageFile,'Image') }} 
                 {{ form_errors(form.imageFile) }}
                 {{ form_help(form.imageFile) }}
-                <div class="vich-image">
-                    {{ form_widget(form.imageFile, {
-                        'attr': {'placeholder': 'fichier-image' }
-                        }
-                        ) }}
-                </div>
+                {{ form_widget(form.imageFile) }}
+                
             </div>
         </section>
         <div class="mt-4">
@@ -37,23 +33,26 @@
         {{ form_end(form) }}
 
 <script>
-    $(document).ready(function() {
-        // On voudrait que le nom de l'image affichée apparaisse 
-        // quand on passe sur le bouton "Browse". Malheureusement,ça ne marche pas
-        {% if evenement.image %}
-            $("#evenement_imageFile_file").hover(function () {
-                $(this).html(evenement.image)});
-        {% endif %}
-    })
+   
 // Add the following code if you want the name of the file appear on select
 
     $(".custom-file-input").on("change", function() {
-        var fileName = $(this).val().split("\\").pop();
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-        // On voudrait que l'image affichée soir mise à jour. Hélas ça ne marche pas non plus
-        // tant que le formulaire n'est n'est pas enregistré et validé en totalité
         var fullPath = $(this).val();
-        var htmlCode = "<img src = fullPath Alt='' width='100%' height='auto'/>"
-        $(#image_evenement).html("<img src = $(this).val() Alt='' width='100%' height='auto'/>");
+        // alert(form.imageFile.file);
+        var htmlCode = '<img src = '+ fullPath + ' ' + "Alt='' width='100%' height='auto'/>"
+        $("#image_evenement + img").remove();
+        $("#image_evenement").html(htmlCode);
+        
+        var fileName = $(this).val().split("\\").pop();
+        
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        // On voudrait que l'image affichée soit mise à jour. Hélas ça ne marche pas non plus
+        // tant que le formulaire n'est n'est pas enregistré et validé en totalité
+        // evenement.imageFile.file = $(this).val();
+        
+        
+        
+        
+        // $("#image_evenement").html('<img src = ' + fullPath + "Alt='' width='100%' height='auto'/>");
     })
 </script>

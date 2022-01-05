@@ -6,13 +6,24 @@
 parameters:
     locale: 'fr'
     language: 'fr'
-
+    images_directory: '%kernel.project_dir%/public/images/evenements'
+    app.image_cache_dir: '%kernel.project_dir%/var/storage/cache'
+    app.public_dir: '%kernel.project_dir%/public'
+    
 services:
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $secret: '%kernel.secret%'
 
+  #  League\Glide\Server:
+   #     factory: ['League\Glide\ServerFactory', create]
+    #    arguments:
+     #       source: '%images_directory%'
+      #      cache: '%app.image_cache_dir%'
+            
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
@@ -36,3 +47,6 @@ services:
     App\Listener\:
         resource: '../src/Listener'
         tags: [name: 'doctrine.event_subscriber']
+
+    
+    

@@ -14,7 +14,7 @@
         <hr>
         <div class="card mt-4 example-wrapper element-evenement">
             {% if evenement.image %}
-                <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="card-img-top" width="100%" height="auto"/>
+                <img src="{{vich_uploader_asset(evenement, 'imageFile') }}" Alt="card-img-top" width="100%" height="auto"/>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 <img src="/images/fleur2.jpg" width="100%" height="auto"/>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
@@ -22,7 +22,7 @@
             {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  
                 <img src="/images/mariage.jpg" width="100%" height="auto"/>
             {% else %}
-                <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100%" height="auto"/>
+                <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('medium')}}" width="100%" height="auto"/>
             {% endif %}
             <div class="card-header text-center 
             {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}

@@ -2,6 +2,8 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+/composer.phar
+/composer.json
 /bin/console
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
@@ -28,3 +30,6 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+/config/packages/dev/
+/src/DataFixtures/

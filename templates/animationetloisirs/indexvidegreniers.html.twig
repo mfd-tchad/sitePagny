@@ -7,20 +7,25 @@
     .example-wrapper { align: justify}
 </style>
 
+<h2>{{ titre }} </h2>
+<hr>
 <div class="row">
     <main class="example-wrapper col-md-8">
-        <h2>{{ titre }} </h2>
-        <hr>
-        {% include '/animationetloisirs/videgreniers.html.twig' %}
         
-
+        {% include '/animationetloisirs/videgreniers.html.twig' %}
     </main>
-    <aside class="col-md-4">
+    <aside class="col-md-4 mt-4">
         <div class="container-fluid"> 
             <div class="text-center">
                 <img class="center-block" src ="/images/animations/vide-greniers.jpg" Alt="Photo Vide-Greniers" width="100%"/>
+                
                 <hr>
-                {% include '/animationetloisirs/menurubrique.html.twig' %}
+                <div style="background-color: yellow;" class="p-1">
+                        
+                        <h4> A VOS AGENDAS </h4>
+                        <h4> Prochain vide-greniers <br> le 14 Août 2022 !</h4>
+                        
+                </div>
             </div>
         </div>
 

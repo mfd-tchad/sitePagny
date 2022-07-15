@@ -32,4 +32,5 @@
 ###< phpunit/phpunit ###
 
 /config/packages/dev/
+/config/packages/test/
 /src/DataFixtures/

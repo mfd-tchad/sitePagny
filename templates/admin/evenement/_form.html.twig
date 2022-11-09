@@ -11,7 +11,7 @@
                     <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="" width="100%" height="auto"/>
                 {% endif %}
             </div>
-            <div class="col-md-5"> 
+            <div class="col-md-5" id="image_name"> 
                 {{ form_label(form.imageFile,'Image') }} 
                 {{ form_errors(form.imageFile) }}
                 {{ form_help(form.imageFile) }}
@@ -37,22 +37,36 @@
 // Add the following code if you want the name of the file appear on select
 
     $(".custom-file-input").on("change", function() {
-        var fullPath = $(this).val();
-        // alert(form.imageFile.file);
-        var htmlCode = '<img src = '+ fullPath + ' ' + "Alt='' width='100%' height='auto'/>"
-        $("#image_evenement + img").remove();
-        $("#image_evenement").html(htmlCode);
+        var input = document.getElementById("evenement_imageFile_file");
+        var fullPath = input.files[0];
+        var prev = document.getElementById("image_evenement");
         
-        var fileName = $(this).val().split("\\").pop();
+        var fReader = new FileReader();
+        
+        var oldImg = prev.querySelector("img");
+
+        fReader.onload = function(event) {
+            var imgElement = document.createElement("img");
+            imgElement.style.maxWidth = '200px';
+            imgElement.style.maxHeight = '200px';
+            imgElement.src = event.target.result;
+
+            if (oldImg != null) {
+                prev.replaceChild(imgElement, oldImg);
+            }
+            else {
+                prev.appendChild(imgElement);
+            }
+        }    
+        fReader.readAsDataURL(fullPath);
+        
+        var fileName = fullPath.name;
         
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-        // On voudrait que l'image affichée soit mise à jour. Hélas ça ne marche pas non plus
-        // tant que le formulaire n'est n'est pas enregistré et validé en totalité
-        // evenement.imageFile.file = $(this).val();
+
+        // enlever les messages d'erreur éventuels
         
-        
-        
-        
-        // $("#image_evenement").html('<img src = ' + fullPath + "Alt='' width='100%' height='auto'/>");
+        $(".vich-image").siblings(".invalid-feedback").remove();  
+        $("#image_name span").remove() ;
     })
 </script>

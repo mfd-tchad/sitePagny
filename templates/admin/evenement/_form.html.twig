@@ -34,39 +34,90 @@
 
 <script>
    
-// Add the following code if you want the name of the file appear on select
+// Add the following code if you want the image and the name of the file appear on select
 
+    // A function to display error message in case of a problem occured
+    function parentAppend(parentElt, tagName, innerHTML) {
+        var elm, elm1;
+        elm = document.createElement(tagName);    
+        elm.classList.add("form-error-message");
+        elm.innerHTML = innerHTML;
+
+        // On encapsule le message dans un autre élément de même tag mais de classe d-block
+        // pour se conformer au mode de fonctionnement de vich_image_uploader
+        elm1 = document.createElement(tagName);
+        elm1.classList.add("invalid-feedback");
+        elm1.classList.add("d-block");
+        elm1.appendChild(elm);
+        tagElt = parentElt.querySelector(tagName);
+        if (tagElt) {
+            parentElt.replaceChild(elm1, tagElt);
+        }
+        else {
+            parentElt.insertBefore(elm1, parentElt.firstChild);
+        }
+    }
+
+    // When a file is selected to be uploaded
     $(".custom-file-input").on("change", function() {
+        const TAILLE_MAX_FICHIER = 2024000;
         var input = document.getElementById("evenement_imageFile_file");
-        var fullPath = input.files[0];
+        var div = document.getElementById("image_name");
         var prev = document.getElementById("image_evenement");
-        
-        var fReader = new FileReader();
-        
-        var oldImg = prev.querySelector("img");
+        if (!input) {   // une anomalie
+            parentAppend(div, "span", "Erreur interne dans le formulaire");
+        }
+        else if (!input.files) {
+            parentAppend(div, "span", "Ce navigateur ne supporte pas le chargement de fichiers");
+        }
+        else if (!input.files[0]) {
+            parentAppend(div,"span", "Veuillez sélectionner un fichier image");
+        }
+        else
+        {  // vérifier que le fichier n'est pas trop volumineux et que le type de fichier est pris en charge
+            var file = input.files[0];
+            var allowedTypes = ['jpg','jpeg','JPG','JPEG','png','PNG','gif','GIF'];
+            var fileType = file.name.split('.');
+            fileType = fileType[fileType.length -1];
+            console.log("file type : ", fileType);
 
-        fReader.onload = function(event) {
-            var imgElement = document.createElement("img");
-            imgElement.style.maxWidth = '200px';
-            imgElement.style.maxHeight = '200px';
-            imgElement.src = event.target.result;
-
-            if (oldImg != null) {
-                prev.replaceChild(imgElement, oldImg);
+            if (allowedTypes.indexOf(fileType) == -1) { // on vérifie que l'extension est dans la liste autorisée
+                parentAppend(div, "span", "Le format du fichier n'est pas pris en charge, choisissez un fichier .jpg, .fpeg ou .png");
             }
-            else {
-                prev.appendChild(imgElement);
-            }
-        }    
-        fReader.readAsDataURL(fullPath);
-        
-        var fileName = fullPath.name;
-        
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            else if (file.size > TAILLE_MAX_FICHIER) {
+                parentAppend(div, "span", "Le fichier est trop volumineux, taille max 2 MB");
+            } 
+            else
+            {
+                var fReader = new FileReader();
+                
+                var oldImg = prev.querySelector("img");
 
-        // enlever les messages d'erreur éventuels
-        
-        $(".vich-image").siblings(".invalid-feedback").remove();  
-        $("#image_name span").remove() ;
+                fReader.onload = function(event) { // on crée une image miniature à partir du fichier
+                    var imgElement = document.createElement("img");
+                    imgElement.style.maxWidth = '200px';
+                    imgElement.style.maxHeight = '200px';
+                    imgElement.src = event.target.result;
+
+                    if (oldImg != null) {  // la miniature vient remplacer la précédemment affichée
+                        prev.replaceChild(imgElement, oldImg);
+                    }
+                    else {  // ou bien se loge dans l'espace vide
+                        prev.appendChild(imgElement);
+                    }
+                }    
+                fReader.readAsDataURL(file);
+                
+                // On affiche le nom du fichier avec la classe "selected"
+                var fileName = file.name;
+                
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+
+                // enlever les messages d'erreur éventuels
+                
+                $(".vich-image").siblings(".invalid-feedback").remove();  
+                $("#image_name span").remove() ;
+            }
+        }
     })
 </script>

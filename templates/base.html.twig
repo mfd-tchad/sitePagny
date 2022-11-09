@@ -49,12 +49,12 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Evénements</a>
+                        <a class="nav-link" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
                             <a class="dropdown-item" href="{{ path('actualiteetevenements') }}">A la une</a>
-                            <a class="dropdown-item" href="{{ path('actualite') }}">Passés</a>
-                            <a class="dropdown-item" href="{{ path('evenements') }}">A venir</a>
-                            <a class="dropdown-item" href="{{ path('flashinfospasses') }}">Flash Infos</a>
+                            <a class="dropdown-item" href="{{ path('actualite') }}">Evènements Passés</a>
+                            <a class="dropdown-item" href="{{ path('evenements') }}">Evènements A venir</a>
+                            <a class="dropdown-item" href="{{ path('flashinfospasses') }}">Flash  Infos</a>
                             <a class="dropdown-item" href="{{ path('deces') }}">Décés</a>
                         </div>
                     </li>
@@ -110,13 +110,15 @@
                         </div>
                     </li>
                     {% endif %}
+                </ul>
+                <ul class="navbar-nav ml-auto" >
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
                         <a class="nav-link" href="{{ path('logout') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{app.user.firstname}}</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
                             <a class="dropdown-item" href="{{ path('logout') }}">Se déconnecter</a> 
                         </div>
                     </li>
-                
+                </ul>
                 {% else %}
                 </ul>
                 <ul class="navbar-nav ml-auto" >

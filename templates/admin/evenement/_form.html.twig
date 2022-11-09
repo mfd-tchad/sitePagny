@@ -5,7 +5,7 @@
             </div>
             <div class="col-md-5"> {{ form_row(form.titre) }} </div>
             
-            <div class="col-md-4"> {{ form_row(form.date) }} </div>
+            <div class="col-md-4"> {{ form_row(form.date ) }} </div>
             <div class="col-md-3" id="image_evenement"> 
                 {% if evenement.image %}
                     <img src="{{vich_uploader_asset(evenement, 'imageFile') | imagine_filter('thumb')}}" Alt="" width="100%" height="auto"/>

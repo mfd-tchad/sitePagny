@@ -18,17 +18,18 @@
         </div>
     {% endfor %}
     
+    <div class="text-right">
+        <a href="{{ path('admin.evenement.new') }}" class="btn btn-primary">Créer un nouvel Evenement</a>
+    </div>
    <div class="mt-4">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    
                     <th> Type </th>
                     <th> Titre </th>
                     <th> Date </th>
                     <th> Image </th> 
                     <th> Action </th>
-                   
                 </tr>
             </thead>
             <tbody>
@@ -62,7 +63,7 @@
             </tbody>
         </table>
         <div class="text-right">
-        <a href="{{ path('admin.evenement.new') }}" class="btn btn-primary">Créer un nouvel Evenement</a>
+            <a href="{{ path('admin.evenement.new') }}" class="btn btn-primary">Créer un nouvel Evenement</a>
         </div>
    </div>
 </div>

@@ -5,15 +5,15 @@
 
 {% block body %}
 <style>
-    .example-wrapper { max-width: 500px; margin-top: 0}
+    .example-wrapper { max-width: 600px; margin-top: 0}
     .h3 { margin-top: 0}
 </style>
 
 <h2> {{ titre }} </h2>
 <hr>
-<div class="row justify-content-around">
+<div class="row mx-0">
 
-    <main class="example-wrapper col-12 col-md-7">
+    <main class="example-wrapper col-12 col-md-6">
 
         {% if not form.vars.valid %}
         <div class="alert alert-danger">
@@ -32,28 +32,59 @@
         <div id="contactForm" class="mt-4 bg-light">
 
             {{ form_start(form) }}
-            <div class="row">
-                <div class="col"> Prénom
-                {{ form_errors(form.prenom) }} 
-                {{ form_widget(form.prenom) }} </div>
-                <div class="col">{{ form_row(form.nom) }}</div>
+            <div class="row mx-2">
+                <div class="col mt-4">
+                    {{ form_errors(form.prenom) }} 
+                    {{ form_widget(form.prenom, { 'attr' : {'placeholder' : 'Prénom'}}) }} 
+                    
+                </div>
+
+                <div class="col mt-4">
+                    {{ form_errors(form.nom) }}
+                    {{ form_widget(form.nom, { 'attr' : {'placeholder' : 'Nom'}}) }} 
+                    
+                </div>
             </div>
-            <div class="row">
-                <div class="col">{{ form_row(form.tel) }}</div>
-                <div class="col">{{ form_row(form.email) }}</div>
+            <div class="row mt-4 mx-2">
+                <div class="col">
+                    {{ form_errors(form.tel) }}
+                    {{ form_widget(form.tel, { 'attr' : {'placeholder' : 'Téléphone'}}) }} 
+                    
+                </div>
+                <div class="col">
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email, { 'attr' : {'placeholder' : 'Adresse e-mail'}}) }} 
+                    
+                </div>
+            </div>
+            <div class="row mt-4 mx-2">
+                <div class="col">
+                    {{ form_errors(form.sujet) }}
+                    {{ form_widget(form.sujet, { 'attr' : {'placeholder' : 'Sujet'}}) }} 
+                 </div>       
+            </div>
+            <div class="row mt-4 mx-2">
+                <div class="col">
+                    {{ form_errors(form.message) }}
+                    {{ form_widget(form.message, { 'attr' : {'placeholder' : 'Votre message'}}) }} 
+                 </div>       
             </div>
             {{ form_rest(form) }}
-            <div class="form-group">
-                <button class="btn btn-primary"> Envoyer </button>
-                <input id="reset" type="reset" value="Effacer tout" class="btn btn-dark">
+            <div class="form-group mt-4 mx-2 pb-4">
+                <div class="col text-center">
+                    <button class="btn btn-primary"> Envoyer </button>
+                    <input id="reset" type="reset" value="Effacer tout" class="btn btn-dark">
+                </div>
             </div>
-
             {{ form_end(form) }}
+            
         </div>    
     </main>
-    <section class="optionnel col-10 col-md-5">
+    <section class="optionnel col-10 col-md-6">
         <h3> Mairie </h3>
-            
+            <div class="mt-4">
+                <img src="/images/mairie/carte-mairie-pagny1.png" width="100%" height="100%"/>
+            </div>
             <p class="mt-4"> <img src="/images/iconeadresse.jpg" height="40">7, rue des Halles <br>     55140 Pagny la Blanche Côte </img> </p>
             <p> <a href="tel:+33329908630"><img src="/images/iconetel.png" height="35" > 03 29 90 86 30 </img> </a></p>
             <p> <img  src="/images/iconefax.jpg" height="40"> Fax: 03 29 90 86 30 </img> </p>

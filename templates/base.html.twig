@@ -48,9 +48,7 @@
                             <a class="dropdown-item" href="{{ path('finances') }}">Finances</a>
                         </div>
                     </li>
-                    <li class="nav-item {% if current_menu is defined and current_menu == 'associations'%} active {% endif %}">
-                        <a class="nav-link" href="{{ path('associations') }}">Associations</a>
-                    </li>
+                    
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
                         <a class="nav-link" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
@@ -94,6 +92,10 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ path('reserve') }}">Réserve naturelle</a>
                         </div>
+                    </li>
+                    
+                    <li class="nav-item {% if current_menu is defined and current_menu == 'associations'%} active {% endif %}">
+                        <a class="nav-link" href="{{ path('associations') }}">Associations</a>
                     </li>
                     
                     <li class="nav-item {% if current_menu is defined and current_menu == 'contact'%} active {% endif %}">

@@ -20,7 +20,9 @@ class EvenementType extends AbstractType
         $builder
             ->add('type', ChoiceType::class, ['choices' => $this->getChoices()])
             ->add('titre')
-            ->add('date',DateType::class)
+            ->add('date',DateType::class, [
+                'widget' => 'single_text', // for a datePicker
+            ])
             ->add('description', CKEditorType::class)
             ->add('imageFile', VichImageType::class, [
                 'required' => false,

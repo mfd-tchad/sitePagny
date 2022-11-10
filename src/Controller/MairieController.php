@@ -62,7 +62,7 @@ class MairieController extends AbstractController
     public function associations()
     {
         return $this->render('mairie/indexassociations.html.twig', [
-            'title' => 'Associations de Pagny la Blanche Côte', 'titre' => 'Associations de la commune', 'current_menu' => 'mairie'
+            'title' => 'Associations de Pagny la Blanche Côte', 'titre' => 'Associations de la commune', 'current_menu' => 'associations'
         ]);
     }
 

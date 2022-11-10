@@ -11,7 +11,7 @@
 
 <h2> {{ titre }} </h2>
 <hr>
-<div class="row mx-0">
+<div class="row justify-content-around">
 
     <main class="example-wrapper col-12 col-md-6">
 
@@ -80,21 +80,23 @@
             
         </div>    
     </main>
-    <section class="optionnel col-10 col-md-6">
+    <section class="col-12 col-md-6">
         <h3> Mairie </h3>
             <div class="mt-4">
                 <img src="/images/mairie/carte-mairie-pagny1.png" width="100%" height="100%"/>
             </div>
-            <p class="mt-4"> <img src="/images/iconeadresse.jpg" height="40">7, rue des Halles <br>     55140 Pagny la Blanche Côte </img> </p>
-            <p> <a href="tel:+33329908630"><img src="/images/iconetel.png" height="35" > 03 29 90 86 30 </img> </a></p>
-            <p> <img  src="/images/iconefax.jpg" height="40"> Fax: 03 29 90 86 30 </img> </p>
-            <p> <a href="mailto:pagnylablanchecote@wanadoo.fr"><img src="/images/iconeadressemail.png" height="35"> pagnylablanchecote@wanadoo.fr </a></p>
-            <p> Permanence :
-                <ul>
-                    <li> Le lundi de 10h30 à 12h30</li>
-                    <li> Le jeudi de 10h30 à 12h30 </li>
-                </ul>
-            </p>
+            <div class="optionnel">
+                <p class="mt-4"> <img src="/images/iconeadresse.jpg" height="40">7, rue des Halles <br>     55140 Pagny la Blanche Côte </img> </p>
+                <p> <a href="tel:+33329908630"><img src="/images/iconetel.png" height="35" > 03 29 90 86 30 </img> </a></p>
+                <p> <img  src="/images/iconefax.jpg" height="40"> Fax: 03 29 90 86 30 </img> </p>
+                <p> <a href="mailto:pagnylablanchecote@wanadoo.fr"><img src="/images/iconeadressemail.png" height="35"> pagnylablanchecote@wanadoo.fr </a></p>
+                <p> Permanence :
+                    <ul>
+                        <li> Le lundi de 10h30 à 12h30</li>
+                        <li> Le jeudi de 10h30 à 12h30 </li>
+                    </ul>
+                </p>
+            </div>
     </section>
 </div>
 {% endblock %}

@@ -10,7 +10,7 @@
 <main class="example-wrapper">
     <h2> {{ titre }} </h2>
     <hr>
-    <img src="/images/cote/CoteArcDeCercleEtVillage.jpg" width="100%"/>
+    <img class="bords-arrondis" src="/images/cote/CoteArcDeCercleEtVillage.jpg" width="100%"/>
 
 
     <br>
@@ -26,9 +26,9 @@
     </p>
     
     <section class="row container mb-4">
-        <div class="col-md-3"><img src="/images/cote/fleur.jpg" width="100%"/>
+        <div class="col-md-3"><img class="bords-arrondis" src="/images/cote/fleur.jpg" width="100%"/>
         </div>
-        <div class="col-md-3"><img src="/images/cote/fleur2.jpg" width="100%"/>
+        <div class="col-md-3"><img class="bords-arrondis" src="/images/cote/fleur2.jpg" width="100%"/>
         </div>
         <div class="col-md-6">
             <p> Géré par le CEN Lorraine depuis 1997, les deux côtes calcaires d’une vingtaine d’hectares chacune abritent des espèces rares et protégées, telles que l’Ibéris de Viollet, le Trèfle scabre et des pelouses à Seslérie. 
@@ -55,14 +55,21 @@
     </ul>
 </main>
 <aside class="row container">
-    <div class="col-md-4">
-        <img src="/images/cote/explorationcotepagny.jpg" width="100%"/>Visite de botanistes
+    <div class="col-md-6">
+    
+    
+        <img class="bords-arrondis" src="/images/cote/explorationcotepagny.jpg" width="100%"/>
+        <p class="text-center">Visite de botanistes </p>
+        <div class="mt-3 ">
+            <img class="bords-arrondis" src="/images/cote/TeteDesRousseauxVueTraveron2.jpg" width="100%"/>
+            <p class="text-center">La tête des Rousseaux avec vue sur le hameau de Traveron</p>
+        </div>
     </div>
 
-    <div class="col-md-4"><img class="aggrandir" src="/images/cote/PanneauSitesNaturels.jpg" width="100%"/>Panneau explicatif - site de la tête des Rousseaux
+    <div class="col-md-6">
+        <img class="bords-arrondis aggrandir" src="/images/cote/PanneauSitesNaturels.jpg" width="100%"/>
+        <p class="text-center"> Panneau explicatif - site de la tête des Rousseaux </p>
     </div>
-    <div class="col-md-4"><img src="/images/cote/tetedesrousseaux.jpg" width="100%"/>La tête des Rousseaux
-    </div>
-
+    
 </aside>
 {% endblock %}

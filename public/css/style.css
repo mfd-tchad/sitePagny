@@ -219,3 +219,7 @@ a .card-text {
     position:relative;
     z-index:10;
 }
+
+.container-fluid#clicrapide:hover {
+    background-color: #87CEFA;
+}

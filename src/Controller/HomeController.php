@@ -141,7 +141,7 @@ class HomeController extends AbstractController
      public function ileauxenfants()
     {
         return $this->render('jeunesse/indexileauxenfants.html.twig', [
-            'title' => 'Association pour les enfants de Pagny la Blanche Cote', 'titre' => 'Association L\'île aux Enfants', 'current_menu' => 'animationetloisirs'
+            'title' => 'Association pour les enfants de Pagny la Blanche Cote', 'titre' => 'Association L\'île aux Enfants', 'current_menu' => 'associations'
         ]);
     }
 
@@ -151,7 +151,7 @@ class HomeController extends AbstractController
     public function saintgregoire()
     {
         return $this->render('patrimoine/indexassocstgregoire.html.twig', [
-            'title' => 'Association Saint Gregoire le Grand - Pagny la Blanche Cote', 'titre' => 'Association Saint Grégoire le Grand', 'current_menu' => 'patrimoine'
+            'title' => 'Association Saint Gregoire le Grand - Pagny la Blanche Cote', 'titre' => 'Association Saint Grégoire le Grand', 'current_menu' => 'associations'
         ]);
     }
     

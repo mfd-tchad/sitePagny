@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Se connecter{% endblock %}
-
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://kit.fontawesome.com/c85d7d7f2c.js" crossorigin="anonymous"> </script>
+{% endblock %}
 {% block body %}
 
     <div class="example-wrapper page-login mt-4">
@@ -15,16 +18,23 @@
         {% endif %}
         <div class="mt-4">
             <form action="{{ path('login')}}" method="POST">
-                <div class="group-form">
-                    <label for="username">Nom d'utilisateur</label>
-                    <input type="text" name="_username" id="username" class="form-control" value="{{ last_username }}">
-                </div>
-                <div class="group-form mt-4">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="_password" id="password" class="form-control">
-                </div>
-                <button type="submit" class="mt-4 btn btn-primary">Se connecter</button>    
-                <a href="/" type="cancel" class="mt-4 btn btn-secondary">Annuler</a>
+                <fieldset>
+                    <legend>
+                        <i class="fa fa-lock" area-hidden="true"></i> {{ title |trans}}
+                    </legend>
+                    <div class="group-form">
+                        <label for="username">Nom d'utilisateur</label>
+                        <input type="text" name="_username" id="username" class="form-control" value="{{ last_username }}">
+                    </div>
+                    <div class="group-form mt-4">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="_password" id="password" class="form-control">
+                    </div>
+                    <input type="hidden" name="_target_path" value="{{ app.request.get('redirect_to')}}" />
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate')}}" />
+                    <button type="submit" class="mt-4 btn btn-primary">Se connecter</button>    
+                    <a href="/" type="cancel" class="mt-4 btn btn-secondary">Annuler</a>
+                </fieldset>            
             </form>
         </div>
     </div>

@@ -2,9 +2,9 @@ framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
         envelope:
-            sender: 'marie-francoise@mfdewulf.fr'
+            sender: 'no-reply@pagnylablanchecote.net'
             recipients: ['mairie@pagnylablanchecote.net']
         headers:
-            from: 'mairie@pagnylablanchecote.net'
+            from: 'no-reply@pagnylablanchecote.net'
             #X-Custom-Header: 'X-Auto-Response-Suppress', 'OOF, DR, RN, NRN, AutoReply'
             X-Custom-Header: 'X-Auto-Response-Suppress'

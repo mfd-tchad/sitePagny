@@ -35,6 +35,7 @@ class RegistrationController extends AbstractController
      */
     public function index () : Response {
         
+        $this->denyAccessUnlessGranted('ROLE_SUPADMIN');
         $users = $this->repository->findAll();
         return $this->render('admin/utilisateur/index.html.twig', [
             'title' => 'Admin', 'titre' => 'Administration des utilisateurs',  'current_menu' => 'admin', 'users' => $users]);
@@ -58,9 +59,8 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
+            $this->em->persist($user);
+            $this->em->flush();
 
             // do anything else you need here, like send an email
             $this->addFlash('success', "Nouvel utilisateur créé avec succés");

@@ -122,7 +122,7 @@ class EvenementsController extends AbstractController
     {
         $events = $this->repository->findHasHappenedAndToCome();
         return $this->render('evenements/index.html.twig', [
-            'title' => 'Evènements à la Une de Pagny la Blanche Côte', 'titre' => 'Actualités à la Une',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Evènements à la Une de Pagny la Blanche Côte', 'titre' => 'Actu\' à la Une',  'current_menu' => 'evenements', 'evenements' => $events
         ]);
     }
     /**

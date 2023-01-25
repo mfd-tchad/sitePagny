@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Evenement;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry ;
-use \DateTime;
+use DateTime;
 
 /**
  * @method Evenement|null find($id, $lockMode = null, $lockVersion = null)
@@ -23,7 +23,7 @@ class EvenementRepository extends ServiceEntityRepository
     /**
      * @return Evenement[] Returns an array of Evenement objects
      */
-    
+
     public function findByType($value)
     {
         return $this->createQueryBuilder('e')
@@ -34,7 +34,7 @@ class EvenementRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    
+
     /**
      * @return Evenement[] Returns an array of Evenement objects
      */
@@ -87,9 +87,9 @@ class EvenementRepository extends ServiceEntityRepository
      */
     public function findHasHappenedAndToCome()
     {
-        
+
         return $this->createQueryBuilder('e')
-            ->orderBy('e.date', 'DESC')
+            ->orderBy('e.updated_at', 'DESC')
             ->setMaxResults(12)
             ->getQuery()
             ->getResult();
@@ -101,7 +101,7 @@ class EvenementRepository extends ServiceEntityRepository
     public function findAllHasHappenedAndToCome()
     {
         return $this->createQueryBuilder('e')
-            ->orderBy('e.date', 'DESC')
+            ->orderBy('e.updated_at', 'DESC')
             ->getQuery()
             ->getResult();
     }

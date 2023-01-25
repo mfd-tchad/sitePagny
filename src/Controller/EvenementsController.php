@@ -5,11 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-
-use \DateTime;
+use DateTime;
 use App\Entity\Evenement;
 use App\Repository\EvenementRepository;
-
 
 class EvenementsController extends AbstractController
 {
@@ -22,107 +20,137 @@ class EvenementsController extends AbstractController
     /**
      * @Route("/evenements", name="evenements")
      */
-    public function index() : Response
+    public function index(): Response
     {
         $events = $this->repository->findToCome();
         return $this->render('evenements/index.html.twig', [
-            'title' => 'Evènements à venir à Pagny la Blanche Côte', 'titre' => 'Evénements à venir',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Evènements à venir à Pagny la Blanche Côte',
+            'titre' => 'Evénements à venir',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
 
     /**
      * @Route("/actualite", name="actualite")
      */
-    public function pastEvents() : Response
+    public function pastEvents(): Response
     {
         $events = $this->repository->findHasHappened();
         return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'Evènements passés à Pagny la Blanche Côte', 'titre' => 'Evènements passés du village',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Evènements passés à Pagny la Blanche Côte',
+            'titre' => 'Evènements passés du village',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
 
     /**
      * @Route("/naissances", name="naissances")
      */
-    public function naissances() : Response
+    public function naissances(): Response
     {
         $events = $this->repository->findByType('0');
         return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'Naissances à Pagny la Blanche Côte', 'titre' => 'Naissances',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Naissances à Pagny la Blanche Côte',
+            'titre' => 'Naissances',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
 
     /**
      * @Route("/mariages", name="mariages")
      */
-    public function mariages() : Response
+    public function mariages(): Response
     {
         $events = $this->repository->findByType('2');
         return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'Mariages à Pagny la Blanche Côte', 'titre' => 'Mariages',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Mariages à Pagny la Blanche Côte',
+            'titre' => 'Mariages',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
 
     /**
      * @Route("/deces", name="deces")
      */
-    public function deces() : Response
+    public function deces(): Response
     {
         $events = $this->repository->findByType('1');
         return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'Décés à Pagny la Blanche Cote', 'titre' => 'Hommages',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Décés à Pagny la Blanche Cote',
+            'titre' => 'Hommages',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
 
     /**
      * @Route("/fetesactu", name="fetesactu")
      */
-    public function fetesactu() : Response
+    public function fetesactu(): Response
     {
         $events = $this->repository->findByType('3');
         return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'Fêtes à Pagny la Blanche Côte', 'titre' => 'Festivités à Pagny',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Fêtes à Pagny la Blanche Côte',
+            'titre' => 'Festivités à Pagny',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
 
     /**
      * @Route("/fetesavenir", name="fetesavenir")
      */
-    public function fetesavenir() : Response
+    public function fetesavenir(): Response
     {
         $events = $this->repository->findByTypeToCome('3');
         return $this->render('evenements/index-avenir.html.twig', [
-            'title' => 'Festivités annocées à Pagny la Blanche Côte', 'titre' => 'Festivités annoncées',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Festivités annocées à Pagny la Blanche Côte',
+            'titre' => 'Festivités annoncées',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
     /**
      * @Route("/flashinfospasses", name="flashinfospasses")
      */
-    public function flashinfospasses() : Response
+    public function flashinfospasses(): Response
     {
         $events = $this->repository->findByType('7');
         return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'FlashInfos passés de Pagny la Blanche Côte', 'titre' => 'Flash Infos passés',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'FlashInfos passés de Pagny la Blanche Côte',
+            'titre' => 'Flash Infos passés',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
     /**
      * @Route("/flashinfos", name="flashinfos")
      */
-    public function flashinfos() : Response
+    public function flashinfos(): Response
     {
         $events = $this->repository->findByTypeToCome('7');
         return $this->render('evenements/index-avenir.html.twig', [
-            'title' => 'FlashInfos de Pagny la Blanche Côte', 'titre' => 'Flash Infos',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'FlashInfos de Pagny la Blanche Côte',
+            'titre' => 'Flash Infos',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
     /**
      * @Route("/actualiteetevenements", name="actualiteetevenements")
      */
-    public function bothEvents() : Response
+    public function bothEvents(): Response
     {
         $events = $this->repository->findHasHappenedAndToCome();
         return $this->render('evenements/index.html.twig', [
-            'title' => 'Evènements à la Une de Pagny la Blanche Côte', 'titre' => 'Actu\' à la Une',  'current_menu' => 'evenements', 'evenements' => $events
+            'title' => 'Evènements à la Une de Pagny la Blanche Côte',
+            'titre' => 'Actu\' à la Une',
+            'current_menu' => 'evenements',
+            'evenements' => $events
         ]);
     }
     /**
@@ -144,5 +172,4 @@ class EvenementsController extends AbstractController
             'current-menu' => 'evenements'
         ]);
     }
-    
 }

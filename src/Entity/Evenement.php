@@ -16,7 +16,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Evenement
 {
-   
     const TYPE_EVENEMENT = [
         4 => 'Activité associative',
         5 => 'Activité Nature',
@@ -50,7 +49,7 @@ class Evenement
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private $description = "";
 
     /**
      * @ORM\Column(type="datetime")
@@ -88,7 +87,7 @@ class Evenement
         $this->created_at = new \DateTime();
         $this->updated_at = new \DateTime();
     }
-    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -195,10 +194,9 @@ class Evenement
         return $this;
     }
 
-    public function getSlug() {
+    public function getSlug()
+    {
         $slugify = new Slugify();
         return $slugify->slugify($this->getTypeEvenement($this->getType()) . $this->getTitre());
     }
-
-
 }

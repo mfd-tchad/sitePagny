@@ -50,6 +50,7 @@ class AdminEvenementController extends AbstractController
     public function new(Request $request)
     {
         $evenement = new Evenement();
+        $evenement->setDescription("Bonjour,");
         $form = $this->createForm(EvenementType::class, $evenement);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

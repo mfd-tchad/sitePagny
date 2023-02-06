@@ -4,8 +4,7 @@
 /.env.local.php
 /.env.*.local
 /composer.phar
-/composer.json
-/composer.lock
+/*.lock
 /bin/console
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/

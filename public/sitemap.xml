@@ -3,7 +3,7 @@
 
         <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/
+                            https://www.pagnylablanchecote.net/
                     </loc>
         
                             <changefreq>monthly</changefreq>
@@ -13,7 +13,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/evenements
+                            https://www.pagnylablanchecote.net/evenements
                     </loc>
 
                 
@@ -24,7 +24,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/associations
+                            https://www.pagnylablanchecote.net/associations
                         </loc>
 
                         <changefreq>monthly</changefreq>
@@ -33,7 +33,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/mairie
+                            https://www.pagnylablanchecote.net/mairie
                         </loc>
 
                         <changefreq>monthly</changefreq>
@@ -42,7 +42,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/demarches
+                            https://www.pagnylablanchecote.net/demarches
                         </loc>
 
                 
@@ -51,7 +51,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/urbanisme
+                            https://www.pagnylablanchecote.net/urbanisme
                         </loc>
 
                         <changefreq>monthly</changefreq>
@@ -60,7 +60,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/cadastre
+                            https://www.pagnylablanchecote.net/cadastre
                     </loc>
 
                 
@@ -69,7 +69,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/patrimoine
+                            https://www.pagnylablanchecote.net/patrimoine
                     </loc>
 
                 
@@ -79,7 +79,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/saintgregoire
+                            https://www.pagnylablanchecote.net/saintgregoire
                         </loc>
 
                         <changefreq>monthly</changefreq>
@@ -88,7 +88,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/eglise
+                            https://www.pagnylablanchecote.net/eglise
                     </loc>
 
                 
@@ -99,7 +99,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/reserve
+                            https://www.pagnylablanchecote.net/reserve
                     </loc>
 
                 
@@ -110,7 +110,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/historique
+                            https://www.pagnylablanchecote.net/historique
                     </loc>
 
                 
@@ -119,7 +119,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/viepratique
+                            https://www.pagnylablanchecote.net/viepratique
                         </loc>
 
                         <changefreq>monthly</changefreq>
@@ -128,7 +128,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/scolaire
+                            https://www.pagnylablanchecote.net/scolaire
                         </loc>
 
                 
@@ -137,7 +137,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/jeunesse
+                            https://www.pagnylablanchecote.net/jeunesse
                         </loc>
 
                 
@@ -146,34 +146,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/aines
-                    </loc>
-
-                
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/ordures
-                        </loc>
-
-                
-                        <changefreq>monthly</changefreq>
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/sportsetloisirs
-                        </loc>
-
-                
-                        <changefreq>monthly</changefreq>
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/ileauxenfants
+                            https://www.pagnylablanchecote.net/aines
                         </loc>
 
                         <changefreq>monthly</changefreq>
@@ -182,61 +155,7 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/fetes
-                        </loc>
-
-                        <changefreq>monthly</changefreq>
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/login
-                        </loc>
-
-                        <changefreq>monthly</changefreq>
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/contact
-                        </loc>
-
-                        <changefreq>monthly</changefreq>
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/actualite
-                        </loc>
-
-                        <changefreq>monthly</changefreq>
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/naissances
-                        </loc>
-
-                        <changefreq>monthly</changefreq>
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/mariages
-                        </loc>
-
-                        <changefreq>monthly</changefreq>
-                
-                
-                    </url>
-    <url>
-                        <loc>
-                            http://www.pagnylablanchecote.net/deces
+                            https://www.pagnylablanchecote.net/ordures
                         </loc>
 
                 
@@ -245,8 +164,80 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/flashinfos
-                    </loc>
+                            https://www.pagnylablanchecote.net/sportsetloisirs
+                        </loc>
+
+                
+                        <changefreq>monthly</changefreq>
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/ileauxenfants
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/fetes
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/login
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/contact
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/actualite
+                        </loc>
+
+                        <changefreq>weekly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/mariages
+                        </loc>
+
+                        <changefreq>monthly</changefreq>
+                
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/deces
+                        </loc>
+
+                
+                        <changefreq>monthly</changefreq>
+                
+                    </url>
+    <url>
+                        <loc>
+                            https://www.pagnylablanchecote.net/flashinfos
+                        </loc>
 
                 
                             <changefreq>weekly</changefreq>
@@ -256,11 +247,11 @@
                     </url>
     <url>
                         <loc>
-                            http://www.pagnylablanchecote.net/fetesactu
-                    </loc>
+                            https://www.pagnylablanchecote.net/fetesactu
+                        </loc>
 
                 
-                        <changefreq>monthly</changefreq>
+                        <changefreq>weekly</changefreq>
                 
                     </url>
 </urlset>

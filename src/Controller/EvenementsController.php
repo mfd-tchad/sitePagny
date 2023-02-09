@@ -46,12 +46,14 @@ class EvenementsController extends AbstractController
     }
 
     /**
+     * Finds and displays events which type is 0
+     * 
      * @Route("/actuconseilmunicipal", name="actuconseilmunicipal")
      */
     public function actuConseilMunicipal(): Response
     {
         $events = $this->repository->findByType('0');
-        return $this->render('evenements/index-passe.html.twig', [
+        return $this->render('evenements/index.html.twig', [
             'title' => 'Activites du Conseil Municipal de Pagny',
             'titre' => 'Activités du Conseil Municipal de Pagny',
             'current_menu' => 'evenements',

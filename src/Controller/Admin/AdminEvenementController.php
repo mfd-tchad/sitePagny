@@ -2,16 +2,18 @@
 
 namespace App\Controller\Admin;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Exception;
 use App\Entity\Evenement;
-use App\Repository\EvenementRepository;
 use App\Form\EvenementType;
+use Psr\Log\LoggerInterface;
+use App\Repository\EvenementRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
  * Controller for Event admin
@@ -33,15 +35,21 @@ class AdminEvenementController extends AbstractController
     private $em;
 
     /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    /**
      * Constructor
      *
      * @param EvenementRepository $repository for retrieving events from storage
      * @param EntityManagerInterface $em used for flushing new/updated event
      */
-    public function __construct(EvenementRepository $repository, EntityManagerInterface $em)
+    public function __construct(EvenementRepository $repository, EntityManagerInterface $em, LoggerInterface $logger)
     {
         $this->repository = $repository;
         $this->em = $em;
+        $this->logger = $logger;
     }
 
     /**
@@ -53,7 +61,23 @@ class AdminEvenementController extends AbstractController
      */
     public function index(): Response
     {
-        $evenements = $this->repository->findAllHasHappenedAndToCome();
+        try {
+            $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        } catch (Exception $e) {
+            $this->addFlash('danger', "Désolé, Vous n'avez pas les droits d'administration sur ce site.");
+            return $this->redirectToRoute('evenements');
+        }
+        try {
+            $evenements = $this->repository->findAllHasHappenedAndToCome();
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to retrieve from event table with findAllHasHappenedAndToCome()",
+                ['exception' => $e],
+            );
+            $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
+              Veuillez réessayer ultérieurement.");
+        }
+        
         return $this->render('admin/evenement/index.html.twig', [
             'title' => 'Admin',
             'titre' => 'Administration des événements',
@@ -72,18 +96,44 @@ class AdminEvenementController extends AbstractController
      */
     public function new(Request $request)
     {
+        try {
+            $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        } catch (Exception $e) {
+            $this->addFlash('danger', "Désolé, Vous n'avez pas les droits d'administration sur ce site.");
+            return $this->redirectToRoute('evenements');
+        }
         $evenement = new Evenement();
         $evenement->setDescription("Bonjour,");
         $form = $this->createForm(EvenementType::class, $evenement);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->em->persist($evenement);
-            // création d'un nouvel evenement dans le tableau de cache de Symfony
-            $this->em->flush();
-            // mise à jour de la base
-            $this->addFlash('success', "Evenement créé avec succés");
+
+        try {
+            $form->handleRequest($request);
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to retrieve data from form with handleRequest for new event",
+                ['exception' => $e],
+            );
+            $this->addFlash('danger', "Oups ! Un problème est survenu et l'évènement n'a pas pu être créé. 
+              Veuillez réessayer sans charger une image.");
             return $this->redirectToRoute('admin.evenement.index');
+        }
+        if ($form->isSubmitted() && $form->isValid()) {
+            try {
+                // création d'un nouvel evenement dans le tableau de cache de Symfony
+                $this->em->persist($evenement);
+                $this->em->flush(); // mise à jour de la base
+            } catch (Exception $e) {
+                $this->logger->critical(
+                    "Failed to persist or flush a new event in evenement table)",
+                    ['exception' => $e],
+                );
+                $this->addFlash('danger', "Oups ! Un problème est survenu et l'évènement n'a pas pu être créé. 
+                  Veuillez réessayer ultérieurement.");
+                return $this->redirectToRoute('admin.evenement.index');
+            }
+            $this->addFlash('success', "Evenement créé avec succés");
             // On redirige l'utilisateur vers la liste des événements
+            return $this->redirectToRoute('admin.evenement.index');
         }
         return $this->render('admin/evenement/new.html.twig', [
             'title' => 'Creation',
@@ -102,10 +152,37 @@ class AdminEvenementController extends AbstractController
      * 
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit(Evenement $evenement, Request $request)
+    public function edit(int $id, Request $request)
     {
+        try {
+            $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        } catch (Exception $e) {
+            $this->addFlash('danger', "Désolé, Vous n'avez pas les droits d'administration sur ce site.");
+            return $this->redirectToRoute('evenements');
+        }
+        try {
+            $evenement = $this->repository->findOneById($id);
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to retrieve from event table with findOneById($id)",
+                ['exception' => $e],
+            );
+            $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
+              Veuillez réessayer ultérieurement.");
+            return $this->redirectToRoute('admin.evenement.index');
+        }
         $form = $this->createForm(EvenementType::class, $evenement);
-        $form->handleRequest($request);
+        try {
+            $form->handleRequest($request);
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to retrieve data from form with handleRequest for event $evenement->getId())",
+                ['exception' => $e],
+            );
+            $this->addFlash('danger', "Oups ! Un problème est survenu et l'évènement n'a pas pu être mis à jour. 
+              Veuillez réessayer plus tard.");
+            return $this->redirectToRoute('admin.evenement.index');
+        }
         if ($form->isSubmitted() && $form->isValid()) {
         /*   // On récupère l'image transmise
             $image = $form->get('imageFile')->getData();
@@ -129,8 +206,18 @@ class AdminEvenementController extends AbstractController
             // On crée l'image dans la base de données
             $evenement->setImage($fichier);
             */
-            $this->em->flush();
-            // mise à jour de la base
+            try {
+                $this->em->flush(); // mise à jour de la base
+            } catch (Exception $e) {
+                $this->logger->critical(
+                    "Failed to update in evenement table element with id $id)",
+                    ['exception' => $e],
+                );
+                $this->addFlash('danger', "Oups ! Un problème est survenu et l'évènement n'a pas pu être modifié. 
+                  Veuillez réessayer ultérieurement.");
+                return $this->redirectToRoute('admin.evenement.index');
+            }
+            
             $this->addFlash('success', "Evenement modifié avec succés");
             // On redirige l'utilisateur vers la liste des événements
             return $this->redirectToRoute('admin.evenement.index');
@@ -144,17 +231,45 @@ class AdminEvenementController extends AbstractController
      * 
      * @Route("/admin/evenement/{id}", name="admin.evenement.delete", methods="DELETE")
      *
-     * @param Evenement $evenement the event to be deleted
+     * @param int $id the event id to be deleted
      * @param Request $request contains the token
      * 
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function delete(Evenement $evenement, Request $request)
+    public function delete(int $id, Request $request)
     {
+        try {
+            $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        } catch (Exception $e) {
+            $this->addFlash('danger', "Désolé, Vous n'avez pas les droits d'administration sur ce site.");
+            return $this->redirectToRoute('evenements');
+        }
         // ajout d'un contrôle de token pour la sécurité. On le récupère dans la request
-        if ($this->isCsrfTokenValid('delete' . $evenement->getId(), $request->get('_tocken'))) {
-            $this->em->remove($evenement);
-            $this->em->flush();
+        if ($this->isCsrfTokenValid('delete' . $id, $request->get('_tocken'))) {
+            try {
+                $event = $this->repository->findOneById($id);
+            } catch (Exception $e) {
+                $this->logger->critical(
+                    "Failed to retrieve from evenement table with findOneById($id)",
+                    ['exception' => $e],
+                );
+                $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
+                  Veuillez réessayer ultérieurement.");
+                return $this->redirectToRoute('admin.evenement.index');
+            }
+            try {
+                $this->em->remove($event);
+                $this->em->flush();
+            } catch (Exception $e) {
+                $this->logger->critical(
+                    "Failed to delete element with id $id from evenement table",
+                    ['exception' => $e],
+                );
+                $this->addFlash('danger', "Oups ! Un problème est survenu et l'évènement n'a pas pu être supprimé. 
+                  Veuillez réessayer ultérieurement.");
+                return $this->redirectToRoute('admin.evenement.index');
+            }
+            
             $this->addFlash('success', "Evenement supprimé avec succés");
         }
         return $this->redirectToRoute('admin.evenement.index');

@@ -40,6 +40,8 @@ class RegistrationController extends AbstractController
     }
 
     /**
+     * Abandonned - Replaced by "admin.user index"
+     * 
      * @Route("/supadmin", name="admin.utilisateur.index")
      * @return \Symfony\Component\HttpFoundation\Response
      */

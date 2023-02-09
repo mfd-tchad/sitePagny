@@ -22,9 +22,9 @@ class SitemapController extends AbstractController
 
         // On ajoute les URLs "statiques"
         
-        $urls[] = ['loc' => $this->generateUrl('home'), 'lastmod' => '2020-07-28', 
-            'changefreq' => 'monthly', 'priority' => 0.8 ];
-        $urls[] = ['loc' => $this->generateUrl('evenements'), 'changefreq' => 'weekly', 'priority' => 0.8 ];
+        $urls[] = ['loc' => $this->generateUrl('home'), 'lastmod' => '2023-02-28', 
+            'changefreq' => 'monthly', 'priority' => 0.9 ];
+        $urls[] = ['loc' => $this->generateUrl('evenements'), 'changefreq' => 'weekly', 'priority' => 1 ];
         $urls[] = ['loc' => $this->generateUrl('associations')];
         $urls[] = ['loc' => $this->generateUrl('mairie')];
         $urls[] = ['loc' => $this->generateUrl('demarches')];
@@ -49,7 +49,7 @@ class SitemapController extends AbstractController
         $urls[] = ['loc' => $this->generateUrl('login')];
         $urls[] = ['loc' => $this->generateUrl('contact')];
         $urls[] = ['loc' => $this->generateUrl('actualite')];
-        $urls[] = ['loc' => $this->generateUrl('naissances')];
+        $urls[] = ['loc' => $this->generateUrl('actuconseilmunicipal')];
         $urls[] = ['loc' => $this->generateUrl('mariages')];
         $urls[] = ['loc' => $this->generateUrl('deces')];
         $urls[] = ['loc' => $this->generateUrl('flashinfos'), 'changefreq' => 'weekly', 'priority' => 0.9];

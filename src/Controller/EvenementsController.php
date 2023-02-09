@@ -46,14 +46,14 @@ class EvenementsController extends AbstractController
     }
 
     /**
-     * @Route("/naissances", name="naissances")
+     * @Route("/actuconseilmunicipal", name="actuconseilmunicipal")
      */
-    public function naissances(): Response
+    public function actuConseilMunicipal(): Response
     {
         $events = $this->repository->findByType('0');
         return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'Naissances à Pagny la Blanche Côte',
-            'titre' => 'Naissances',
+            'title' => 'Activites du Conseil Municipal de Pagny',
+            'titre' => 'Activités du Conseil Municipal de Pagny',
             'current_menu' => 'evenements',
             'evenements' => $events
         ]);

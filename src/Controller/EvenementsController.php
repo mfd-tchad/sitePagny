@@ -104,19 +104,6 @@ class EvenementsController extends AbstractController
     }
 
     /**
-     * @Route("/fetesavenir", name="fetesavenir")
-     */
-    public function fetesavenir(): Response
-    {
-        $events = $this->repository->findByTypeToCome('3');
-        return $this->render('evenements/index-avenir.html.twig', [
-            'title' => 'Festivités annocées à Pagny la Blanche Côte',
-            'titre' => 'Festivités annoncées',
-            'current_menu' => 'evenements',
-            'evenements' => $events
-        ]);
-    }
-    /**
      * @Route("/flashinfospasses", name="flashinfospasses")
      */
     public function flashinfospasses(): Response

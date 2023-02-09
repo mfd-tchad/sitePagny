@@ -46,14 +46,16 @@ class EvenementsController extends AbstractController
     }
 
     /**
-     * @Route("/naissances", name="naissances")
+     * Finds and displays events which type is 0
+     * 
+     * @Route("/actuconseilmunicipal", name="actuconseilmunicipal")
      */
-    public function naissances(): Response
+    public function actuConseilMunicipal(): Response
     {
         $events = $this->repository->findByType('0');
-        return $this->render('evenements/index-passe.html.twig', [
-            'title' => 'Naissances à Pagny la Blanche Côte',
-            'titre' => 'Naissances',
+        return $this->render('evenements/index.html.twig', [
+            'title' => 'Activites du Conseil Municipal de Pagny',
+            'titre' => 'Activités du Conseil Municipal de Pagny',
             'current_menu' => 'evenements',
             'evenements' => $events
         ]);
@@ -101,19 +103,6 @@ class EvenementsController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/fetesavenir", name="fetesavenir")
-     */
-    public function fetesavenir(): Response
-    {
-        $events = $this->repository->findByTypeToCome('3');
-        return $this->render('evenements/index-avenir.html.twig', [
-            'title' => 'Festivités annocées à Pagny la Blanche Côte',
-            'titre' => 'Festivités annoncées',
-            'current_menu' => 'evenements',
-            'evenements' => $events
-        ]);
-    }
     /**
      * @Route("/flashinfospasses", name="flashinfospasses")
      */

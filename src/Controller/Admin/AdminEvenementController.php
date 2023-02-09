@@ -13,16 +13,31 @@ use App\Repository\EvenementRepository;
 use App\Form\EvenementType;
 use Doctrine\ORM\EntityManagerInterface;
 
+/**
+ * Controller for Event admin
+ * 
+ * @category Class
+ * @author Marie-Françoise Dewulf <marie-francoise@mfdewulf.fr>
+ * 
+ */
 class AdminEvenementController extends AbstractController
 {
     /**
      * @var EvenementRepository
      */
     private $repository;
+
     /**
      * @var ObjectManager
      */
     private $em;
+
+    /**
+     * Constructor
+     *
+     * @param EvenementRepository $repository for retrieving events from storage
+     * @param EntityManagerInterface $em used for flushing new/updated event
+     */
     public function __construct(EvenementRepository $repository, EntityManagerInterface $em)
     {
         $this->repository = $repository;
@@ -30,7 +45,10 @@ class AdminEvenementController extends AbstractController
     }
 
     /**
+     * Retrieves all events from storage into an array and sends it to display
+     * 
      * @Route("/admin", name="admin.evenement.index")
+     * 
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(): Response
@@ -41,11 +59,16 @@ class AdminEvenementController extends AbstractController
             'titre' => 'Administration des événements',
             'current_menu' => 'admin',
             'evenements' => $evenements
-        ]);
+            ]
+        );
     }
 
     /**
+     * Creates a new event from a form completed by user and stores it 
+     * 
      * @Route("/admin/evenement/create", name="admin.evenement.new")
+     * 
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function new(Request $request)
     {
@@ -68,10 +91,15 @@ class AdminEvenementController extends AbstractController
             'current_menu' => 'admin',
             'evenement' => $evenement,
             'form' => $form->createView()
-        ]);
+            ]
+        );
     }
+
     /**
+     * Displays an event as a form the user can update and then stores the updated event into storage
+     * 
      * @Route("/admin/evenement/{id}", name="admin.evenement.edit", methods="GET|POST")
+     * 
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit(Evenement $evenement, Request $request)
@@ -112,12 +140,18 @@ class AdminEvenementController extends AbstractController
     }
 
     /**
+     * Deletes an event from storage after checking token is valid
+     * 
      * @Route("/admin/evenement/{id}", name="admin.evenement.delete", methods="DELETE")
+     *
+     * @param Evenement $evenement the event to be deleted
+     * @param Request $request contains the token
+     * 
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function delete(Evenement $evenement, Request $request)
     {
-        // ajout d'un conrôle de tocken pour la sécurité. On le récupère dans la request
+        // ajout d'un contrôle de token pour la sécurité. On le récupère dans la request
         if ($this->isCsrfTokenValid('delete' . $evenement->getId(), $request->get('_tocken'))) {
             $this->em->remove($evenement);
             $this->em->flush();

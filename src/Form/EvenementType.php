@@ -13,8 +13,21 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Event Form builder
+ * 
+ * @category Class
+ * @author Marie-Françoise Dewulf <marie-francoise@mfdewulf.fr>
+ */
 class EvenementType extends AbstractType
 {
+    /**
+     * Builds form from event class
+     *
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     * 
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -39,6 +52,11 @@ class EvenementType extends AbstractType
         ;
     }
 
+    /**
+     * Binds form to Evenement class
+     *
+     * @param OptionsResolver $resolver
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
@@ -46,7 +64,9 @@ class EvenementType extends AbstractType
         ]);
     }
 
-    // On inverse la clé et la valeur pour un affichage correct de la liste des types d'évènement
+    /**
+     * On inverse la clé et la valeur pour un affichage correct de la liste des types d'évènement
+     */
     private function getChoices()
     {
         $choices = Evenement::TYPE_EVENEMENT;

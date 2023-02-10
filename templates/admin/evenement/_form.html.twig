@@ -22,7 +22,7 @@
         <section class="row mt-4 border border-light">
             <div class="col-md-4" id="pdf_evenement"> 
                 {% if evenement.pdfFile %}
-                    <iframe src="{{vich_uploader_asset(event, 'pdfFile') }}" width="100%" height="auto"></iframe>
+                    <iframe src="{{vich_uploader_asset(evenement, 'pdfFile') }}" width="100%" height="auto"></iframe>
                     
                 {% endif %}
             </div>

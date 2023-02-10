@@ -18,9 +18,9 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
 
-        event_pdf: 
-            uri_prefix: /documents/events
-            upload_destination: '%kernel.project_dir%/public/documents/events'
+        evenement_pdf: 
+            uri_prefix: /documents/evenements
+            upload_destination: '%kernel.project_dir%/public/documents/evenements'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
             inject_on_load: true
             delete_on_update: true

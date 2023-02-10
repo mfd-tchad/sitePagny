@@ -102,7 +102,7 @@ class Evenement
      *     mimeTypes = {"application/pdf", "application/x-pdf"},
      *     mimeTypesMessage = "Please upload a valid PDF"
      * )
-     * @Vich\UploadableField(mapping="event_pdf",fileNameProperty="event_pdf")
+     * @Vich\UploadableField(mapping="evenement_pdf",fileNameProperty="event_pdf")
      */
     private $pdfFile;
 

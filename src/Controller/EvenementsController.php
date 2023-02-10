@@ -2,21 +2,26 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Response;
 use DateTime;
+use Exception;
 use App\Entity\Evenement;
+use Psr\Log\LoggerInterface;
 use App\Repository\EvenementRepository;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EvenementsController extends AbstractController
 {
     private $repository;
+    private $logger;
 
-    public function __construct(EvenementRepository $repository)
+    public function __construct(EvenementRepository $repository, LoggerInterface $logger)
     {
         $this->repository = $repository;
+        $this->logger = $logger;
     }
+    
     /**
      * @Route("/evenements", name="evenements")
      */
@@ -144,16 +149,25 @@ class EvenementsController extends AbstractController
     }
     /**
      * @Route("evenements/{slug}-{id}", name="evenement.show", requirements={"slug": "[a-z0-9\-]*"})
-     * @param Evenement $evenement
      * @return Response
      */
-    public function show(Evenement $evenement, string $slug): Response
+    public function show(string $slug, int $id): Response
     {
-        if ($evenement->getSlug() !== $slug) {
+        /* if ($evenement->getSlug() !== $slug) {
             return $this->redirectToRoute('evenement.show', [
                 'id' => $evenement->getId(),
                 'slug' => $evenement->getSlug()
             ], 301);
+        } */
+        try {
+            $evenement = $this->repository->findOneById($id);
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to retrieve from evenenement table with findOneById($id)",
+                ['exception' => $e],
+            );
+            $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
+              Veuillez réessayer ultérieurement.");
         }
         return $this->render('evenement/show.html.twig', [
             'title' => 'Actualite', 'titre' => 'Actualité du village',

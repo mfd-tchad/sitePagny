@@ -175,7 +175,7 @@ class AdminEvenementController extends AbstractController
             $form = $this->createForm(EvenementType::class, $evenement);
         } catch (Exception $e) {
             $this->logger->critical(
-                "Failed to create form with EvenementType for evenement no $evenement->getId()",
+                "Failed to create form of EvenementType class for evenement no $evenement->getId()",
                 ['exception' => $e],
             );
             $this->addFlash('danger', "Oups ! Un problème de préparation du formulaire est survenu. 

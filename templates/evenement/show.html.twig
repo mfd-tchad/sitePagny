@@ -15,6 +15,8 @@
         <div class="card mt-4 example-wrapper element-evenement">
             {% if evenement.image %}
                 <img src="{{vich_uploader_asset(evenement, 'imageFile') }}" Alt="card-img-top" width="100%" height="auto"/>
+            {% elseif evenement.pdfFile %}   
+                <iframe class="card-pdf" src="{{vich_uploader_asset(evenement, 'pdfFile') }}" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 <img src="/images/fleur2.jpg" width="100%" height="auto"/>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}

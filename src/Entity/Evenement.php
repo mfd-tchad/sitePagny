@@ -15,13 +15,13 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @category Class
  * @author   Marie-Françoise Dewulf <marie-francoise@mfdewulf.fr>
  * 
- * @UniqueEntity("titre")
  * @ORM\Entity(repositoryClass="App\Repository\EvenementRepository")
  * @Vich\Uploadable()
  * 
  */
 class Evenement
 {
+    public const TAILLE_MAX_FICHIER_UPLOAD = 2000000;
     const TYPE_EVENEMENT = [
         4 => 'Activité associative',
         5 => 'Activité Nature',
@@ -94,6 +94,23 @@ class Evenement
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
+
+    /**
+     * @var File|null
+     * @Assert\File(
+     *     maxSize = "2048k",
+     *     mimeTypes = {"application/pdf", "application/x-pdf"},
+     *     mimeTypesMessage = "Please upload a valid PDF"
+     * )
+     * @Vich\UploadableField(mapping="evenement_pdf",fileNameProperty="event_pdf")
+     */
+    private $pdfFile;
+
+    /**
+     * @var String|null
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $event_pdf;
 
     /**
      * Last event update time 
@@ -315,5 +332,53 @@ class Evenement
     {
         $slugify = new Slugify();
         return $slugify->slugify($this->getTypeEvenement($this->getType()) . '-' . $this->getTitre());
+    }
+
+    /**
+     * Get maxSize = "2048k",
+     *
+     * @return  File|null
+     */
+    public function getPdfFile()
+    {
+        return $this->pdfFile;
+    }
+
+    /**
+     * Set maxSize = "2048k",
+     *
+     * @param  File|null  $pdfFile  maxSize = "2048k",
+     *
+     * @return  self
+     */
+    public function setPdfFile($pdfFile)
+    {
+        $this->pdfFile = $pdfFile;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of event_pdf
+     *
+     * @return  String|null
+     */
+    public function getEventPdf()
+    {
+        return $this->event_pdf;
+    }
+
+    /**
+     * Set the value of event_pdf
+     *
+     * @param  String|null  $event_pdf
+     *
+     * @return  self
+     */
+    public function setEventPdf($event_pdf)
+    {
+        $this->event_pdf = $event_pdf;
+
+        return $this;
     }
 }

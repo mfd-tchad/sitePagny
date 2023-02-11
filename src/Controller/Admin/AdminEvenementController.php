@@ -171,12 +171,22 @@ class AdminEvenementController extends AbstractController
               Veuillez réessayer ultérieurement.");
             return $this->redirectToRoute('admin.evenement.index');
         }
-        $form = $this->createForm(EvenementType::class, $evenement);
+        try {
+            $form = $this->createForm(EvenementType::class, $evenement);
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to create form of EvenementType class for evenement no $evenement->getId()",
+                ['exception' => $e],
+            );
+            $this->addFlash('danger', "Oups ! Un problème de préparation du formulaire est survenu. 
+              Veuillez réessayer ultérieurement.");
+            return $this->redirectToRoute('admin.evenement.index');
+        }
         try {
             $form->handleRequest($request);
         } catch (Exception $e) {
             $this->logger->critical(
-                "Failed to retrieve data from form with handleRequest for event $evenement->getId())",
+                "Failed to retrieve data from form with handleRequest for evenenement no $evenement->getId()",
                 ['exception' => $e],
             );
             $this->addFlash('danger', "Oups ! Un problème est survenu et l'évènement n'a pas pu être mis à jour. 

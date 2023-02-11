@@ -19,6 +19,22 @@
                 
             </div>
         </section>
+        <section class="row mt-4 border border-light">
+            <div class="col-md-4" id="pdf_evenement"> 
+                {% if evenement.pdfFile %}
+                    <iframe src="{{vich_uploader_asset(evenement, 'pdfFile') }}" width="100%" height="auto"></iframe>
+                    
+                {% endif %}
+            </div>
+            <div class="col-md-4" id="pdf_name"> 
+                {{ form_label(form.pdfFile,'Pdf') }} 
+                {{ form_errors(form.pdfFile) }}
+                {{ form_help(form.pdfFile) }}
+                {{ form_widget(form.pdfFile) }}
+            </div>
+            <div class="col-md-4">
+            </div>
+        </section>
         <div class="mt-4">
             {{ form_label(form.description) }}
         </div>
@@ -58,8 +74,125 @@
         }
     }
 
+    function checkAndUploadFile(input, type, div, prev) {
+        const TAILLE_MAX_FICHIER = 2024000;
+        var allowedImgTypes = ['jpg','jpeg','JPG','JPEG','png','PNG','gif','GIF'];
+        var allowedPdfTypes = ['pdf','PDF','Pdf'];
+
+        if (!input) {   // une anomalie
+            parentAppend(div, "span", "Erreur interne dans le formulaire");
+        }
+        else if (!input.files) {
+            parentAppend(div, "span", "Ce navigateur ne supporte pas le chargement de fichiers");
+        }
+        else if (!input.files[0]) {
+            parentAppend(div,"span", "Veuillez sélectionner un fichier");
+        }
+        else
+        {  // vérifier que le fichier n'est pas trop volumineux et que le type de fichier est pris en charge
+            var file = input.files[0];
+            
+            var fileType = file.name.split('.');
+            fileType = fileType[fileType.length -1];
+            console.log("file type : ", fileType);
+
+            if (file.size > TAILLE_MAX_FICHIER) {
+                parentAppend(div, "span", "Le fichier est trop volumineux, taille max 2 MB");
+            } 
+            else if (type == 'image')
+            {  
+                if (allowedImgTypes.indexOf(fileType) == -1) { // on vérifie que l'extension est dans la liste autorisée
+                    parentAppend(div, "span", "Le format du fichier n'est pas pris en charge, choisissez un fichier .jpg, .jpeg, .png ou .gif");
+                }
+                else 
+                {
+                    var fReader = new FileReader(); 
+                    var oldImg = prev.querySelector("img");
+
+                    fReader.onload = function(event) { // on crée une image miniature à partir du fichier
+                        var imgElement = document.createElement("img");
+                        imgElement.style.maxWidth = '200px';
+                        imgElement.style.maxHeight = '200px';
+                        imgElement.src = event.target.result;
+
+                        if (oldImg != null) {  // la miniature vient remplacer la précédemment affichée
+                            prev.replaceChild(imgElement, oldImg);
+                        }
+                        else {  // ou bien se loge dans l'espace vide
+                            prev.appendChild(imgElement);
+                        }
+                    }    
+                    fReader.readAsDataURL(file);
+                    // On affiche le nom du fichier avec la classe "selected"
+                    var fileName = file.name;
+                    console.log("file name :" ,fileName);
+                    $("#evenement_imageFile_file").siblings(".custom-file-label").addClass("selected").html(fileName);
+
+                    // enlever les messages d'erreur éventuels
+                    $(".vich-image").siblings(".invalid-feedback").remove(); 
+                    $("#image_name span").remove() ;
+                } 
+            }
+            else if (type == 'pdf') 
+            {
+                if (allowedPdfTypes.indexOf(fileType) == -1) { // on vérifie que l'extension est dans la liste autorisée
+                    parentAppend(div, "span", "Le format du fichier n'est pas pris en charge, choisissez un fichier pdf");
+                }
+                else
+                {
+                    var fileName = file.name;
+                    console.log("fileName :", fileName);
+                    // créer une image temporaire à partir du pdf ?
+                    /* var imgElement = document.createElement("img");
+                    imgElement.style.maxWidth = '200px';
+                    imgElement.style.maxHeight = '200px';
+                    imgElement.src = '/images/evenements/tmpImg.jpg';
+                    */
+
+                    // supprimer l'affichage de l'ancien pdf
+                    var oldPdf = prev.querySelector("iframe");
+                    if (oldPdf != null) {  
+                        oldPdf.remove();
+                        // supprimer l'affichage du div form-group avec la case supprimer et Télécharger
+                        $(".vich-file").children(".form-group, a").remove();
+                    }
+                        
+                    // On affiche le nom du fichier avec la classe "selected"
+                    $("#evenement_pdfFile_file").siblings(".custom-file-label").addClass("selected").html(fileName); 
+                    
+                    // renderPDF ne fonctionne pas pour le moment
+                    // renderPDF(file, prev);// URL, pdf_evenement = container
+
+                    // on enlève les messages d'erreur
+                    $(".vich-file").siblings(".invalid-feedback").remove();             
+                    $("#pdf_name span").remove() ;
+                }
+                
+            }
+        }
+    }
     // When a file is selected to be uploaded
-    $(".custom-file-input").on("change", function() {
+    $("#evenement_imageFile_file").on("change", function() {
+        console.log("Fichier image chargé");
+        var input = document.getElementById("evenement_imageFile_file");
+        var div = document.getElementById("image_name");
+        var prev = document.getElementById("image_evenement");
+
+        checkAndUploadFile(input, 'image', div, prev);
+
+    })
+
+    $("#evenement_pdfFile_file").on("change", function() {
+        console.log("Fichier pdf chargé");
+        var input = document.getElementById("evenement_pdfFile_file");
+        var div = document.getElementById("pdf_name");
+        var prev = document.getElementById("pdf_evenement");
+        
+        checkAndUploadFile(input, 'pdf', div, prev);
+
+    })
+    // When a file is selected to be uploaded
+    {# $(".custom-file-input").on("change", function() {
         const TAILLE_MAX_FICHIER = 2024000;
         var input = document.getElementById("evenement_imageFile_file");
         var div = document.getElementById("image_name");
@@ -119,5 +252,5 @@
                 $("#image_name span").remove() ;
             }
         }
-    })
+    }) #}
 </script>

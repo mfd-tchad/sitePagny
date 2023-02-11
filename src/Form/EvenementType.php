@@ -4,14 +4,15 @@ namespace App\Form;
 
 use App\Entity\Evenement;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Validator\Constraints\File;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
-use Vich\UploaderBundle\Form\Type\VichImageType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 /**
  * Event Form builder
@@ -49,6 +50,14 @@ class EvenementType extends AbstractType
                 },
                 //'upload_max_size_message' => 'Le fichier image est trop volumineux. Taille max autorisée : 2 MB'
             ])
+            ->add('pdfFile', VichFileType::class, [
+                'required' => false,
+                'asset_helper' => true,
+                'allow_delete' => true,
+                'label' => 'Charger Pdf',
+                'allow_file_upload' => true,
+                'download_uri' => true,
+                ])
         ;
     }
 

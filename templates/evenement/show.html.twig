@@ -4,7 +4,7 @@
 
 {% block body %}
 <style>
-    .example-wrapper { max-width: 500px; width: 95%; }
+    .example-wrapper { max-width: 800px; width: 95%; }
     .font-blue-italic  {font-style: italic; font-size:small; color:blue}
 </style>
 
@@ -19,12 +19,12 @@
                 <iframe class="card-pdf" src="{{vich_uploader_asset(evenement, 'pdfFile') }}" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 <img src="/images/fleur2.jpg" width="100%" height="auto"/>
-            {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet rose') %}
-                <img src="/images/naissance.jpg" width="100%" height="auto"/>
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Conseil Municipal') %}
+                <img src="/images/iconeassociation1.png" class="p-2 mx-auto" width="30%" height="auto"/>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  
                 <img src="/images/mariage.jpg" width="100%" height="auto"/>
             {% else %}
-                <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('medium')}}" width="100%" height="auto"/>
+                <img src="{{'/images/evenements/iconecalendrier.png'}}" class="p-2 mx-auto" width="30%" height="auto"/>
             {% endif %}
             <div class="card-header text-center 
             {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}

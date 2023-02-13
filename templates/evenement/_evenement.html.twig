@@ -23,6 +23,8 @@
         
     {% if evenement.image %}
         <img class="card-img-real" src="{{ asset('/images/evenements/'~evenement.image)  }}" Alt="card-img-top" height="130px"/>
+    {% elseif (evenement.typeEvenement(evenement.type) == 'Conseil Municipal') %}
+        <img src="/images/iconeassociation1.png" class="card-img mx-auto"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
         <img class="card-img" src="/images/fleur2.jpg"/>
     {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  

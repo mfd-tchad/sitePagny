@@ -18,19 +18,19 @@
             {% elseif evenement.pdfFile %}   
                 <iframe class="card-pdf" src="{{vich_uploader_asset(evenement, 'pdfFile') }}" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
-                <img src="/images/fleur2.jpg" width="100%" height="auto"/>
+                <img src="/images/fleur2.jpg" class="card-img-show mx-auto"/>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Conseil Municipal') %}
-                <img src="/images/iconeassociation1.png" class="p-2 mx-auto" width="30%" height="auto"/>
+                <img src="/images/iconeassociation1.png" class="card-img-show mx-auto"/>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Carnet blanc') %}  
-                <img src="/images/mariage.jpg" width="100%" height="auto"/>
+                <img src="/images/mariage.jpg" class="card-img-show mx-auto"/>
             {% else %}
-                <img src="{{'/images/evenements/iconecalendrier.png'}}" class="p-2 mx-auto" width="30%" height="auto"/>
+                <img src="{{'/images/evenements/iconecalendrier.png'}}" class="card-img-show mx-auto"/>
             {% endif %}
             <div class="card-header text-center 
             {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 bg-secondary
-            {% elseif (evenement.typeEvenement(evenement.type) == 'Naissance') %}
-                bg-pink
+            {% elseif (evenement.typeEvenement(evenement.type) == 'Conseil Municipal') %}
+                bg-primary
             {% elseif (evenement.typeEvenement(evenement.type) == 'Fête') %}
                 bg-warning
             {% elseif (evenement.typeEvenement(evenement.type) == 'Mariage') %}
@@ -38,7 +38,7 @@
             {% elseif (evenement.typeEvenement(evenement.type) == 'Commémoration') %}
                 bg-light
             {% elseif (evenement.typeEvenement(evenement.type) == 'Vide-Greniers') %}
-                bg-primary
+                bg-pink
             {% endif %}"> 
                 <h4> {{ evenement.titre }} </h4> 
             </div>

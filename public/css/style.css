@@ -123,6 +123,11 @@ footer p {
     height: 130px;
     width: 100%;
  }
+
+.card-img-show{
+    width: 50%;
+    height: auto;
+ }
  
  .card-pdf {
     min-height: 800px;

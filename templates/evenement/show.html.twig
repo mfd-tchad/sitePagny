@@ -13,10 +13,13 @@
         <h2>{{ evenement.typeEvenement(evenement.type) }}</h2>
         <hr>
         <div class="card mt-4 example-wrapper element-evenement">
+            {% if evenement.pdfFile %}   
+                <!--<iframe class="card-pdf" src="{{vich_uploader_asset(evenement, 'pdfFile') }}" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
+            -->
+                <a class="card-img-show mx-auto text-center" href="{{vich_uploader_asset(evenement, 'pdfFile') }}">
+            {% endif %}
             {% if evenement.image %}
                 <img src="{{vich_uploader_asset(evenement, 'imageFile') }}" Alt="card-img-top" width="100%" height="auto"/>
-            {% elseif evenement.pdfFile %}   
-                <iframe class="card-pdf" src="{{vich_uploader_asset(evenement, 'pdfFile') }}" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 <img src="/images/fleur2.jpg" class="card-img-show mx-auto"/>
             {% elseif (evenement.typeEvenement(evenement.type) == 'Conseil Municipal') %}
@@ -26,6 +29,11 @@
             {% else %}
                 <img src="{{'/images/evenements/iconecalendrier.png'}}" class="card-img-show mx-auto"/>
             {% endif %}
+            {% if evenement.pdfFile %}
+                <div class="text-center">
+                    Ouvrir Fichier Pdf</a>
+                </div>
+            {% endif %}   
             <div class="card-header text-center 
             {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
                 bg-secondary

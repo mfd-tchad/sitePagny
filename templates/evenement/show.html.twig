@@ -16,7 +16,7 @@
             {% if evenement.pdfFile %}   
                 <!--<iframe class="card-pdf" src="{{vich_uploader_asset(evenement, 'pdfFile') }}" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
             -->
-                <a class="card-img-show mx-auto text-center" href="{{vich_uploader_asset(evenement, 'pdfFile') }}">
+                <a class="mx-auto text-center" href="{{vich_uploader_asset(evenement, 'pdfFile') }}">
             {% endif %}
             {% if evenement.image %}
                 <img src="{{vich_uploader_asset(evenement, 'imageFile') }}" Alt="card-img-top" width="100%" height="auto"/>

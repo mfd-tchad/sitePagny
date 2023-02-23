@@ -24,7 +24,7 @@ class MailerService extends AbstractController {
     {
         $email = (new TemplatedEmail())
             ->from($contact->getEmail())
-            ->to('mairie@pagnylablanchecote.net')
+            ->to('pagnylablanchecote@wanadoo.fr')
             ->replyTo($contact->getEmail())
             ->subject($contact->getSujet())
             ->htmlTemplate('emails/contact.html.twig')

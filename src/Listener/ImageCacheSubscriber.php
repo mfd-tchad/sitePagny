@@ -30,7 +30,7 @@ class ImageCacheSubscriber implements EventSubscriber
 
     // this method can only return the event names; you cannot define a
     // custom method name to execute when each event triggers
-    public function getSubscribedEvents()
+    public function getSubscribedEvents() : array
     {
         return [
             'preRemove',

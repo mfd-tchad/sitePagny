@@ -95,11 +95,27 @@ class EvenementsControllerTest extends WebTestCase
         $eventRepository = $this->client->getContainer()->get('doctrine.orm.entity_manager')
             ->getRepository('Evenement::class');
         */
+        
         $this->client->request('GET', '/evenements/conseil-municipal-compte-rendu-cm-18');
         $this->assertResponseIsSuccessful();
+        $this->assertPageTitleContains('Actualite');
+        $this->assertSelectorTextContains('h2', 'Conseil Municipal');
 
         $this->client->request('GET', '/evenements/flash-info-calendrier-de-collecte-des-ordures-menageres-24');
         $this->assertResponseIsSuccessful();
 
+    }
+
+    public function testShowFlashInfosPageIsUp()
+    {
+        $crawler = $this->client->request('GET', '/flashinfos');
+        $this->assertPageTitleContains('FlashInfos');
+        $this->assertCount(2, $crawler->filter('article'));
+
+        /*
+        $this->client->clickLink('article');
++       $this->assertResponseIsSuccessful();
+        
+        */  
     }
 }

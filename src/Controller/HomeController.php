@@ -17,16 +17,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-     /**
-     * @Route("/historique", name="historique")
-     */
-    public function historique()
-    {
-        return $this->render('historique/index.html.twig', [
-            'title' => 'Historique de Pagny la Blanche Cote', 'titre' => 'Historique du village', 'current_menu' => 'patrimoins'
-        ]);
-    }
-    
     /**
      * @Route("/viepratique", name="viepratique")
      */
@@ -36,7 +26,7 @@ class HomeController extends AbstractController
             'title' => 'Vivre à Pagny la Blanche Cote', 'titre' => 'Vie pratique', 'current_menu' => 'viepratique'
         ]);
     }
-/**
+    /**
      * @Route("/scolaire", name="scolaire")
      */
     public function scolaire()
@@ -145,6 +135,16 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/historique", name="historique")
+     */
+    public function historique()
+    {
+        return $this->render('historique/index.html.twig', [
+            'title' => 'Historique de Pagny la Blanche Cote', 'titre' => 'Historique du village', 'current_menu' => 'patrimoins'
+        ]);
+    }
+    
     /**
      * @Route("/saintgregoire", name="saintgregoire")
      */

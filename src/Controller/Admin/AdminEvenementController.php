@@ -217,6 +217,7 @@ class AdminEvenementController extends AbstractController
             $evenement->setImage($fichier);
             */
             try {
+                $evenement->setUpdatedAt(new \Datetime);
                 $this->em->flush(); // mise à jour de la base
             } catch (Exception $e) {
                 $this->logger->critical(

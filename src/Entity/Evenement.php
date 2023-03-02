@@ -248,6 +248,30 @@ class Evenement
     }
 
     /**
+     * Get the date the event has been last updated
+     *
+     * @return \DateTimeInterface|null
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Set the creation date of the event
+     *
+     * @param \DateTimeInterface $created_at creation date
+     * 
+     * @return self
+     */
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    /**
      * Get the event title
      *
      * @return string|null

@@ -87,7 +87,6 @@ class EvenementRepository extends ServiceEntityRepository
      */
     public function findHasHappenedAndToCome()
     {
-
         return $this->createQueryBuilder('e')
             ->orderBy('e.updated_at', 'DESC')
             ->setMaxResults(12)
@@ -105,15 +104,5 @@ class EvenementRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-    /*
-    public function findOneBySomeField($value): ?Evenement
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+    
 }

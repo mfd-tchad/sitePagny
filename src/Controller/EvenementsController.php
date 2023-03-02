@@ -143,7 +143,7 @@ class EvenementsController extends AbstractController
     }
 
     /**
-     * @Route("/fetesactu", name="fetesactu")
+     * @Route("/actufetes", name="actufetes")
      */
     public function fetesactu(): Response
     {
@@ -166,9 +166,9 @@ class EvenementsController extends AbstractController
     }
 
     /**
-     * @Route("/flashinfospasses", name="flashinfospasses")
+     * @Route("/flashinfos", name="flashinfos")
      */
-    public function flashinfospasses(): Response
+    public function flashinfos(): Response
     {
         try {
             $events = $this->repository->findByType('7');
@@ -188,9 +188,9 @@ class EvenementsController extends AbstractController
         ]);
     }
     /**
-     * @Route("/flashinfos", name="flashinfos")
+     * @Route("/flashinfosavenir", name="flashinfosavenir")
      */
-    public function flashinfos(): Response
+    public function flashinfosavenir(): Response
     {
         try {
             $events = $this->repository->findByTypeToCome('7');
@@ -210,7 +210,7 @@ class EvenementsController extends AbstractController
         ]);
     }
     /**
-     * @Route("/actualiteetevenements", name="actualiteetevenements")
+     * @Route("/alaune", name="alaune")
      */
     public function bothEvents(): Response
     {

@@ -61,10 +61,10 @@
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'evenements'%} active {% endif %}">
                         <a class="nav-link dropdown-toggle" href="{{ path('evenements') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;" data-hover="dropdown">
-                            <a class="dropdown-item" href="{{ path('actualiteetevenements') }}">A la une</a>
+                            <a class="dropdown-item" href="{{ path('alaune') }}">A la une</a>
                             <a class="dropdown-item" href="{{ path('actualite') }}">Evènements Passés</a>
                             <a class="dropdown-item" href="{{ path('evenements') }}">Evènements A venir</a>
-                            <a class="dropdown-item" href="{{ path('flashinfospasses') }}">Flash  Infos</a>
+                            <a class="dropdown-item" href="{{ path('flashinfos') }}">Flash  Infos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'viepratique'%} active {% endif %}">

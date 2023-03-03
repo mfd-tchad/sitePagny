@@ -116,18 +116,8 @@ class Evenement
      * Last event update time 
      * 
      * @ORM\Column(type="datetime")
-     * @var \DateTime
      */
     private $updated_at;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->created_at = new \DateTime();
-        $this->updated_at = new \DateTime();
-    }
 
     /**
      * Get Id
@@ -226,9 +216,9 @@ class Evenement
     /**
      * Get the date the event has been created
      *
-     * @return \DateTimeInterface|null
+     * @return \DateTime|null
      */
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->created_at;
     }
@@ -236,11 +226,11 @@ class Evenement
     /**
      * Set the creation date of the event
      *
-     * @param \DateTimeInterface $created_at creation date
+     * @param \DateTime $created_at creation date
      * 
      * @return self
      */
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setCreatedAt(\DateTime $created_at): self
     {
         $this->created_at = $created_at;
 
@@ -250,9 +240,9 @@ class Evenement
     /**
      * Get the date the event has been last updated
      *
-     * @return \DateTimeInterface|null
+     * @return \DateTime|null
      */
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?\DateTime
     {
         return $this->updated_at;
     }
@@ -260,11 +250,11 @@ class Evenement
     /**
      * Set the creation date of the event
      *
-     * @param \DateTimeInterface $created_at creation date
+     * @param \DateTime $created_at creation date
      * 
      * @return self
      */
-    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    public function setUpdatedAt(\DateTime $updated_at): self
     {
         $this->updated_at = $updated_at;
 

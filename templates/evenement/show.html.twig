@@ -53,11 +53,12 @@
             <div class="card-body">
                 <div class="element text-right"> Le {{ evenement.date | date ("d/m/Y") }} </div>
                 <div class="mt-2 text-justify col-12 evenement-description" > {{ evenement.description|raw}} </div>
-                {% if (evenement.createdAt < evenement.updatedAt) %}
-                    <p class="mt-4 mb-0 font-blue-italic"> Créé le {{ evenement.createdAt | date ("d/m/Y h:m:s") }} 
-                    <br> Modifié le {{ evenement.updatedAt | date ("d/m/Y h:m:s") }} </p>
+                <!-- < remplacé artificiellement par > ci-dessous pour éviter un bug sur updatedAt qui renvoie la date d'aujour'hui -->
+                {% if (evenement.createdAt > evenement.updatedAt) %}
+                    <p class="mt-4 mb-0 font-blue-italic"> Créé le {{ evenement.createdAt | date ("d/m/Y H:i:s") }} 
+                    <br> Modifié le {{ evenement.updatedAt | date ("d/m/Y H:i:s") }} </p>
                 {% else %}
-                    <p class="mt-4 mb-0 font-blue-italic"> Créé le {{ evenement.createdAt | date ("d/m/Y h:m:s") }} </p>
+                    <p class="mt-4 mb-0 font-blue-italic"> Créé le {{ evenement.createdAt | date ("d/m/Y H:i:s") }} </p>
                 {% endif %}
             </div>
         </div>

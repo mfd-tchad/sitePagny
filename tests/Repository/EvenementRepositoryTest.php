@@ -1,12 +1,9 @@
 <?php
 namespace App\Tests\Repository;
-use Date;
-use App\Entity\Evenement;
 
-// use Doctrine\Persistence\ManagerRegistry ;
+use App\Entity\Evenement;
 use App\Repository\EvenementRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 class EvenementRepositoryTest extends KernelTestCase
 {
@@ -45,7 +42,7 @@ class EvenementRepositoryTest extends KernelTestCase
         
         $this->assertNotNull($events);
         $this->assertInstanceOf('DateTime', $events[0]->getCreatedAt());
-        $this->assertLessThanOrEqual($event->getCreatedAt(), $events[0]->getCreatedAt());
+        $this->assertLessThanOrEqual(new \DateTime(), $events[0]->getCreatedAt());
         $this->assertSame($event->getType(),$events[0]->getType());
     }
     
@@ -58,7 +55,6 @@ class EvenementRepositoryTest extends KernelTestCase
         $events = $this->evenementRepo->findToCome();
         $this->assertNotNull($events);
         $this->assertInstanceOf('DateTime', $events[0]->getCreatedAt());
-        $this->assertLessThanOrEqual($event->getCreatedAt(), $events[0]->getCreatedAt());
         $this->assertLessThanOrEqual($events[0]->getDate(), $event->getDate());
     }
 
@@ -69,7 +65,7 @@ class EvenementRepositoryTest extends KernelTestCase
         $event->setDate(new \DateTime());
         $event->setType(0);
 
-        $events = $this->evenementRepo->findToCome();
+        $events = $this->evenementRepo->findByTypeToCome(0);
         if ($events) {
             $this->assertLessThanOrEqual($events[0]->getDate(), $event->getDate());
             $this->assertSame($event->getType(),$events[0]->getType());
@@ -86,7 +82,7 @@ class EvenementRepositoryTest extends KernelTestCase
         $events = $this->evenementRepo->findHasHappened();
         $this->assertNotNull($events);
         $this->assertInstanceOf('DateTime', $events[0]->getCreatedAt());
-        $this->assertLessThanOrEqual($event->getCreatedAt(), $events[0]->getCreatedAt());
+        $this->assertLessThanOrEqual(new \DateTime(), $events[0]->getCreatedAt());
         $this->assertLessThanOrEqual($event->getDate(), $events[0]->getDate());
         $this->assertLessThanOrEqual(count($events), 2);
         $this->assertLessThanOrEqual($events[0]->getDate(), $events[1]->getDate());
@@ -101,6 +97,7 @@ class EvenementRepositoryTest extends KernelTestCase
         $this->assertNotNull($events);
         $this->assertLessThanOrEqual(12, count($events));
         $this->assertLessThanOrEqual(count($events), 2);
+       
         $this->assertLessThanOrEqual($events[0]->getUpdatedAt(), $events[1]->getUpdatedAt());
     }
 

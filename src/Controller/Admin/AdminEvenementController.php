@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use Exception;
+use DateTime;
 use App\Entity\Evenement;
 use App\Form\EvenementType;
 use Psr\Log\LoggerInterface;
@@ -120,6 +121,8 @@ class AdminEvenementController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 // création d'un nouvel evenement dans le tableau de cache de Symfony
+                $evenement->setCreatedAt(new Datetime());
+                $evenement->setUpdatedAt(new Datetime());
                 $this->em->persist($evenement);
                 $this->em->flush(); // mise à jour de la base
             } catch (Exception $e) {
@@ -217,7 +220,7 @@ class AdminEvenementController extends AbstractController
             $evenement->setImage($fichier);
             */
             try {
-                $evenement->setUpdatedAt(new \Datetime);
+                $evenement->setUpdatedAt(new Datetime());
                 $this->em->flush(); // mise à jour de la base
             } catch (Exception $e) {
                 $this->logger->critical(

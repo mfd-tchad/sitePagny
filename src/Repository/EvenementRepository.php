@@ -87,11 +87,14 @@ class EvenementRepository extends ServiceEntityRepository
      */
     public function findHasHappenedAndToCome()
     {
+        return $this->findBy([],array('updated_at'=>'DESC'),12);
+        /*
         return $this->createQueryBuilder('e')
             ->orderBy('e.updated_at', 'DESC')
             ->setMaxResults(12)
             ->getQuery()
             ->getResult();
+        */
     }
 
     /**
@@ -99,10 +102,13 @@ class EvenementRepository extends ServiceEntityRepository
      */
     public function findAllHasHappenedAndToCome()
     {
+        return $this->findBy([],array('updated_at'=>'DESC'));
+        /*
         return $this->createQueryBuilder('e')
             ->orderBy('e.updated_at', 'DESC')
             ->getQuery()
             ->getResult();
+        */
     }
     
 }

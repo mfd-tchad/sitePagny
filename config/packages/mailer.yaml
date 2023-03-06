@@ -8,3 +8,15 @@ framework:
             from: 'no-reply@pagnylablanchecote.net'
             #X-Custom-Header: 'X-Auto-Response-Suppress', 'OOF, DR, RN, NRN, AutoReply'
             X-Custom-Header: 'X-Auto-Response-Suppress'
+
+when@dev:
+    framework:
+        mailer:
+            envelope:
+                recipients: ['mairie@pagnylablanchecote.net']
+
+when@test:
+    framework:
+        mailer:
+            envelope:
+                recipients: ['mairie@pagnylablanchecote.net']

@@ -45,6 +45,7 @@ class AdminEvenementController extends AbstractController
      *
      * @param EvenementRepository $repository for retrieving events from storage
      * @param EntityManagerInterface $em used for flushing new/updated event
+     * @param LoggerInterface $logger used to log errors
      */
     public function __construct(EvenementRepository $repository, EntityManagerInterface $em, LoggerInterface $logger)
     {

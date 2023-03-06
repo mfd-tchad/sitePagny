@@ -2,17 +2,28 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Exception;
 use App\Entity\Contact;
 use App\Form\ContactType;
+use Psr\Log\LoggerInterface;
 use App\Notification\MailerService;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
-    
+    /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
     /**
      * @Route("/contact", name="contact")
      */
@@ -21,12 +32,22 @@ class ContactController extends AbstractController
         
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
+        try {
+            $form->handleRequest($request);
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to retrieve contact data from form",
+                ['exception' => $e],
+            );
+            $this->addFlash('danger', "Oups ! Un problème est survenu. 
+              Veuillez réessayer ultérieurement.");
+        }
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             
             $mailerService->sendEmail($contact);
-            $this->addFlash('success', 'Votre email a bien été envoyé');
+            
             return $this->redirectToRoute('contact');
         }
 

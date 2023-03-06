@@ -25,6 +25,8 @@ class MairieControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('mairie'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2', 'Mairie');
     }
 
     public function testDemarchesPageIsUp()
@@ -34,6 +36,8 @@ class MairieControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('demarches'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2', 'Démarches');
     }
 
     public function testUrbanismePageIsUp()
@@ -43,6 +47,8 @@ class MairieControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('urbanisme'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2', 'Cadastre');
     }
 
     public function testConseilMunicipalPageIsUp()
@@ -52,6 +58,8 @@ class MairieControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('conseilmunicipal'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2', 'Conseil Municipal');
     }
 
     public function testFinancesPageIsUp()
@@ -61,6 +69,8 @@ class MairieControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('finances'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2', 'Finances');
     }
 
 

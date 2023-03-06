@@ -170,7 +170,7 @@ class HomeController extends AbstractController
     public function reserve()
     {
         return $this->render('reserve/index.html.twig', [
-            'title' => 'Réserve Naturelle Régionale de Pagny la Blanche Côte', 'titre' => 'Reserve naturelle régionale', 'current_menu' => 'patrimoine'
+            'title' => 'Réserve Naturelle Régionale de Pagny la Blanche Côte', 'titre' => 'Réserve Naturelle Régionale', 'current_menu' => 'patrimoine'
         ]);
     }
 

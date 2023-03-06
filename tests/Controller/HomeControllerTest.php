@@ -25,6 +25,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('home'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h1', 'Bienvenue');
     }
 
     public function testViePratiquePageIsUp()
@@ -34,6 +36,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('viepratique'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Vie pratique");
     }
 
     public function testScolairePageIsUp()
@@ -43,6 +47,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('scolaire'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"scolaire");
     }
 
     public function testServiceAinesPageIsUp()
@@ -52,6 +58,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('serviceaines'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Service");
     }
 
     public function testOrduresPageIsUp()
@@ -61,6 +69,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('ordures'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Gestion des");
     }
 
     public function testAnimationEtLoisirsPageIsUp()
@@ -70,6 +80,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('animationetloisirs'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Animation");
     }
 
     public function testJeunessePageIsUp()
@@ -79,6 +91,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('jeunesse'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Jeunesse");
     }
 
     public function testAinesPageIsUp()
@@ -88,6 +102,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('aines'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Ainés");
     }
 
     public function testVideGreniersPageIsUp()
@@ -97,6 +113,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('videgreniers'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Greniers");
     }
 
     public function testConcertsPageIsUp()
@@ -106,6 +124,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('concerts'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Concerts");
     }
 
     public function testFetesPageIsUp()
@@ -115,6 +135,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('fetes'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Fêtes");
     }
 
     public function testSportsEtLoisirssPageIsUp()
@@ -124,6 +146,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('sportsetloisirs'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Sport");
     }
 
     public function testAssociationsPageIsUp()
@@ -133,6 +157,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('associations'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Associations");
     }
 
     public function testIleAuxEnfantsPageIsUp()
@@ -142,6 +168,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('ileauxenfants'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Enfants");
     }
 
     public function testHistoriquePageIsUp()
@@ -151,6 +179,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('historique'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Historique");
     }
     
     public function testSaintGregoirePageIsUp()
@@ -160,6 +190,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('saintgregoire'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Grégoire");
     }
 
     public function testEglisePageIsUp()
@@ -169,6 +201,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('eglise'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Eglise");
     }
 
     public function testReservePageIsUp()
@@ -178,6 +212,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('reserve'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Réserve");
     }
 
     public function testPatrimoinePageIsUp()
@@ -187,6 +223,8 @@ class HomeControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('patrimoine'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('h2',"Patrimoine");
     }
 
 }

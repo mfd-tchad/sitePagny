@@ -25,5 +25,7 @@ class SecurityControllerTest extends WebTestCase
 
         $this->client->request('GET', $this->urlGenerator->generate('login'));
         $this->assertResponseIsSuccessful();
+
+        $this->assertSelectorTextContains('legend','Login');
     }
 }

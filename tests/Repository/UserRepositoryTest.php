@@ -23,8 +23,8 @@ class UserRepositoryTest extends KernelTestCase
     
     public function testOneByUsername() 
     {        
-        $this->user->setUsername('mairie');
-        $user = $this->userRepo->findOneByUsername('mairie');
+        $this->user->setUsername('user');
+        $user = $this->userRepo->findOneByUsername('user');
         $this->assertNotNull($user);
         $this->assertSame($this->user->getUsername(), $user->getUsername());
     }

@@ -76,11 +76,11 @@ class AdminEvenementControllerTest extends WebTestCase
        
         // check below that there is a link named Administration
         $liAdmin = $crawler->selectLink('Administration');
-        $this->AssertNotNull($liAdmin);
+        $this->AssertNotEmpty($liAdmin);
 
         // check below that there is a link named Evénements
         $linkCrawler = $crawler->selectLink('Evénements');
-        $this->AssertNotNull($linkCrawler);
+        $this->AssertNotEmpty($linkCrawler);
         
         // ...then, get the Link object and click :
         $link = $linkCrawler->link();
@@ -117,7 +117,7 @@ class AdminEvenementControllerTest extends WebTestCase
 
         // check below that there is a link named Créer un nouvel Evénement
         $linkCrawler = $crawler->selectLink('Créer un nouvel Evenement');
-        $this->AssertNotNull($linkCrawler);
+        $this->AssertNotEmpty($linkCrawler);
         
         // ...then, get the Link object and click :
         $link = $linkCrawler->link();
@@ -161,7 +161,7 @@ class AdminEvenementControllerTest extends WebTestCase
 
         // check below that there is a link named Editer
         $linkCrawler = $crawler->selectLink('Editer');
-        $this->AssertNotNull($linkCrawler);
+        $this->AssertNotEmpty($linkCrawler);
         
         // ...then, get the Link object and click :
         $link = $linkCrawler->link();

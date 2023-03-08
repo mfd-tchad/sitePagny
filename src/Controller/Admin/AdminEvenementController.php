@@ -92,7 +92,7 @@ class AdminEvenementController extends AbstractController
     /**
      * Creates a new event from a form completed by user and stores it 
      * 
-     * @Route("/admin/evenement/create", name="admin.evenement.new")
+     * @Route("/admin/evenement/new", name="admin.evenement.new")
      * 
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -244,7 +244,7 @@ class AdminEvenementController extends AbstractController
     /**
      * Deletes an event from storage after checking token is valid
      * 
-     * @Route("/admin/evenement/{id}", name="admin.evenement.delete", methods="DELETE")
+     * @Route("/admin/evenement/delete/{id}", name="admin.evenement.delete", methods="DELETE")
      *
      * @param int $id the event id to be deleted
      * @param Request $request contains the token

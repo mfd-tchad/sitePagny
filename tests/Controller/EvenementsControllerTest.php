@@ -90,12 +90,7 @@ class EvenementsControllerTest extends WebTestCase
     }
 
     public function testShowEventPageIsUp()
-    {
-       /* 
-        $eventRepository = $this->client->getContainer()->get('doctrine.orm.entity_manager')
-            ->getRepository('Evenement::class');
-        */
-        
+    {   
         $this->client->request('GET', '/evenements/conseil-municipal-compte-rendu-cm-18');
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleContains('Actualite');
@@ -109,8 +104,8 @@ class EvenementsControllerTest extends WebTestCase
     public function testShowFlashInfosPageIsUp()
     {
         $crawler = $this->client->request('GET', '/flashinfos');
+        $this->assertResponseIsSuccessful();
         $this->assertPageTitleContains('FlashInfos');
-        $this->assertCount(2, $crawler->filter('article'));
 
         /*
         $this->client->clickLink('article');

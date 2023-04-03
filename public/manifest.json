@@ -26,7 +26,8 @@
     {
       "src": "/icons/android-chrome-256x256.png",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/android-512x512.png",

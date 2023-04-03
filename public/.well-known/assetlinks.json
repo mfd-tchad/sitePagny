@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "net.pagnylablanchecote.twa",
+                     "sha256_cert_fingerprints": ["DA:5B:59:AC:5E:79:3E:89:27:C5:49:11:98:94:CA:B5:3A:06:FC:02:43:AD:90:74:DB:32:76:9F:03:43:47:F4"] }
+      }
+]

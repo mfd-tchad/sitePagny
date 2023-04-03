@@ -27,11 +27,6 @@
       "src": "/icons/android-chrome-256x256.png",
       "sizes": "256x256",
       "type": "image/png"
-    },
-    {
-      "src": "/icons/manifest-icon-512.maskable.png",
-      "sizes": "512x512",
-      "type": "image/png"
     }
   ],
   "screenshots": [

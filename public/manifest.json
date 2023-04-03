@@ -1,0 +1,79 @@
+{
+  "name": "Pagny la Blanche Côte - Appli officielle",
+  "lang": "fr-FR",
+  "short_name": "PagnyLBC",
+  "start_url": "/",
+  "categories": [
+    "village",
+    "official",
+    "news"
+  ],
+  "theme_color": "#87cefa",
+  "background_color": "#ffffff",
+  "display_override": [
+    "fullscreen",
+    "minimal-ui"
+  ],
+  "display": "standalone",
+  "description": "L'application de la commune de Pagny la Blanche Côte.",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "public/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "public/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "public/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "public/screenshots/1280x800-screenshot.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "public/screenshots/750x1334-screenshot.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "A la une",
+      "url": "/events",
+      "description": "Actu' à la Une"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "Activités",
+      "url": "/activites"
+    }
+  ],
+  "orientation": "any",
+  "url_handlers": [
+    {
+      "origin": "https://pagnylablanchecote.net"
+    }
+  ]
+}

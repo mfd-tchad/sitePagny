@@ -33,4 +33,9 @@
     
     {% include '/home/clicsrapides.html.twig' %}
 </main>
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('service-worker.js')
+  }
+</script>
 {% endblock %}

@@ -184,5 +184,16 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/download", name="download")
+     */
+    public function download()
+    {
+        return $this->render('home/download.html.twig', [
+            'title' => 'Appli download',
+            'titre' => "Téléchargement de l'application",
+            'current_menu' => 'home'
+        ]);
+    }
     
 }

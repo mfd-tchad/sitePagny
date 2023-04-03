@@ -104,16 +104,6 @@
                         </div>
                     </li>
                     
-                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'associations'%} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('associations') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Associations</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #87CEFA;">
-                            <a class="dropdown-item" href="{{ path('ileauxenfants') }}">Ile aux enfants</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ path('saintgregoire') }}"> St Grégoire</a>  
-                            
-                        </div>
-                    </li>
-                    
                     <li class="nav-item {% if current_menu is defined and current_menu == 'contact'%} active {% endif %}">
                         <a class="nav-link" href="{{ path('contact') }}">Contact</a>
                     </li>
@@ -141,6 +131,13 @@
                     </li>
                 </ul>
                 {% else %}
+                    <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'download'%} active {% endif %}">
+                        <a class="nav-link dropdown-toggle" href="{{ path('download')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-download fa-fw"></i></a>
+                        <div class="dropdown-menu couleur-fond-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/wpa/android/APEN.zip">Pour android</a>
+                            <a class="dropdown-item" href="/wpa/windows/APEN.zip">Pour windows</a> 
+                        </div>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ml-auto" >
                     <li class="nav-item {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">

@@ -24,7 +24,7 @@ var urlsToCache = [
   '/jeunesse',
   '/reserve',
   '/sportsetloisirs',
-  '/videgrenier'
+  '/videgreniers'
 ];
 
 self.addEventListener("message", (event) => {

@@ -42,7 +42,7 @@
         <p class="card-text" style="font-weight: bold;"> {{ evenement.titre }} </p>
         {% if start_content %}
             <div class="card-content mt-2"> 
-                {{ evenement.description |u.truncate(100,'...') | raw}}
+                {{ evenement.description |u.truncate(150,'...') | raw}}
             </div>
             <div class="mt-2 text-left">
                 <span class="btn btn-sm btn-primary card-btn"> 

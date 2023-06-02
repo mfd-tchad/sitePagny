@@ -55,7 +55,7 @@ class RegistrationController extends AbstractController
             $this->denyAccessUnlessGranted('ROLE_USER');
         } catch (Exception $e) {
             $this->addFlash('danger', "Veuillez vous connecter pour avoir accès à votre profil");
-            return $this->redirectToRoute('events');
+            return $this->redirectToRoute('login');
         }
         return $this->render('user/profile.html.twig', [
             'title' => 'Profile', 'titre' => 'Votre profil',  'current_menu' => 'session']);

@@ -1,28 +1,38 @@
 
-{{ form_start(form) }}
+{{ form_start(form, 
+    {'attr': {
+        'novalidate':'novalidate',
+        'class':'col-lg-12'
+        }
+      })
+}}
 
-    <div class="mt-4"> Nom  
-        {{ form_errors(form.Lastname) }}
-        {{ form_widget(form.Lastname) }}
-        {{ form_help(form.Lastname) }}
+    <div class="mt-4"> 
+        {{ form_row(form.Lastname) }}
     </div>
-    <div class="mt-4"> Prénom
-        {{ form_errors(form.Firstname) }}
-        {{ form_widget(form.Firstname) }}
-        {{ form_help(form.Firstname) }}
-        
+    <div class="mt-4"> 
+        {{ form_row(form.Firstname) }}
     </div>
-    <div class="mt-4"> Identifiant
-        {{ form_errors(form.username) }}
-        {{ form_widget(form.username) }}
-        {{ form_help(form.username) }}
+    <div class="mt-4"> 
+        {{ form_row(form.username) }}
     </div>
-    <div class="mt-4"> Rôle
-        {{ form_errors(form.roles) }}
-        {{ form_widget(form.roles) }}
-        {{ form_help(form.roles) }}
+    <div class="mt-4"> 
+        {{ form_row(form.email) }}
     </div>
-    <button class="btn btn-primary">Enregistrer</button>
-    <a href="{{ path('admin.user.index') }}" type="cancel" class="btn btn-secondary">Annuler</a>
+    {% if (signup) %}
+    <div class="mt-4">
+        {{ form_row(form.plainPassword) }}
+    </div>
+    {% else %}
+    <div class="mt-4">
+        {{ form_row(form.roles) }}
+    </div>
+    <div class="mt-4"> 
+        {{ form_errors(form.isVerified) }}
+        {{ form_widget(form.isVerified) }}
+    </div>
+    {% endif %}
+    <button class="btn btn-primary mt-4">Enregistrer</button>
+    <a href="{{ path('admin.user.index')}}" type="cancel" class="btn btn-secondary mt-4">Annuler</a>
 
  {{ form_end(form) }}

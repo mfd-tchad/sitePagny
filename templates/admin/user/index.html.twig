@@ -4,7 +4,7 @@
 
 {% block body %}
 <style>
-    .example-wrapper { min-height: 20em; font: 16px/1.5 }
+    .example-wrapper { min-height: 20em; font: 14px/1.5 }
 
 </style>
 
@@ -12,11 +12,7 @@
     <h2> {{ titre }} </h2>
     <hr>
 
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
-            {{ message }}
-        </div>
-    {% endfor %}
+    {% include 'flashes.html.twig' %}
     
    <div class="mt-4">
         <table class="table table-striped">
@@ -26,8 +22,10 @@
                     <th> Nom </th>
                     <th> Prénom </th>
                     <th> Identifiant </th>
+                    <th> Adresse Mail </th>
                     <th> Rôle </th> 
-                   
+                    <th> Activé </th>
+                    <th> Enregistré le </th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +34,7 @@
                     <td> {{ user.lastname }} </td>
                     <td> {{ user.firstname }} </td>
                     <td> {{ user.username }} </td>
+                    <td> {{ user.email }} </td>
                     <td> 
                         {% if user.roles %}
                             {{ user.roles[0] }} 
@@ -43,6 +42,8 @@
                             ROLE_USER
                         {% endif %}
                         </td>
+                    <td> {{ user.isVerified }} </td>
+                    <td> {{ user.createdAt |date("d/m/Y H:i") }} </td>
                     <td> 
                         <a href="{{ path('admin.user.edit' , {id: user.id}) }}" class="btn btn-secondary"> Editer </a>
                         <form  action="{{ path('admin.user.delete' , {id: user.id}) }}" style="display:inline-block" method="POST" onsubmit="return confirm('Etes vous vraiment sûr ?')"> 
@@ -57,7 +58,7 @@
             </tbody>
         </table>
         <div class="text-right">
-        <a href="{{ path('app_register') }}" class="btn btn-primary">Créer un nouvel Utilisateur</a>
+        <a href="{{ path('admin.user.new') }}" class="btn btn-primary">Créer un nouvel Utilisateur</a>
         </div>
    </div>
 </div>

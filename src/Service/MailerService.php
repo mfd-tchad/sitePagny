@@ -1,5 +1,5 @@
 <?php
-namespace App\Notification;
+namespace App\Service;
 
 use App\Entity\Contact;
 use Psr\Log\LoggerInterface;
@@ -25,6 +25,30 @@ class MailerService extends AbstractController {
         $this->logger = $logger;
     }
 
+    // generic funtion to send an email
+    public function send(
+        string $from,
+        string $to,
+        string $subject,
+        string $template,
+        array $context
+    ): void {
+        $email = (new TemplatedEmail())
+        ->from($from)
+        ->to($to)
+        ->subject($subject)
+        ->htmlTemplate('emails/' . $template . '.html.twig')
+        ->context($context);
+
+        $this->mailer->send($email);
+    }
+
+    /**
+     * Send an email to Web master from Contact Page
+     *
+     * @param Contact $contact
+     * @return void
+     */
     public function sendEmail(Contact $contact): void
     {
         $email = (new TemplatedEmail())

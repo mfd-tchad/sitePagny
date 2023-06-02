@@ -35,8 +35,12 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
             form_login:
+                login_path: login
                 check_path: login
-            # https://symfony.com/doc/current/security/form_login_setup.html    
+                default_target_path: alaune # get back to login and the user should be redirected to the right page
+                enable_csrf: true
+            # https://symfony.com/doc/current/security/form_login_setup.html   
+            entry_point:    form_login 
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -45,12 +49,12 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/supadmin, roles: ROLE_SUPADMIN }
+        - { path: ^/admin/evenement, roles: ROLE_ADMIN }
+        - { path: ^/admin/user, roles: ROLE_SUPADMIN }
         #- { path: ^/supadmin, roles: ROLE_SUPADMIN, requires_channel: https }
         - { path: '^/', roles: IS_AUTHENTICATED_ANONYMOUSLY }
         #- { path: '^/', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
     security:

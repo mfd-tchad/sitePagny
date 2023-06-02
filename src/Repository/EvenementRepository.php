@@ -100,6 +100,21 @@ class EvenementRepository extends ServiceEntityRepository
     /**
      * @return Evenement[] Returns an array of Evenement objects
      */
+    public function findLastUpdatedOnes(int $maxResults)
+    {
+        return $this->findBy([],array('updated_at'=>'DESC'),$maxResults);
+        /*
+        return $this->createQueryBuilder('e')
+            ->orderBy('e.updated_at', 'DESC')
+            ->setMaxResults($maxResults)
+            ->getQuery()
+            ->getResult();
+        */
+    }
+
+    /**
+     * @return Evenement[] Returns an array of Evenement objects
+     */
     public function findAllHasHappenedAndToCome()
     {
         return $this->findBy([],array('updated_at'=>'DESC'));

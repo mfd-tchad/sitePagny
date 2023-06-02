@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<style>
+    .container { max-width: 600px;}
+    .example-wrapper { max-width: 400px; min-height: 200em; }
+</style>
+    <main class="container m-4 text-center">
+        
+        <h4> Heureux de vous (re)voir, {{ app.user.firstname }} </h4>
+        <div class="mt-4 mx-4 alert alert-secondary">
+            Vous êtes connecté en tant que <strong>{{ app.user.username }} </strong>
+        </div>
+        {% include 'flashes.html.twig' %}
+        
+        {% if app.user and app.user.isVerified == false %}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-bs-dismiss="alert" area-label="Close"> 
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="alert-message">
+                <strong>Votre compte n'est pas activé</strong>, 
+                <div class="mt-2"> Si vous venez de vous inscrire, allez dans votre boite mail cliquer sur 
+                le lien d'activation qui vous a été envoyé. </div>
+                <div class="mt-4"> Sinon, 
+                <a href="{{ path('register.verif.resend') }}"> renvoyer le lien d'activation </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if (app.user.email) %}
+        <section class="example-wrapper">
+            <p class="mt-4"> Veuillez vérifier votre profil, vous pouvez le modifier si vous le souhaitez </p>
+            <div class="row bg-light pt-2">
+                <div class ="col-lg-12"> 
+                    <p> Nom complet : {{app.user.firstname}} {{app.user.lastname}} </p> 
+                </div>
+                
+                <div class ="col-lg-12"> 
+                    <p> Adresse mail : {{app.user.email}} </p>
+                </div>
+            </div>
+            <a href="{{ path('register.user.changeemail') }}" class="btn btn-secondary mt-4">Remplacer l'adresse email</a>
+            <a href="{{ path('register.user.changepwd') }}" class="btn btn-danger mt-4">Changer le mot de passe</a>
+        </section>
+        {% else %}
+        <div class="mx-4">
+         <p> Vous n'avez pas encore renseigné votre adresse mail,
+            Vous pourriez en avoir besoin pour réinitialiser votre mot de passe </p>
+         <a href="{{ path('register.user.addemail') }}" class="btn btn-secondary mt-4">Ajouter une adresse email</a>
+        {% endif %}
+        </div>
+    <main>
+{% endblock %}

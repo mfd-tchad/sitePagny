@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Enregistrer un utilisateur{% endblock %}
+{% block title %} {{ title }} {% endblock %}
 
 {% block body %}
 <style>
     .example-wrapper { max-width: 400px; min-height: 200em; }
 </style>
-<h3 class="text-center">Enregistrer un utilisateur</h3>
-<hr>
+
 <main class="example-wrapper page-registration mt-4">
-    
-     <div class="mt-4 mb-4 bg-light">
+    <h2> {{ titre }} </h2>
+    <hr>
+
+    <div class="mt-4 mb-4 bg-light">
         {{ include ('/registration/_form.html.twig', {form: registrationForm, button: 'Créer'}) }}
     </div>
 </main>

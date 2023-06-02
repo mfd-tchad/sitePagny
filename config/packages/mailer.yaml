@@ -3,7 +3,7 @@ framework:
         dsn: '%env(MAILER_DSN)%'
         envelope:
             sender: 'no-reply@pagnylablanchecote.net'
-            recipients: ['pagnylablanchecote@wanadoo.fr']
+            #recipients: ['pagnylablanchecote@wanadoo.fr']
         headers:
             from: 'no-reply@pagnylablanchecote.net'
             #X-Custom-Header: 'X-Auto-Response-Suppress', 'OOF, DR, RN, NRN, AutoReply'

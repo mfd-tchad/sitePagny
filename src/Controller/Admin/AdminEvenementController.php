@@ -57,7 +57,7 @@ class AdminEvenementController extends AbstractController
     /**
      * Retrieves all events from storage into an array and sends it to display
      * 
-     * @Route("/admin", name="admin.evenement.index")
+     * @Route("/admin/evenement", name="admin.evenement.index")
      * 
      * @return \Symfony\Component\HttpFoundation\Response
      */

@@ -66,7 +66,7 @@ class AdminUserController extends AbstractController
     }
 
     /**
-     * intended to be used to create a new user. Not used yet. register used instead
+     * intended to be used to create a new user.
      * 
      * @Route("/admin/user/create", name="admin.user.new")
      */

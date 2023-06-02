@@ -8,7 +8,7 @@
 {% block body %}
 
     <div class="example-wrapper page-login mt-4">
-        
+        {% include 'flashes.html.twig' %}
         {% if error %}
         <div class="alert alert-danger">
             {{ error.messageKey | trans(error.messagedata, 'security')}}
@@ -29,6 +29,9 @@
                     <div class="group-form mt-4">
                         <label for="password">Mot de passe</label>
                         <input type="password" name="_password" id="password" class="form-control">
+                    </div>
+                    <div> 
+                        <a href="{{ path('forgotten_password')}}" type="cancel" class="mt-4">Mot de passe oublié</a>
                     </div>
                     <input type="hidden" name="_target_path" value="{{ app.request.get('redirect_to')}}" />
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate')}}" />

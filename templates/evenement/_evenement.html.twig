@@ -1,4 +1,4 @@
-<a href="{{ path('evenement.show', {slug: evenement.slug, id: evenement.id}) }}">
+<a href="{{ path('evenement.show', {slug: evenement.slug, id: evenement.id}) }}" class="text-decoration-none">
 
 <article class="card card-transform mb-4 
         {% if (evenement.typeEvenement(evenement.type) == 'Hommage') %}
@@ -34,14 +34,24 @@
     {% endif %}
         
     <div class="card-body">
+        {% if not start_content %}
         <p class="card-title"> 
-            
-                {{ evenement.typeEvenement(evenement.type) }} 
-            
+            {{ evenement.typeEvenement(evenement.type) }} 
         </p>
+        {% endif %}
         <p class="card-text" style="font-weight: bold;"> {{ evenement.titre }} </p>
-                    
-        <p class="card-text"> Le {{ evenement.date | date ("d/m/Y") }} </p>            
+        {% if start_content %}
+            <div class="card-content mt-2"> 
+                {{ evenement.description |u.truncate(100,'...') | raw}}
+            </div>
+            <div class="mt-2 text-left">
+                <span class="btn btn-sm btn-primary card-btn"> 
+                    Voir le détail
+                </span>
+            </div>
+        {% else %}           
+            <p class="card-text"> Le {{ evenement.date | date ("d/m/Y") }} </p>   
+        {% endif %}             
     </div>
 </article>
 </a>

@@ -145,6 +145,12 @@ footer p {
     text-align: center;
 }
 
+.card-content {
+    color:black;
+    font-size: smaller;
+    text-align: justify;
+}
+
 a .card-text {
     color: black;
 }
@@ -162,10 +168,6 @@ a .card-text {
 }
 .example-wrapper { 
     margin: 1em auto; font: 14px/1.5 
-}
-
-.example-wrapper code { 
-    background: #F5F5F5; padding: 2px 6px; 
 }
 
 .page-normale { 

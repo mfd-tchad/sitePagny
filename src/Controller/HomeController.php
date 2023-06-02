@@ -2,18 +2,56 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Exception;
+use Psr\Log\LoggerInterface;
+use App\Repository\EvenementRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
+    /**
+     * @var EvenementtRepository
+     */
+    private $eventRepository;
+
+    /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    /** @var string */
+    private $organisation_name;
+
+    public function __construct(
+        EvenementRepository $eventRepository,
+        LoggerInterface $logger
+    ) {
+        $this->eventRepository = $eventRepository;
+        $this->logger = $logger;
+        $this->organisation_name = $_ENV['ORGANISATION_NAME'];
+    }
+
     /**
      * @Route("/", name="home")
      */
     public function index()
     {
+        // look for the lastest public updated event
+        try {
+            $lastEvents = $this->eventRepository->findLastUpdatedOnes(4);
+        } catch (Exception $e) {
+            $this->logger->critical(
+                "Failed to retrieve from event table with findLastUpdatedOnes(4)",
+                ['exception' => $e],
+            );
+            $lastEvents = null;
+        }
         return $this->render('home/index.html.twig', [
-            'title' => 'Pagny la Blanche Cote - site Officiel','titre' => 'Bienvenue sur le site de Pagny la Blanche Côte', 'current_menu' => 'home'
+            'title' => 'Pagny la Blanche Cote - site Officiel',
+            'titre' => 'Bienvenue sur le site de ' . $this->organisation_name . ' !',
+            'events' => $lastEvents,
+             'current_menu' => 'home'
         ]);
     }
 
@@ -23,7 +61,7 @@ class HomeController extends AbstractController
     public function viepratique()
     {
         return $this->render('viepratique/index.html.twig', [
-            'title' => 'Vivre à Pagny la Blanche Cote', 'titre' => 'Vie pratique', 'current_menu' => 'viepratique'
+            'title' => 'Vivre à ' . $this->organisation_name, 'titre' => 'Vie pratique', 'current_menu' => 'viepratique'
         ]);
     }
     /**
@@ -32,7 +70,7 @@ class HomeController extends AbstractController
     public function scolaire()
     {
         return $this->render('viepratique/indexscolaire.html.twig', [
-            'title' => 'Bus scolaires et écoles près de Pagny la Blanche Cote', 'titre' => 'Bus scolaires et Ecoles', 'current_menu' => 'viepratique'
+            'title' => 'Bus scolaires et écoles près de ' . $this->organisation_name, 'titre' => 'Bus scolaires et Ecoles', 'current_menu' => 'viepratique'
         ]);
     }
 

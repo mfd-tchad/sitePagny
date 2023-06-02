@@ -3,17 +3,20 @@
         <hr>
         <div class="bg-light">
             <div class="mt-4 row">
-               {# <div class="card-group"> #}
-                    {% for evenement in evenements %}
+              
+                    {% for event in evenements %}
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
-                        {% include 'evenement/_evenement.html.twig' %}
+                        {% include 'evenement/_evenement.html.twig' with {
+                            evenement: event,
+                            start_content: false
+                            } only %}
                     </div>
                     {% else %}
                         <div class="container-fluid m-4 text-center">
                             Pas (encore !) d'évènements enregistrés
                         </div>
                     {% endfor %}
-               {#</div> #}
+              
             </div>
         </div>
         

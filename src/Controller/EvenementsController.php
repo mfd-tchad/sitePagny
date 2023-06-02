@@ -63,7 +63,7 @@ class EvenementsController extends AbstractController
             $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
                 Veuillez réessayer ultérieurement.");
         }
-        return $this->render('evenements/index-passe.html.twig', [
+        return $this->render('evenements/index.html.twig', [
             'title' => 'Evènements passés à Pagny la Blanche Côte',
             'titre' => 'Evènements passés du village',
             'current_menu' => 'evenements',
@@ -111,7 +111,7 @@ class EvenementsController extends AbstractController
             $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
                 Veuillez réessayer ultérieurement.");
         }
-        return $this->render('evenements/index-passe.html.twig', [
+        return $this->render('evenements/index.html.twig', [
             'title' => 'Mariages à Pagny la Blanche Côte',
             'titre' => 'Mariages',
             'current_menu' => 'evenements',
@@ -134,7 +134,7 @@ class EvenementsController extends AbstractController
             $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
                 Veuillez réessayer ultérieurement.");
         }
-        return $this->render('evenements/index-passe.html.twig', [
+        return $this->render('evenements/index.html.twig', [
             'title' => 'Décés à Pagny la Blanche Cote',
             'titre' => 'Hommages',
             'current_menu' => 'evenements',
@@ -157,7 +157,7 @@ class EvenementsController extends AbstractController
             $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
                 Veuillez réessayer ultérieurement.");
         }
-        return $this->render('evenements/index-passe.html.twig', [
+        return $this->render('evenements/index.html.twig', [
             'title' => 'Fêtes à Pagny la Blanche Côte',
             'titre' => 'Festivités à Pagny',
             'current_menu' => 'evenements',
@@ -180,7 +180,7 @@ class EvenementsController extends AbstractController
             $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
                 Veuillez réessayer ultérieurement.");
         }
-        return $this->render('evenements/index-passe.html.twig', [
+        return $this->render('evenements/index.html.twig', [
             'title' => 'FlashInfos de Pagny la Blanche Côte',
             'titre' => 'Flash Infos',
             'current_menu' => 'evenements',
@@ -202,7 +202,7 @@ class EvenementsController extends AbstractController
             $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
                 Veuillez réessayer ultérieurement.");
         }
-        return $this->render('evenements/index-avenir.html.twig', [
+        return $this->render('evenements/index.html.twig', [
             'title' => 'FlashInfos de Pagny la Blanche Côte',
             'titre' => 'Flash Infos - Evenements à venir',
             'current_menu' => 'evenements',

@@ -2,10 +2,11 @@
 
 namespace App\Repository;
 
-use App\Entity\Evenement;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry ;
 use DateTime;
+use Exception;
+use App\Entity\Evenement;
+use Doctrine\Persistence\ManagerRegistry ;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Evenement|null find($id, $lockMode = null, $lockVersion = null)
@@ -103,13 +104,22 @@ class EvenementRepository extends ServiceEntityRepository
     public function findLastUpdatedOnes(int $maxResults)
     {
         return $this->findBy([],array('updated_at'=>'DESC'),$maxResults);
-        /*
+    }
+
+    /**
+     * @return Evenement[] Returns an array of Evenement objects
+     */
+    public function findNextOnes(int $maxResults)
+    {
+        $date = new DateTime();
         return $this->createQueryBuilder('e')
-            ->orderBy('e.updated_at', 'DESC')
+            ->andWhere('e.date > :date')
+            ->setParameter('date', $date)
+            ->orderBy('e.date', 'ASC')
             ->setMaxResults($maxResults)
             ->getQuery()
-            ->getResult();
-        */
+            ->getResult()
+        ;
     }
 
     /**

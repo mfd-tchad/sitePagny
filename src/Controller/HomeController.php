@@ -37,20 +37,20 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        // look for the lastest public updated event
+        // look for the next events to come
         try {
-            $lastEvents = $this->eventRepository->findLastUpdatedOnes(4);
+            $nextEvents = $this->eventRepository->findNextOnes(3);
         } catch (Exception $e) {
             $this->logger->critical(
-                "Failed to retrieve from event table with findLastUpdatedOnes(4)",
+                "Failed to retrieve from event table with findNextOnes(3)",
                 ['exception' => $e],
             );
-            $lastEvents = null;
+            $nextEvents = null;
         }
         return $this->render('home/index.html.twig', [
             'title' => 'Pagny la Blanche Cote - site Officiel',
             'titre' => 'Bienvenue sur le site de ' . $this->organisation_name . ' !',
-            'events' => $lastEvents,
+            'events' => $nextEvents,
              'current_menu' => 'home'
         ]);
     }

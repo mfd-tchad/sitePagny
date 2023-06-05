@@ -72,14 +72,12 @@ class EvenementsController extends AbstractController
     }
 
     /**
-     * Finds and displays events which type is 0
-     * 
-     * @Route("/actuconseilmunicipal", name="actuconseilmunicipal")
+     * @return Evenement[] Returns an array of Evenement objects
      */
-    public function actuConseilMunicipal(): Response
+    public function findEventsOfType($type)
     {
         try {
-            $events = $this->repository->findByType('0');
+            $events = $this->repository->findByType($type);
         } catch (Exception $e) {
             $this->logger->critical(
                 "Failed to retrieve from evenement table with findByType function",
@@ -87,7 +85,18 @@ class EvenementsController extends AbstractController
             );
             $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
                 Veuillez réessayer ultérieurement.");
+            $events = null;
         }
+        return $events;
+    }
+    /**
+     * Finds and displays events which type is 0
+     * 
+     * @Route("/actuconseilmunicipal", name="actuconseilmunicipal")
+     */
+    public function actuConseilMunicipal(): Response
+    {
+        $events = $this->findEventsOfType('0');
         return $this->render('evenements/index.html.twig', [
             'title' => 'Activites du Conseil Municipal de Pagny',
             'titre' => 'Activités du Conseil Municipal de Pagny',
@@ -101,16 +110,7 @@ class EvenementsController extends AbstractController
      */
     public function mariages(): Response
     {
-        try {
-            $events = $this->repository->findByType('2');
-        } catch (Exception $e) {
-            $this->logger->critical(
-                "Failed to retrieve from evenement table with findByType function",
-                ['exception' => $e],
-            );
-            $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
-                Veuillez réessayer ultérieurement.");
-        }
+        $events = $this->findEventsOfType('2');
         return $this->render('evenements/index.html.twig', [
             'title' => 'Mariages à Pagny la Blanche Côte',
             'titre' => 'Mariages',
@@ -124,16 +124,7 @@ class EvenementsController extends AbstractController
      */
     public function deces(): Response
     {
-        try {
-            $events = $this->repository->findByType('1');
-        } catch (Exception $e) {
-            $this->logger->critical(
-                "Failed to retrieve from evenement table with findByType function",
-                ['exception' => $e],
-            );
-            $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
-                Veuillez réessayer ultérieurement.");
-        }
+        $events = $this->findEventsOfType('1');
         return $this->render('evenements/index.html.twig', [
             'title' => 'Décés à Pagny la Blanche Cote',
             'titre' => 'Hommages',
@@ -147,16 +138,7 @@ class EvenementsController extends AbstractController
      */
     public function fetesactu(): Response
     {
-        try {
-            $events = $this->repository->findByType('3');
-        } catch (Exception $e) {
-            $this->logger->critical(
-                "Failed to retrieve from evenement table with findByType function",
-                ['exception' => $e],
-            );
-            $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
-                Veuillez réessayer ultérieurement.");
-        }
+        $events = $this->findEventsOfType('3');
         return $this->render('evenements/index.html.twig', [
             'title' => 'Fêtes à Pagny la Blanche Côte',
             'titre' => 'Festivités à Pagny',
@@ -170,16 +152,7 @@ class EvenementsController extends AbstractController
      */
     public function flashinfos(): Response
     {
-        try {
-            $events = $this->repository->findByType('7');
-        } catch (Exception $e) {
-            $this->logger->critical(
-                "Failed to retrieve from evenement table with findByType function",
-                ['exception' => $e],
-            );
-            $this->addFlash('danger', "Oups ! Un problème d'accès aux actualités est survenu. 
-                Veuillez réessayer ultérieurement.");
-        }
+        $events = $this->findEventsOfType('7');
         return $this->render('evenements/index.html.twig', [
             'title' => 'FlashInfos de Pagny la Blanche Côte',
             'titre' => 'Flash Infos',

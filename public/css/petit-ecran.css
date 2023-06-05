@@ -108,6 +108,11 @@
         transform: scale(1.1em);
         overflow: scroll;
     }
+
+    .card-img-real {
+        width: 100%;
+        height: auto;
+    }
     
 }
 @media screen and (max-device-width : 768px) {

@@ -80,7 +80,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown {% if current_menu is defined and current_menu == 'animationetloisirs' %} active {% endif %}">
-                        <a class="nav-link dropdown-toggle" href="{{ path('animationetloisirs') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animation et Loisirs</a>
+                        <a class="nav-link dropdown-toggle" href="{{ path('animationetloisirs') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Loisirs</a>
                         <div class="dropdown-menu couleur-fond-menu" aria-labelledby="navbarDropdown">
                             
                             <a class="dropdown-item" href="{{ path('jeunesse') }}">Jeunesse</a> 
@@ -142,7 +142,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto" >
                     <li class="nav-item {% if current_menu is defined and current_menu == 'session' %} active {% endif %}">
-                        <a href="{{ path('login') }}" class="btn btn-outline-primary" ><img src="/images/icone-se-connecter.png" class="bords-tres-arrondis" width="25">  Me connecter</a>
+                        <a href="{{ path('login') }}" class="btn btn-outline-primary" ><img src="/images/icone-se-connecter.png" class="bords-tres-arrondis" width="25"> <span class="connect-title"> Me connecter </span></a>
                     </li>
                 {% endif %}
                 </ul>

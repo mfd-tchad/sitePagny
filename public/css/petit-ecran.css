@@ -120,6 +120,10 @@
     .clicrapide-item {
         border-style: none;
     }
+
+    .connect-title {
+        display: none;
+    }
     
 }
 @media screen and (max-device-width : 768px) {
@@ -200,6 +204,10 @@
 
     .adresse {
         font-size: 12px;
+    }
+
+    .connect-title {
+        display: contents;
     }
 }
 

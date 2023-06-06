@@ -6,7 +6,7 @@ use Exception;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Psr\Log\LoggerInterface;
-use App\Notification\MailerService;
+use App\Service\MailerService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

@@ -120,7 +120,7 @@ footer p {
 }
 
 .card-img-real {
-    max-height: 130px;
+    height: 130px;
     width: 100%;
     object-fit: none;
  }

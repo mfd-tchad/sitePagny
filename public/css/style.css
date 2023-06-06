@@ -168,7 +168,8 @@ a .card-text {
     background-color: pink;
 }
 .example-wrapper { 
-    margin: 1em auto; font: 14px/1.5 
+    margin: 1em auto; 
+    font: 14px/1.5 
 }
 
 .page-normale { 
@@ -246,4 +247,9 @@ a .card-text {
 
 .container-fluid#clicrapide:hover {
     background-color: #87CEFA;
+}
+
+.clicrapide-item {
+    border-color: #87CEFA;
+    border-style: solid;
 }

@@ -40,6 +40,10 @@
     h4 {
         margin-top: 0.7em;
     }
+
+    .clicrapide-item {
+        border-style: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -75,6 +79,10 @@
         font-size: 1.1em;
     }
 
+    p {
+        font-size: 13px;
+    }
+
     .card-title {
         font-size: 1.1em;
     }
@@ -108,6 +116,10 @@
         transform: scale(1.1em);
         overflow: scroll;
     }
+
+    .clicrapide-item {
+        border-style: none;
+    }
     
 }
 @media screen and (max-device-width : 768px) {
@@ -130,6 +142,10 @@
     .aggrandir:hover {
         transform: scale(1.1em);
         overflow: scroll;
+    }
+
+    .adresse {
+        font-size: 13px;
     }
 }
 
@@ -160,18 +176,6 @@
         font-size: 1em;
         font-weight: bold ;
     }
-    
-    .element-grille-normale {
-        font: 11px/1.5 ; 
-    }
-    
-    .element-grille-aggrandi {
-        font: 12px/1.5 ;
-    }
-    
-    .element-grille-evenement {
-        font: 13px/1.5 ;
-    }
 
     .carte-optionnelle {
         display: none;
@@ -188,6 +192,14 @@
     .card-img-show {
         width: 100%;
         height: auto;
+    }
+
+    .clicrapide-item {
+        font-size: 12px;
+    }
+
+    .adresse {
+        font-size: 12px;
     }
 }
 

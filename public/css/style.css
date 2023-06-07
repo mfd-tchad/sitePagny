@@ -125,7 +125,7 @@ footer p {
     object-fit: none;
  }
 
-.card-img-show{
+.card-img-show {
     width: 50%;
     height: auto;
  }
@@ -169,7 +169,7 @@ a .card-text {
 }
 .example-wrapper { 
     margin: 1em auto; 
-    font: 14px/1.5 
+    font: 14px/1.5;
 }
 
 .page-normale { 
@@ -189,17 +189,6 @@ a .card-text {
 
 .page-login {
     min-height: 300px; max-width: 300px; font: 16px/1.5 sans-serif;
-}
-.element-grille-normale {
-    font: 14px/1.5 ; 
-}
-
-.element-grille-aggrandi {
-    font: 16px/1.5 ;
-}
-
-.element-grille-evenement {
-    font: 16px/1.5 ;
 }
 
 .element-evenement {
@@ -250,6 +239,6 @@ a .card-text {
 }
 
 .clicrapide-item {
-    border-color: #87CEFA;
+    border-color: #0798f3;
     border-style: solid;
 }

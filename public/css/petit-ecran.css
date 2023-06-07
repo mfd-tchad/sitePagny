@@ -126,6 +126,13 @@
     }
     
 }
+
+@media screen and (min-device-width: 768px) {
+    .on-navbar-collapse {
+      display: none;
+    }
+  }
+
 @media screen and (max-device-width : 768px) {
     
     h2 {

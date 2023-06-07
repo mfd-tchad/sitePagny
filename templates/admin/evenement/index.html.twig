@@ -50,12 +50,12 @@
                             <img src="{{'/images/evenements/iconecalendrier.png' | imagine_filter('thumb')}}" width="100" height="auto"/>
                         {% endif %}
                     <td> 
-                        <a href="{{ path('admin.evenement.edit' , {id: evenement.id}) }}" class="btn btn-secondary"> Editer </a>
+                        <a href="{{ path('admin.evenement.edit' , {id: evenement.id}) }}" class="btn btn-secondary"> <i class="fa fa-solid fa-pencil fa-large"></i> </a>
                         <form  action="{{ path('admin.evenement.delete' , {id: evenement.id}) }}" style="display:inline-block" method="POST" onsubmit="return confirm('Etes vous vraiment sûr ?')"> 
                             <input type="hidden" name="_method" value="DELETE">
                             {# pour la sécurité, on ajoute un tocken #}
                             <input type="hidden" name="_tocken" value="{{ csrf_token('delete' ~ evenement.id) }}"> 
-                            <button class="btn btn-danger"> Supprimer </button>
+                            <button class="btn btn-danger"> <i class="fa fa-solid fa-trash fa-large"></i>  </button>
                         </form>
                     </td>
                 </tr>

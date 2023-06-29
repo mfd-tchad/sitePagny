@@ -3,22 +3,22 @@
 {% block title %} {{ title }} {% endblock %}
 
 {% block body %}
-
+<link rel="stylesheet" href='/css/finances.css'>
 <main>
     <h2>{{ titre }} </h2>
     <hr>
     <section>
-        <h3> Exercice 2020 </h3>
+        <h3> chiffres clés 2022 et budget 2023 </h3>
         <div class="row">
             <div class="example-wrapper col-sm-6 col-md-4">
                 <div class="container-fluid">
                     <div class="text-center">
-                        <a href="/documents/CA_2020_Commune.pdf" target="_blank"><img class="bords-arrondis" src="/images/mairie/iconemairie.png" alt="Icone mairie" width="150" height="130"/>
+                        <a href="#" id="display-commune"><img class="bords-arrondis" src="/images/mairie/iconemairie.png" alt="Icone mairie" width="150" height="130"/>
                         <h5 class="text-center">Commune</h5>
                         </a>
                     </div>
                 </div>
-            <p>Prévisions et réalisations pour le budget de la commune.</p>    
+                
             </div>
             <div class="example-wrapper col-sm-6 col-md-4">
                 <div class="container-fluid">
@@ -28,7 +28,6 @@
                         </a>   
                     </div>
                 </div>
-                <p>Prévisions et réalisations pour l&#8217;approvisionnement en eau potable.</p>
             </div>
             <div class="example-wrapper col-sm-6 col-md-4">
                 <div class="container-fluid">
@@ -38,13 +37,17 @@
                         </a>
                     </div>
                 </div>
-                <p>Prévisions et réalisations pour l&#8217;assainissement des eaux usées.</p>
             </div>
         </div>
+
     </section>
-    
     <section>
-        <h3> Budget 2021 </h3>
+        {% include 'mairie/finances/_CA_2022_Commune.html.twig' %}
+        {% include 'mairie/finances/_CA_2022_Eau.html.twig' %}
+        {% include 'mairie/finances/_CA_2022_Assainissement.html.twig' %}
+    </section>
+    <!-- <section>
+        <h3> Budget 2023 </h3>
         <div class="row">
             
             <div class="example-wrapper col-sm-6 col-md-4">
@@ -83,7 +86,7 @@
             </div>
         </div>
 
-    </section>
+    </section> -->
     <section>
         <h3> Exercices antérieurs </h3>
         <div class="row">

@@ -1,0 +1,38 @@
+    table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+    td, th { vertical-align:top; font-size:10pt;}
+    h1, h2, h3, h4, h5, h6 { clear:both;}
+    p { white-space: nowrap; }
+    ol, ul { margin:0; padding:0;}
+    li { list-style: none; margin:0; padding:0;}
+    span.footnodeNumber { padding-right:1em; }
+    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}
+    .ta1 { writing-mode:horizontal-tb; direction:ltr; }
+    .Default { font-family:Liberation Sans; }
+    .ce1 { font-family:Liberation Sans; font-size:12pt; font-weight:bold; }
+    .ce10 { font-family:Liberation Sans; background-color:#dddddd; text-align: right ! important;}
+    .ce11 { font-family:Liberation Sans; background-color:#afd095; text-align: right ! important;}
+    .ce12 { font-family:Liberation Sans; background-color:#dde8cb; text-align: right ! important;}
+    .ce13 { font-family:Liberation Sans; background-color:#ffa6a6; text-align: right ! important;}
+    .ce14 { font-family:Liberation Sans; background-color:#b4c7dc; text-align: right ! important;}
+    .ce2 { font-family:Liberation Sans; background-color:#dddddd; border:none }
+    .ce3 { font-family:Liberation Sans; background-color:#eeeeee; border:none }
+    .ce4 { font-family:Liberation Sans; background-color:#afd095; border:none }
+    .ce5 { font-family:Liberation Sans; background-color:#dde8cb; border:none }
+    .ce6 { font-family:Liberation Sans; background-color:#ffa6a6; border:none }
+    .ce7 { font-family:Liberation Sans; background-color:#b4c7dc; border:none}
+    .ce8 { font-family:Liberation Sans; background-color:#ffff6d; text-align:center ! important; margin-left:0cm; }
+    .ce9 { font-family:Liberation Sans; background-color:#eeeeee; text-align: right ! important;}
+    .co1 { width: 400px; }
+
+    #display-eau {
+        display: none;
+    }
+
+    #display-eau:hover {
+        display: block;
+    }
+
+    #diplay-assainissement {
+            display:none;
+    }

@@ -34,7 +34,7 @@
     {% endif %}
         
     <div class="card-body">
-        {% if not start_content %}
+        {% if display_type %}
         <p class="card-title"> 
             {{ evenement.typeEvenement(evenement.type) }} 
         </p>

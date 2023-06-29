@@ -23,7 +23,7 @@ class MairieController extends AbstractController
     public function demarches()
     {
         return $this->render('mairie/indexdemarches.html.twig', [
-            'title' => 'Démarches administratives', 'titre' => 'Démarches administratives',  'current_menu' => 'mairie'
+            'title' => 'Démarches en ligne', 'titre' => 'Démarches administratives',  'current_menu' => 'mairie'
         ]);
     }
 

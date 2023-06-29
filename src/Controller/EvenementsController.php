@@ -44,7 +44,8 @@ class EvenementsController extends AbstractController
             'title' => 'Evènements à venir à Pagny la Blanche Côte',
             'titre' => 'Evénements à venir',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => true
         ]);
     }
 
@@ -67,7 +68,8 @@ class EvenementsController extends AbstractController
             'title' => 'Evènements passés à Pagny la Blanche Côte',
             'titre' => 'Evènements passés du village',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => true
         ]);
     }
 
@@ -101,7 +103,8 @@ class EvenementsController extends AbstractController
             'title' => 'Activites du Conseil Municipal de Pagny',
             'titre' => 'Activités du Conseil Municipal de Pagny',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => false
         ]);
     }
 
@@ -115,7 +118,8 @@ class EvenementsController extends AbstractController
             'title' => 'Mariages à Pagny la Blanche Côte',
             'titre' => 'Mariages',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => false
         ]);
     }
 
@@ -129,7 +133,8 @@ class EvenementsController extends AbstractController
             'title' => 'Décés à Pagny la Blanche Cote',
             'titre' => 'Hommages',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => false
         ]);
     }
 
@@ -143,7 +148,8 @@ class EvenementsController extends AbstractController
             'title' => 'Fêtes à Pagny la Blanche Côte',
             'titre' => 'Festivités à Pagny',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => false
         ]);
     }
 
@@ -157,7 +163,8 @@ class EvenementsController extends AbstractController
             'title' => 'FlashInfos de Pagny la Blanche Côte',
             'titre' => 'Flash Infos',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => false
         ]);
     }
     /**
@@ -179,7 +186,8 @@ class EvenementsController extends AbstractController
             'title' => 'FlashInfos de Pagny la Blanche Côte',
             'titre' => 'Flash Infos - Evenements à venir',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => false
         ]);
     }
     /**
@@ -201,7 +209,8 @@ class EvenementsController extends AbstractController
             'title' => 'Evènements à la Une de Pagny la Blanche Côte',
             'titre' => 'Actu\' à la Une',
             'current_menu' => 'evenements',
-            'evenements' => $events
+            'evenements' => $events,
+            'display_type' => true
         ]);
     }
     /**

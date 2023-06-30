@@ -1,0 +1,25 @@
+        <tr class="ro1">
+			<td style="text-align:left; " class="ce3"><p>Solde d'exécution de fonctionnement</p></td>
+			<td class="ce9">{{ Report1|number_format(0,'',' ') }}</td>
+			<td class="ce9">{{ Report1|number_format(0,'',' ') }}</td>
+			<td class="ce9">{{ Report2|number_format(0,'',' ') }}</td>
+		</tr>
+        <tr class="ro1">
+			<td class="ce2"><p>Total des produits de fonctionnement = A</p></td>
+			<td class="ce10">{{ A1|number_format(0,'',' ') }}</td>
+			<td class="ce10">{{ A2|number_format(0,'',' ') }}</td>
+			<td class="ce10">{{ A3|number_format(0,'',' ') }}</td>
+		</tr>
+		<tr class="ro1">
+			<td class="ce3"><p>Total des charges de fonctionnement = B</p></td>
+			<td class="ce9">{{ B1|number_format(0,'',' ') }}</td>
+			<td class="ce9">{{ B2|number_format(0,'',' ') }}</td>
+			<td class="ce9">{{ B3|number_format(0,'',' ') }}</td>
+		</tr>
+		<tr class="ro1">
+			<td class="ce2"><p>Résultat comptable (A – B = R)</p></td>
+
+			<td class="ce10">{% set R1= A1-B1 %}{{ R1|number_format(0,'',' ') }}</td>
+			<td class="ce10">{% set R2= A2-B2 %}{{ R2|number_format(0,'',' ') }}</td>
+			<td class="ce10">{% set R3= A3-B3 %}{{ R3|number_format(0,'',' ') }}</td>
+		</tr>

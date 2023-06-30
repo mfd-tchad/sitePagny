@@ -25,14 +25,7 @@
     .ce9 { font-family:Liberation Sans; background-color:#eeeeee; text-align: right ! important;}
     .co1 { width: 400px; }
 
-    #display-eau {
-        display: none;
+    .finances-sector {
+        display:none;
     }
-
-    #display-eau:hover {
-        display: block;
-    }
-
-    #diplay-assainissement {
-            display:none;
-    }
+    

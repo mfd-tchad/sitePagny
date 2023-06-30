@@ -13,8 +13,8 @@
             <div class="example-wrapper col-sm-6 col-md-4">
                 <div class="container-fluid">
                     <div class="text-center">
-                        <a href="#" id="display-commune"><img class="bords-arrondis" src="/images/mairie/iconemairie.png" alt="Icone mairie" width="150" height="130"/>
-                        <h5 class="text-center">Commune</h5>
+                        <a href="#" id="display-commune" class="clicrapide finance-label"><img class="bords-arrondis" src="/images/mairie/iconemairie.png" alt="Icone mairie" width="150" height="130"/>
+                            <h5 class="text-center">Commune</h5>
                         </a>
                     </div>
                 </div>
@@ -23,8 +23,8 @@
             <div class="example-wrapper col-sm-6 col-md-4">
                 <div class="container-fluid">
                     <div class="text-center">
-                        <a href="/documents/CA_2020_Eaux.pdf" target="_blank"><img class="bords-arrondis" src="/images/mairie/robinet1.jpg" alt="Image Robinet avec eau qui coule" width="130" height="130" />
-                        <h5 class="text-center">Eau</h5>
+                        <a href="#" id="display-eau" class="clicrapide finance-label"><img class="bords-arrondis" src="/images/mairie/robinet1.jpg" alt="Image Robinet avec eau qui coule" width="130" height="130" />
+                            <h5 class="text-center">Eau</h5>
                         </a>   
                     </div>
                 </div>
@@ -32,7 +32,7 @@
             <div class="example-wrapper col-sm-6 col-md-4">
                 <div class="container-fluid">
                     <div class="text-center">
-                        <a href="/documents/CA_2020_Assainissement.pdf" target="_blank"><img class="bords-arrondis" src="/images/mairie/iconeassainissement1.jpg" alt="Icone assainissement" width="180" height="130" />
+                        <a href="#" id="display-assainissement" class="clicrapide finance-label"><img class="bords-arrondis" src="/images/mairie/iconeassainissement1.jpg" alt="Icone assainissement" width="180" height="130" />
                         <h5 class="text-center">Assainissement</h5>
                         </a>
                     </div>
@@ -42,9 +42,15 @@
 
     </section>
     <section>
-        {% include 'mairie/finances/_CA_2022_Commune.html.twig' %}
-        {% include 'mairie/finances/_CA_2022_Eau.html.twig' %}
-        {% include 'mairie/finances/_CA_2022_Assainissement.html.twig' %}
+        <div id = "commune" class="finances-sector">
+            {% include 'mairie/finances/_CA_2022_Commune.html.twig' %}
+        </div>
+        <div id = "eau" class="finances-sector">
+            {% include 'mairie/finances/_CA_2022_Eau.html.twig' %}
+        </div>
+        <div id = "assainissement" class="finances-sector">
+            {% include 'mairie/finances/_CA_2022_Assainissement.html.twig' %}
+        </div>
     </section>
     <!-- <section>
         <h3> Budget 2023 </h3>
@@ -115,4 +121,5 @@
             </div>
         </div>
 </main>
+<script src="js/finances.js" type="module"> </script>
 {% endblock %}

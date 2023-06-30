@@ -1,3 +1,32 @@
-<div id="display-eau">
-    <p><strong>Prévisions et réalisations pour l&#8217;approvisionnement en eau potable.</strong></p>
+<div class="mt-4">
+    <p><strong>Budget en euros pour l&#8217;approvisionnement en eau potable.</strong></p>
+    <table border="0" cellspacing="0" cellpadding="5px" class="ta1">
+		{% include 'mairie/finances/_table_header.html.twig' %}
+        {% set Report1 =  46838 %}
+		{%	set Report2 = 39889 %}
+		{% include 'mairie/finances/_report.html.twig' with {
+                            title: "de fonctionnement",
+                            Report1: Report1,
+                            Report2: Report2
+                            } only %}
+		{% include 'mairie/finances/_fonctionnement.html.twig' with {
+                            A1: 14136, A2: 14745, A3: 13836,
+							B1: 60974, B2: 21694, B3: 53725
+                            } only %}
+        {% set Report3 =  20127 %}
+		{%	set Report4 = 13163 %}
+        {% include 'mairie/finances/_report.html.twig' with {
+                            title: "d'investissement",
+                            Report1: Report3,
+                            Report2: Report4
+                            } only %}
+		{% include 'mairie/finances/_investissement.html.twig' with {
+							C1: "3 003", C2: "3 002", C3: "3 990",
+							D1: "23 130", D2: "9 965", D3: "17154",
+							E2: "3 164"
+			} only %}
+        {% include 'mairie/finances/_roulement.html.twig' with {
+							R2: Report2
+			} only %}
+    </table>
 </div>

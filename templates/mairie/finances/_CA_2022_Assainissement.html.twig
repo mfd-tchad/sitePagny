@@ -1,5 +1,34 @@
 <div class="mt-4">
     <p><strong>Budget en euros pour l&#8217;assainissement des eaux usées.</strong></p>
 
-    <p class="mt-4"> Bientôt disponible </p>
+    <table border="0" cellspacing="0" cellpadding="5px" class="ta1">
+		{% include 'mairie/finances/_table_header.html.twig' %}
+		{% set Report1 =  -6706 %}
+		{% set Report2 = 5206 %}
+		{% include 'mairie/finances/_fonctionnement.html.twig' with {
+							Report1: Report1,
+                            Report2: Report2,
+                            A1: 43170, A2: 41039, A3: 41305,
+							B1: 36464, B2: 35833, B3: 39805
+                            } only %}
+		{% set Report3 =  3412 %}
+		{%	set Report4 = 2731 %}
+		{% include 'mairie/finances/_investissement.html.twig' with {
+							Report1: Report3,
+                            Report2: Report4,
+							C1: "20 377", C2: "20 376", C3: "20 559",
+							D1: "23 789", D2: "21 057", D3: "23 290",
+							E2: "1 731"
+			} only %}
+		<tr class="ro1">
+			<td class="ce5"><p>Capacité d’autofinancement brut = CAF</p></td>
+			<td class="ce12">{% set CAF1 =  -Report1 %} {{ CAF1 |number_format(0,'',' ')}}</td>
+			<td class="ce12">5 206</td>
+			<td class="ce12">{% set CAF2 =  -Report2 %} {{ CAF2 |number_format(0,'',' ')}}</td>
+		</tr>
+		{% include 'mairie/finances/_dette.html.twig' %}
+		{% include 'mairie/finances/_roulement.html.twig' with {
+							R2: Report2
+			} only %}
+	</table>
 </div>

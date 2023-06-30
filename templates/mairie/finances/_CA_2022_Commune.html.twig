@@ -4,24 +4,19 @@
 		{% include 'mairie/finances/_table_header.html.twig' %}
 		{% set Report1 =  117999 %}
 		{%	set Report2 = 128646 %}
-		{% include 'mairie/finances/_report.html.twig' with {
-							title: "de fonctionnement",
-                            Report1: Report1,
-                            Report2: Report2
-                            } only %}
 		{% include 'mairie/finances/_fonctionnement.html.twig' with {
+							Report1: Report1,
+                            Report2: Report2,
                             A1: 144284, A2: 210824, A3: 141908,
 							B1: 262283, B2: 152464, B3: 270554
                             } only %}
-
-		{% include 'mairie/finances/_report.html.twig' with {
-							title: "d'investissement",
-                            Report1: -7918,
-                            Report2: -21120
-                            } only %}
+		{% set Report3 =  -7918 %}
+		{%	set Report4 = -21120 %}
 		{% include 'mairie/finances/_investissement.html.twig' with {
-							C1: "122 803", C2: "12 162", C3: "68 664",
-							D1: "114 886", D2: "33 284", D3: "20 950",
+							Report1: Report3,
+                            Report2: Report4,
+							C1: "122 803", C2: "12 162", C3: "126 786",
+							D1: "114 886", D2: "33 284", D3: "97 748",
 							E2: "-47 713"
 			} only %}
 		<tr class="ro1">
@@ -30,12 +25,7 @@
 			<td class="ce12">58 360</td>
 			<td class="ce12">{% set CAF2 =  -Report2 %} {{ CAF2 |number_format(0,'',' ')}}</td>
 		</tr>
-		<tr class="ro1">
-			<td class="ce6"><p>Encours de la dette au 31/12/N-1</p></td>
-			<td class="ce13">183 200</td>
-			<td class="ce13">183 500</td>
-			<td class="ce13">177 500 </td>
-		</tr>
+		{% include 'mairie/finances/_dette.html.twig' %}
 		{% include 'mairie/finances/_roulement.html.twig' with {
 							R2: Report2
 			} only %}

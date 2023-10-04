@@ -80,8 +80,13 @@ height: 24px;
     width: 30%; 
     text-align: center; 
     height: 62px;
+    border-color: #0798f3;
+    border-style: solid;
 }
 
+.cellule-table-urbanisme:hover {
+    background-color: #87CEFA;
+}
 footer {
     margin-left: auto;
     padding-left: 10px;
@@ -241,4 +246,8 @@ a .card-text {
 .clicrapide-item {
     border-color: #0798f3;
     border-style: solid;
+}
+
+.clicrapide-item:hover {
+    background-color: #87CEFA;
 }

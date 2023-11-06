@@ -85,4 +85,14 @@ class MairieController extends AbstractController
             'title' => 'Finances de Pagny la Blanche Côte', 'titre' => 'Finances de Pagny la Blanche Côte', 'current_menu' => 'mairie'
         ]);
     }
+
+    /**
+     * @Route("/mentions-legales", name="mentions-legales")
+     */
+    public function mentionslegales()
+    {
+        return $this->render('mairie/indexmentions.html.twig', [
+            'title' => 'Pagny la Blanche Côte | Mentions Légales', 'titre' => 'Mentions légales', 'current_menu' => ''
+        ]);
+    }
 }
